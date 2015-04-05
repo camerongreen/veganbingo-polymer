@@ -31,9 +31,14 @@
     document.querySelector('core-animated-pages').setAttribute("selected", 4);
     var bId = event.detail.buttonId;
     var page = document.querySelector('#info');
+    var gridEl = document.querySelector('#' + bId);
 
     // populate page with appropriate stuff
     page.querySelector('#header-image').setAttribute('src', 'images/' + bId + '.png');
+    page.querySelector('#description').innerHTML = gridEl.querySelector("div.description").innerHTML;
+    page.querySelector('#rules').innerHTML = gridEl.querySelector("div.rules").innerHTML;
+    page.querySelector('#main').innerHTML = gridEl.querySelector("div.main").innerHTML;
+
 
   });
 
