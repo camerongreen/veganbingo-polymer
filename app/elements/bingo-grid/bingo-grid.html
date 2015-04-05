@@ -1,0 +1,65 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/core-layout-grid/core-layout-grid.html">
+
+<link rel="import" href="../grid-button/grid-button.html">
+
+
+<polymer-element name="bingo-grid" attributes="numInRow">
+  <template>
+    <link rel="stylesheet" href="bingo-grid.css">
+    <template repeat="{{row in gridTiles}}">
+      <div horizontal layout>
+      <template repeat="{{tile in row}}">
+        <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}" buttonId="{{tile.tileId}}" flex></grid-button>
+      </template>
+      </div>
+    </template>
+  </template>
+  <script>
+    (function () {
+      /**
+       * The number of tile styles should equal the number of tiles in each row
+       * and be named 'style1', 'style2' etc
+       *
+       * @param tiles
+       * @param numInRow
+       */
+      function makeGrid(tiles, numInRow) {
+        var returnVal = [];
+        var currRow = [];
+
+        for (var i = 0, l = tiles.length; i < l; i++) {
+          var row = Math.floor(i / numInRow);
+          var styleNum = (i + row) % numInRow;
+          var style = "style" + (styleNum + 1);
+          var newElement = {
+            elClass: style,
+            altText: "timmy",
+            tileId: tiles[i].getAttribute('elId')
+          };
+
+          currRow.push(newElement);
+
+          if (currRow.length == numInRow) {
+            returnVal.push(currRow.slice(0));
+            currRow = [];
+          }
+        }
+
+        if (currRow.length > 0) {
+          returnVal.push(currRow);
+        }
+
+        return returnVal;
+      }
+
+      Polymer({
+        ready: function () {
+          var tiles = this.querySelectorAll('grid-el')
+
+         this.gridTiles = makeGrid(tiles, this.numInRow);
+        }
+      });
+    })();
+  </script>
+</polymer-element>

@@ -1,0 +1,17 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="grid-button" attributes="elClass, altText, buttonId">
+  <template>
+    <link rel="stylesheet" href="grid-button.css">
+    <div id="{{buttonId}}" class="{{elClass}}">
+      <img src="images/{{buttonId}}.png" alt="{{altText}}" />
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+      });
+    })();
+  </script>
+</polymer-element>
