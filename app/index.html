@@ -34,18 +34,10 @@
 
     <!-- Drawer Content -->
     <core-menu selected="0">
-      <core-item label="Main">
-        <core-icon icon="label-outline"></core-icon>
-      </core-item>
-      <core-item label="How to play">
-        <core-icon icon="label-outline"></core-icon>
-      </core-item>
-      <core-item label="Reset game">
-        <core-icon icon="label-outline"></core-icon>
-      </core-item>
-      <core-item label="About">
-        <core-icon icon="label-outline"></core-icon>
-      </core-item>
+      <core-item label="Main" icon="apps"></core-item>
+      <core-item label="How to play" icon="help"></core-item>
+      <core-item label="About" icon="info"></core-item>
+      <core-item label="Settings" icon="settings"></core-item>
     </core-menu>
 
   </core-header-panel>
@@ -226,9 +218,9 @@
               <p>Vegan bingo is a fun game for vegans, not to make fun of non-vegans; remember veganism was new to most of us at one point and we might have asked similar questions.</p></div>
           </div>
         </section>
-        <section id="reset">
+        <section id="settings">
           <div layout vertical>
-            <h2>Reset Game</h2>
+            <h2>Settings</h2>
 
             <div><p>Todo...</p></div>
           </div>
@@ -254,10 +246,10 @@
         <section id="info">
           <div layout vertical>
             <div layout horizontal>
-            <img id="header-image" />
-            <h2 id="description" flex></h2>
+              <img id="header-image" />
+              <h2 id="description" flex></h2>
             </div>
-            <button></button>
+            <button>Incomplete <core-icon icon="favorite-outline"></core-icon></button>
             <div id="rules"></div>
             <div id="main"></div>
           </div>
