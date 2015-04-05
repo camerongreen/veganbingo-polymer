@@ -32,20 +32,19 @@ body {
   background-color: #EEEEEE;
 }
 
-core-toolbar {
-  color: #FAFAFA;
-  background-color: #009688;
-}
-
 core-animated-pages {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  font-size: 72px;
-  overflow: hidden;
 }
+
 section > div {
   height: 100%;
+  overflow-y: auto;
+
+  h2, p {
+    margin-left: 15px;
+  }
 }

@@ -25,6 +25,12 @@
     })(i);
   }
 
+  document.addEventListener('grid-button-clicked', function (event) {
+    document.querySelector('core-menu').setAttribute('selected', -1);
+    var p = document.querySelector('core-animated-pages');
+    p.selected = 4;
+  });
+
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
 })(wrap(document));

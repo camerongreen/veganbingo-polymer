@@ -3,7 +3,7 @@
 <polymer-element name="grid-button" attributes="elClass, altText, buttonId">
   <template>
     <link rel="stylesheet" href="grid-button.css">
-    <div id="{{buttonId}}" class="{{elClass}}" on-click="doClick()">
+    <div id="{{buttonId}}" class="{{elClass}}" on-click="{{doClick}}">
       <img src="images/{{buttonId}}.png" alt="{{altText}}" />
     </div>
   </template>
@@ -11,7 +11,7 @@
     (function () {
       Polymer({
         doClick: function (event, detail, sender) {
-          this.fire('grid-button-clicked', {buttonId: buttonId});
+          this.fire('grid-button-clicked', {buttonId: this.buttonId});
         }
       });
     })();
