@@ -18,17 +18,23 @@
   for (var i = 0, l = els.length; i < l; i++) {
     (function (index) {
       els[i].addEventListener('click', function () {
-        var p = document.querySelector('core-animated-pages');
+        document.querySelector('core-animated-pages').setAttribute("selected", index);
         document.querySelector('core-menu').setAttribute('selected', index);
-        p.selected = index;
       });
     })(i);
   }
 
   document.addEventListener('grid-button-clicked', function (event) {
+    // set menu to nothing
     document.querySelector('core-menu').setAttribute('selected', -1);
-    var p = document.querySelector('core-animated-pages');
-    p.selected = 4;
+    // set page to the one we'll use to put details in
+    document.querySelector('core-animated-pages').setAttribute("selected", 4);
+    var bId = event.detail.buttonId;
+    var page = document.querySelector('#info');
+
+    // populate page with appropriate stuff
+    page.querySelector('#header-image').setAttribute('src', 'images/' + bId + '.png');
+
   });
 
 // wrap document so it plays nice with other libraries

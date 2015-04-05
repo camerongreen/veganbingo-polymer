@@ -36,7 +36,7 @@
           var newElement = {
             elClass: style,
             altText: "timmy",
-            tileId: tiles[i].getAttribute('elId')
+            tileId: tiles[i].id
           };
 
           currRow.push(newElement);
@@ -56,7 +56,7 @@
 
       Polymer({
         ready: function () {
-          var tiles = this.querySelectorAll('grid-el')
+          var tiles = this.querySelectorAll('div.grid-el')
           this.gridTiles = makeGrid(tiles, this.numInRow);
 
           this.addEventListener('grid-button-clicked', function (ev) {
