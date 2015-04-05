@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
-      <template repeat="{{tile in row}}">
-        <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}" buttonId="{{tile.tileId}}" flex></grid-button>
-      </template>
+        <template repeat="{{tile in row}}">
+          <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}" buttonId="{{tile.tileId}}"
+                       flex></grid-button>
+        </template>
       </div>
     </template>
   </template>
@@ -56,8 +57,11 @@
       Polymer({
         ready: function () {
           var tiles = this.querySelectorAll('grid-el')
+          this.gridTiles = makeGrid(tiles, this.numInRow);
 
-         this.gridTiles = makeGrid(tiles, this.numInRow);
+          this.addEventListener('grid-button-clicked', function (ev) {
+            console.log(ev.type, ev.buttonId);
+          });
         }
       });
     })();

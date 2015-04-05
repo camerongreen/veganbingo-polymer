@@ -2,6 +2,10 @@
   display: block;
   text-align: center; }
 
+:host div {
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
 .style1 {
   background-color: #fbb8b8; }
 

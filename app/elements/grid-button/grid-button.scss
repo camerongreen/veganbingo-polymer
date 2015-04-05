@@ -8,6 +8,11 @@ $mygreen: #b8fbc6;
   text-align: center;
 }
 
+:host div {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 .style1 {
   background-color: $mypink;
 }
