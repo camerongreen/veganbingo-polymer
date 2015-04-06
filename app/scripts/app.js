@@ -22,9 +22,13 @@
     listenForHomeButtonClicks();
 
     var page = document.querySelector('#bingo-page');
-    // this button used quote a log
     var btn = page.querySelector('button');
 
+    handleCompletionClick(btn);
+    handleIndividualPage(page, btn);
+  });
+
+  function handleCompletionClick(btn) {
     btn.addEventListener('click', function (e) {
       if (e.target.id === "completionButton") {
         var elId = this.getAttribute("bingo-page");
@@ -40,7 +44,9 @@
         persistSettings();
       }
     });
+  }
 
+  function handleIndividualPage(page, btn) {
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
       changePage(-1, 4);
@@ -59,7 +65,7 @@
       btn.classList.add(bDone ? 'completed' : 'uncompleted');
       btn.classList.remove(bDone ? 'uncompleted' : 'completed');
     });
-  });
+  }
 
   function listenForMenuClicks() {
     var els = document.querySelectorAll('core-item');
@@ -87,6 +93,7 @@
     document.querySelector('core-menu').setAttribute('selected', menu);
     document.querySelector('core-animated-pages').setAttribute("selected", page);
   }
+
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
 })(wrap(document));
