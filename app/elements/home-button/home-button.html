@@ -1,0 +1,20 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="home-button" attributes="">
+  <template>
+    <link rel="stylesheet" href="home-button.css">
+    <div class="home-button" on-click="{{doClick}}">
+      <core-icon icon="apps"></core-icon> Home
+    </div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        // define element prototype here
+        doClick: function (event, detail, sender) {
+          this.fire('home-button-clicked');
+        }
+      });
+    })();
+  </script>
+</polymer-element>

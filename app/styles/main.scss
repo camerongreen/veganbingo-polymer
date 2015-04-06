@@ -65,6 +65,24 @@ home-button {
     height: 120px;
     width: 120px;
   }
+  button {
+    &.completed {
+      span.isCompleted {
+        display: inline;
+      }
+      span.isUncompleted {
+        display: none;
+      }
+    }
+    &.uncompleted {
+      span.isCompleted {
+        display: none;
+      }
+      span.isUncompleted {
+        display: inline;
+      }
+    }
+  }
 }
 
 

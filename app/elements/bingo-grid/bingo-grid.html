@@ -33,9 +33,10 @@
           var row = Math.floor(i / numInRow);
           var styleNum = (i + row) % numInRow;
           var style = "style" + (styleNum + 1);
+
           var newElement = {
             elClass: style,
-            altText: "timmy",
+            altText: tiles[i].querySelector("div.description").textContent,
             tileId: tiles[i].id
           };
 
