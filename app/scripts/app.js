@@ -5,7 +5,7 @@
 
   var settings = localStorage[myNs + '.values'] ? JSON.parse(localStorage[myNs + '.values']) : {};
 
-  function persistSettings() {
+  function persistSettings(settings) {
     localStorage[myNs + '.values'] = JSON.stringify(settings);
   }
 
@@ -20,35 +20,63 @@
   app.addEventListener('template-bound', function () {
     listenForMenuClicks();
     listenForHomeButtonClicks();
+    listenForRestartButtonClicks();
 
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('button');
 
     handleCompletionClick(btn);
     handleIndividualPage(page, btn);
+    updateScore(settings);
   });
 
   function handleCompletionClick(btn) {
-    btn.addEventListener('click', function (e) {
-      if (e.target.id === "completionButton") {
-        var elId = this.getAttribute("bingo-page");
-        if (settings.hasOwnProperty(elId)) {
-          this.classList.add('uncompleted');
-          this.classList.remove('completed');
-          delete settings[elId];
-        } else {
-          this.classList.add('completed');
-          this.classList.remove('uncompleted');
-          settings[elId] = true;
-        }
-        persistSettings();
-      }
+    btn.addEventListener('click', function () {
+      updateValue(btn);
+      setButtonStatus(btn);
     });
   }
 
-  function setButtonAndStatus(btn) {
-
+  function updateValue(btn) {
+    var elId = btn.getAttribute("bingo-page");
+    if (settings.hasOwnProperty(elId)) {
+      delete settings[elId];
+    } else {
+      settings[elId] = true;
+    }
+    updateScore(settings);
+    persistSettings(settings);
   }
+
+  function restartGame() {
+    settings = {};
+    updateScore(settings);
+    persistSettings(settings);
+  }
+
+  function objectSize(obj) {
+    var size = 0, key;
+    for (key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        size++;
+      }
+    }
+    return size;
+  }
+
+  function updateScore(settings) {
+    document.querySelector("#completed").innerHTML = objectSize(settings);
+  }
+
+  function setButtonStatus(btn) {
+    var elId = btn.getAttribute("bingo-page");
+    if (settings.hasOwnProperty(elId)) {
+      btn.innerHTML = "Someone said this, you got a bingo!";
+    } else {
+      btn.innerHTML = "Click if someone said this";
+    }
+  }
+
 
   function handleIndividualPage(page, btn) {
     document.addEventListener('grid-button-clicked', function (event) {
@@ -66,10 +94,7 @@
       // populate page with appropriate stuff
 
       btn.setAttribute('bingo-page', bId);
-      btn.text = bDone ? 'Completed' : 'Uncompleted';
-
-      btn.classList.add(bDone ? 'completed' : 'uncompleted');
-      btn.classList.remove(bDone ? 'uncompleted' : 'completed');
+      setButtonStatus(btn);
     });
   }
 
@@ -83,6 +108,13 @@
         });
       })(i);
     }
+  }
+
+  function listenForRestartButtonClicks() {
+    document.querySelector("#restart").addEventListener('click', function (evt) {
+      restartGame();
+      evt.preventDefault();
+    });
   }
 
   function listenForHomeButtonClicks() {
