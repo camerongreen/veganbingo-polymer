@@ -10,8 +10,7 @@
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
         <template repeat="{{tile in row}}">
-          <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}" buttonId="{{tile.tileId}}"
-                       flex></grid-button>
+          <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}" buttonId="{{tile.tileId}}" buttonImage="{{tile.buttonImage}}" flex></grid-button>
         </template>
       </div>
     </template>
@@ -37,7 +36,8 @@
           var newElement = {
             elClass: style,
             altText: tiles[i].querySelector("div.description").textContent,
-            tileId: tiles[i].id
+            tileId: tiles[i].id,
+            buttonImage: tiles[i].id
           };
 
           currRow.push(newElement);

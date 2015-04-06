@@ -18,22 +18,8 @@
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function () {
-    var els = document.querySelectorAll('core-item');
-
-    for (var i = 0, l = els.length; i < l; i++) {
-      (function (index) {
-        els[i].addEventListener('click', function () {
-          document.querySelector('core-animated-pages').setAttribute("selected", index);
-          document.querySelector('core-menu').setAttribute('selected', index);
-        });
-      })(i);
-    }
-
-    document.addEventListener('home-button-clicked', function (evt) {
-      document.querySelector('core-animated-pages').setAttribute("selected", 0);
-      document.querySelector('core-menu').setAttribute('selected', 0);
-      evt.preventDefault();
-    });
+    listenForMenuClicks(this);
+    listenForHomeButtonClicks(this);
 
     var page = document.querySelector('#bingo-page');
     // this button used quote a log
@@ -77,6 +63,26 @@
     });
   });
 
+  function listenForMenuClicks(app) {
+    var els = app.querySelectorAll('core-item');
+
+    for (var i = 0, l = els.length; i < l; i++) {
+      (function (index) {
+        els[i].addEventListener('click', function () {
+          app.querySelector('core-animated-pages').setAttribute("selected", index);
+          app.querySelector('core-menu').setAttribute('selected', index);
+        });
+      })(i);
+    }
+  }
+
+  function listenForHomeButtonClicks(app) {
+    app.addEventListener('home-button-clicked', function (evt) {
+      app.querySelector('core-animated-pages').setAttribute("selected", 0);
+      app.querySelector('core-menu').setAttribute('selected', 0);
+      evt.preventDefault();
+    });
+  }
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
 })(wrap(document));
