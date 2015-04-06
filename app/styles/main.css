@@ -37,16 +37,20 @@ core-animated-pages {
 section > div {
   height: 100%;
   overflow-y: auto; }
-  section > div h2, section > div p {
+section.info {
+  margin-left: 15px; }
+  section.info p {
     margin-left: 15px; }
 
 home-button {
   margin-left: 15px; }
 
-#info {
+#bingo-page {
   padding-left: 1em;
   padding-right: 1em; }
-  #info #main img.header-image {
-    margin: 1em; }
+  #bingo-page #main img.header-image {
+    margin: 1em;
+    height: 120px;
+    width: 120px; }
 
 /*# sourceMappingURL=main.css.map */
