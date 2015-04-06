@@ -18,8 +18,8 @@
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function () {
-    listenForMenuClicks(this);
-    listenForHomeButtonClicks(this);
+    listenForMenuClicks();
+    listenForHomeButtonClicks();
 
     var page = document.querySelector('#bingo-page');
     // this button used quote a log
@@ -43,13 +43,11 @@
 
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
-      document.querySelector('core-menu').setAttribute('selected', -1);
-      // set page to the one we'll use to put details in
-      document.querySelector('core-animated-pages').setAttribute("selected", 4);
+      changePage(-1, 4);
 
       var bId = event.detail.buttonId;
       var bDone = settings.hasOwnProperty(bId);
-      var gridEl = document.querySelector('#' + bId);
+      var gridEl = this.querySelector('#' + bId);
 
       page.querySelector('#header-image').setAttribute('src', 'images/' + bId + '.png');
       page.querySelector('#description').innerHTML = gridEl.querySelector("div.description").innerHTML;
@@ -63,25 +61,31 @@
     });
   });
 
-  function listenForMenuClicks(app) {
-    var els = app.querySelectorAll('core-item');
+  function listenForMenuClicks() {
+    var els = document.querySelectorAll('core-item');
 
     for (var i = 0, l = els.length; i < l; i++) {
       (function (index) {
         els[i].addEventListener('click', function () {
-          app.querySelector('core-animated-pages').setAttribute("selected", index);
-          app.querySelector('core-menu').setAttribute('selected', index);
+          changePage(index);
         });
       })(i);
     }
   }
 
-  function listenForHomeButtonClicks(app) {
-    app.addEventListener('home-button-clicked', function (evt) {
-      app.querySelector('core-animated-pages').setAttribute("selected", 0);
-      app.querySelector('core-menu').setAttribute('selected', 0);
+  function listenForHomeButtonClicks() {
+    document.addEventListener('home-button-clicked', function (evt) {
+      changePage(0);
       evt.preventDefault();
     });
+  }
+
+  function changePage(menu, page) {
+    if (typeof page === 'undefined') {
+      page = menu;
+    }
+    document.querySelector('core-menu').setAttribute('selected', menu);
+    document.querySelector('core-animated-pages').setAttribute("selected", page);
   }
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
