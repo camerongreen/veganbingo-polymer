@@ -40,4 +40,13 @@ section > div {
   section > div h2, section > div p {
     margin-left: 15px; }
 
+home-button {
+  margin-left: 15px; }
+
+#info {
+  padding-left: 1em;
+  padding-right: 1em; }
+  #info #main img.header-image {
+    margin: 1em; }
+
 /*# sourceMappingURL=main.css.map */

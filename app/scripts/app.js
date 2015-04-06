@@ -24,6 +24,12 @@
     })(i);
   }
 
+  document.addEventListener('home-button-clicked', function (evt) {
+    document.querySelector('core-animated-pages').setAttribute("selected", 0);
+    document.querySelector('core-menu').setAttribute('selected', 0);
+    evt.preventDefault();
+  });
+
   document.addEventListener('grid-button-clicked', function (event) {
     // set menu to nothing
     document.querySelector('core-menu').setAttribute('selected', -1);
@@ -36,10 +42,8 @@
     // populate page with appropriate stuff
     page.querySelector('#header-image').setAttribute('src', 'images/' + bId + '.png');
     page.querySelector('#description').innerHTML = gridEl.querySelector("div.description").innerHTML;
-    page.querySelector('#rules').innerHTML = gridEl.querySelector("div.rules").innerHTML;
+    page.querySelector('#rules p').innerHTML = gridEl.querySelector("div.rules").innerHTML;
     page.querySelector('#main').innerHTML = gridEl.querySelector("div.main").innerHTML;
-
-
   });
 
 // wrap document so it plays nice with other libraries
