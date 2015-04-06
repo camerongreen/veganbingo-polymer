@@ -51,13 +51,13 @@ home-button {
     margin: 10px;
     height: 120px;
     width: 120px; }
-  #bingo-page button.completed span.isCompleted {
+  #bingo-page div.extras.completed span.isCompleted {
     display: inline; }
-  #bingo-page button.completed span.isUncompleted {
+  #bingo-page div.extras.completed span.isUncompleted {
     display: none; }
-  #bingo-page button.uncompleted span.isCompleted {
+  #bingo-page div.extras.uncompleted span.isCompleted {
     display: none; }
-  #bingo-page button.uncompleted span.isUncompleted {
+  #bingo-page div.extras.uncompleted span.isUncompleted {
     display: inline; }
 
 /*# sourceMappingURL=main.css.map */

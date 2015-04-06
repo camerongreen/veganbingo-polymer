@@ -46,6 +46,10 @@
     });
   }
 
+  function setButtonAndStatus(btn) {
+
+  }
+
   function handleIndividualPage(page, btn) {
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
@@ -62,6 +66,8 @@
       // populate page with appropriate stuff
 
       btn.setAttribute('bingo-page', bId);
+      btn.text = bDone ? 'Completed' : 'Uncompleted';
+
       btn.classList.add(bDone ? 'completed' : 'uncompleted');
       btn.classList.remove(bDone ? 'uncompleted' : 'completed');
     });

@@ -555,18 +555,19 @@
 
               <h2 id="description" flex></h2>
             </div>
-            <button id="completionButton" bingo-page="">
-              <span class="isCompleted">
-              <span class="status">Completed bingo!</span>
-              <core-icon icon="favorite"></core-icon>
-              <core-icon icon="favorite"></core-icon>
-              <core-icon icon="favorite"></core-icon>
-              </span>
-              <span class="isUncompleted">
-              <span class="status">Complete this bingo</span>
-              <core-icon icon="favorite-outline"></core-icon>
-              </span>
-            </button>
+            <div layout horizontal>
+              <button id="completionButton" bingo-page=""></button>
+              <div class="extras">
+                <span class="isUncompleted">
+                  <core-icon icon="favorite-outline"></core-icon>
+                </span>
+                <span class="isCompleted">
+                  <core-icon icon="favorite"></core-icon>
+                  <core-icon icon="favorite"></core-icon>
+                  <core-icon icon="favorite"></core-icon>
+                </span>
+              </div>
+            </div>
             <div id="rules"><h3>Also acceptable</h3>
 
               <p></p></div>
