@@ -36,7 +36,7 @@
     // set page to the one we'll use to put details in
     document.querySelector('core-animated-pages').setAttribute("selected", 4);
     var bId = event.detail.buttonId;
-    var page = document.querySelector('#info');
+    var page = document.querySelector('#bingo-page');
     var gridEl = document.querySelector('#' + bId);
 
     // populate page with appropriate stuff

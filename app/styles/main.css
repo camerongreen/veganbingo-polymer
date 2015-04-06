@@ -35,7 +35,6 @@ core-animated-pages {
   left: 0; }
 
 section > div {
-  height: 100%;
   overflow-y: auto; }
 section.info {
   margin-left: 15px; }
@@ -46,10 +45,10 @@ home-button {
   margin-left: 15px; }
 
 #bingo-page {
-  padding-left: 1em;
-  padding-right: 1em; }
-  #bingo-page #main img.header-image {
-    margin: 1em;
+  padding-left: 10px;
+  padding-right: 10px; }
+  #bingo-page #header-image {
+    margin: 10px;
     height: 120px;
     width: 120px; }
 
