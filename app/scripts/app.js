@@ -4,6 +4,7 @@
   var myNs = 'org.camerongreen.veganbingo';
 
   var settings = localStorage[myNs + '.values'] ? JSON.parse(localStorage[myNs + '.values']) : {};
+  var data;
 
   function persistSettings(settings) {
     localStorage[myNs + '.values'] = JSON.stringify(settings);
@@ -14,6 +15,13 @@
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
   app.appName = 'Vegan Bingo!';
+
+  document.addEventListener('polymer-ready', function () {
+    var ajax = document.querySelector("core-ajax");
+    ajax.addEventListener("core-response", function (e) {
+      data = e.detail.response
+    });
+  });
 
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
@@ -84,13 +92,12 @@
       changePage(-1, 4);
 
       var bId = event.detail.buttonId;
-      var bDone = settings.hasOwnProperty(bId);
-      var gridEl = this.querySelector('#' + bId);
+      var gridEl = data[bId];
 
       page.querySelector('#header-image').setAttribute('src', 'images/' + bId + '.png');
-      page.querySelector('#description').innerHTML = gridEl.querySelector("div.description").innerHTML;
-      page.querySelector('#rules p').innerHTML = gridEl.querySelector("div.rules").innerHTML;
-      page.querySelector('#main').innerHTML = gridEl.querySelector("div.main").innerHTML;
+      page.querySelector('#description').innerHTML = gridEl.description;
+      page.querySelector('#rules p').innerHTML = gridEl.rules;
+      page.querySelector('#main').innerHTML = "<p>" + gridEl.main.join("</p>\n<p>") + "</p>";
       // populate page with appropriate stuff
 
       btn.setAttribute('bingo-page', bId);

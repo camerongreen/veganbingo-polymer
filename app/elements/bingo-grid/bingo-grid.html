@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/core-layout-grid/core-layout-grid.html">
+<link rel="import"
+      href="../../bower_components/core-layout-grid/core-layout-grid.html">
 
 <link rel="import" href="../grid-button/grid-button.html">
 
@@ -10,7 +11,9 @@
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
         <template repeat="{{tile in row}}">
-          <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}" buttonId="{{tile.tileId}}" buttonImage="{{tile.buttonImage}}" flex></grid-button>
+          <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}"
+                       buttonId="{{tile.tileId}}"
+                       buttonImage="{{tile.buttonImage}}" flex></grid-button>
         </template>
       </div>
     </template>
@@ -28,23 +31,25 @@
         var returnVal = [];
         var currRow = [];
 
-        for (var i = 0, l = tiles.length; i < l; i++) {
-          var row = Math.floor(i / numInRow);
-          var styleNum = (i + row) % numInRow;
-          var style = "style" + (styleNum + 1);
+        for (var tile in tiles) {
+          if (tiles.hasOwnProperty(tile)) {
+            var row = 1 + returnVal.length;
+            var styleNum = (row + currRow.length) % numInRow;
+            var style = "style" + (styleNum);
 
-          var newElement = {
-            elClass: style,
-            altText: tiles[i].querySelector("div.description").textContent,
-            tileId: tiles[i].id,
-            buttonImage: tiles[i].id
-          };
+            var newElement = {
+              elClass: style,
+              altText: tiles.description,
+              tileId: tile,
+              buttonImage: tile
+            };
 
-          currRow.push(newElement);
+            currRow.push(newElement);
 
-          if (currRow.length == numInRow) {
-            returnVal.push(currRow.slice(0));
-            currRow = [];
+            if (currRow.length == numInRow) {
+              returnVal.push(currRow.slice(0));
+              currRow = [];
+            }
           }
         }
 
@@ -57,8 +62,11 @@
 
       Polymer({
         ready: function () {
-          var tiles = this.querySelectorAll('div.grid-el')
-          this.gridTiles = makeGrid(tiles, this.numInRow);
+          var that = this;
+
+          document.addEventListener("core-response", function (e) {
+            that.gridTiles = makeGrid(e.detail.response, that.numInRow);
+          });
 
           this.addEventListener('grid-button-clicked', function (ev) {
             console.log(ev.type, ev.buttonId);
