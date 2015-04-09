@@ -4,8 +4,9 @@
 
 <link rel="import" href="../grid-button/grid-button.html">
 
-<polymer-element name="bingo-grid" attributes="tiles">
+<polymer-element name="bingo-grid">
   <template>
+    <bingo-data id="ajax" tiles="{{tiles}}"></bingo-data>
     <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
@@ -56,11 +57,11 @@
 
       Polymer({
         ready: function () {
-          this.gridTiles = makeGrid(this.tiles, 4);
+          var that = this;
+          document.addEventListener('core-response', function (res) {
+            that.gridTiles = makeGrid(res.detail.response, 4);
+          })
         },
-        tilesChanged: function () {
-          this.gridTiles = makeGrid(this.tiles, 4);
-        }
       });
     })();
   </script>

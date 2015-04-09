@@ -6,69 +6,37 @@
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
   app.appName = 'Vegan Bingo!';
-  app.namespace = app.getAttribute('namespace');
-  var settings = localStorage[app.namespace + '.values'] ? JSON.parse(localStorage[app.namespace + '.values']) : {};
-  app.settings = settings;
-
-  document.addEventListener("bingo-data-loaded", function (res) {
-    app.model.tiles = res.detail;
-  });
 
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function () {
     listenForMenuClicks();
     listenForHomeButtonClicks();
-    listenForRestartButtonClicks(app.settings);
+    listenForRestartButtonClicks();
 
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('button');
 
-    listenForCompletionClick(app.settings, btn);
+    listenForCompletionClick(btn);
     listenForGridPageClicks(page, btn);
-    updateScore(app.settings);
+    updateScore();
   });
 
-  function listenForCompletionClick(settings, btn) {
+  function listenForCompletionClick(btn) {
     btn.addEventListener('click', function () {
       var elId = btn.getAttribute("bingo-page");
-      var done = settings.hasOwnProperty(elId);
-      updateValue(settings, elId, !done);
+      updateValue(elId, !done);
       setButtonStatus(btn, !done);
     });
   }
 
-  function updateValue(settings, elId, done) {
-    var tile = app.model.tiles[elId];
-    tile.done = done;
+  function updateValue(elId, done) {
     app.model.tiles[elId].done = done;
-    if (done) {
-      settings[elId] = true;
-    } else {
-      delete settings[elId];
-    }
-    updateScore(settings);
-    persistSettings(settings);
   }
 
-  function restartGame(settings) {
-    settings = {};
-    updateScore(settings);
-    persistSettings(settings);
-  }
-
-  function objectSize(obj) {
-    var size = 0, key;
-    for (key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        size++;
-      }
-    }
-    return size;
-  }
-
-  function updateScore(settings) {
-    document.querySelector("#completed").innerHTML = objectSize(settings);
+  function updateScore() {
+    var settings = document.querySelector("bingo-settings");
+    document.querySelector("#completed").innerHTML = settings.count();
   }
 
   function setButtonStatus(btn, done) {
@@ -79,8 +47,7 @@
     }
   }
 
-
-  function listenForGridPageClicks(page, btn, data) {
+  function listenForGridPageClicks(page, btn) {
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
       changePage(-1, 4);
@@ -110,9 +77,10 @@
     }
   }
 
-  function listenForRestartButtonClicks(settings) {
+  function listenForRestartButtonClicks() {
     document.querySelector("#restart").addEventListener('click', function (evt) {
-      restartGame(settings);
+      var settings = document.querySelector('bingo-settings');
+      settings.restart();
       evt.preventDefault();
     });
   }
@@ -130,10 +98,6 @@
     }
     document.querySelector('core-menu').setAttribute('selected', menu);
     document.querySelector('core-animated-pages').setAttribute("selected", page);
-  }
-
-  function persistSettings(settings) {
-    localStorage[app.namespace + '.values'] = JSON.stringify(settings);
   }
 
 // wrap document so it plays nice with other libraries

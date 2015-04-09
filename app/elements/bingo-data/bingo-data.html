@@ -1,28 +1,25 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="bingo-data" attributes="tiles, settings">
+<polymer-element name="bingo-data" attributes="tiles">
   <template>
-    <core-ajax id="bingoDataSource" auto url="../../scripts/data.json"
-               handleAs="json"></core-ajax>
+    <bingo-settings id="settings"></bingo-settings>
+    <core-ajax id="ajax" auto url="../../scripts/data.json"
+               handleAs="json" on-core-response="{{tilesLoaded}}"></core-ajax>
   </template>
   <script>
     (function () {
       Polymer({
-        tiles: {},
-        settings: {},
-        ready: function () {
-          var that = this;
-
-          var settings = localStorage['org.camerongreen.veganbingo.values'] ? JSON.parse(localStorage['org.camerongreen.veganbingo.values']) : {};
-
-          this.$.bingoDataSource.addEventListener('core-response', function () {
-            for (var tile in this.response) {
-              that.tiles[tile] = this.response[tile];
-              that.tiles[tile].done = settings.hasOwnProperty(tile);
-            }
-
-            this.fire('bingo-data-loaded', that.tiles);
-          });
+        created: function () {
+          this.tiles = {};
+        },
+        tilesLoaded: function () {
+          this.tiles = Object.create(this.$.ajax.response);
+          for (var tile in this.tiles) {
+            this.tiles[tile].done = this.$.settings.isDone(tile);
+          }
+        },
+        getTiles: function() {
+          return this.tiles;
         }
       });
     })();
