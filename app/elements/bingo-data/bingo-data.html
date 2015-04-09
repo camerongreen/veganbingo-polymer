@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bingo-data" attributes="tiles, settings">
+  <template>
+    <core-ajax id="bingoDataSource" auto url="../../scripts/data.json"
+               handleAs="json"></core-ajax>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        tiles: {},
+        settings: {},
+        ready: function () {
+          var that = this;
+          this.$.bingoDataSource.addEventListener('core-response', function () {
+            for (var tile in this.response) {
+              that.tiles[tile] = this.response[tile];
+              that.tiles[tile].done = settings.hasOwnProperty(tile);
+            }
+
+            this.fire('bingo-data-loaded', that.tiles);
+          });
+        }
+      });
+    })();
+  </script>
+</polymer-element>

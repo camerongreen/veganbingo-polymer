@@ -10,12 +10,10 @@
   var myNs = 'org.camerongreen.veganbingo';
   var settings = localStorage[myNs + '.values'] ? JSON.parse(localStorage[myNs + '.values']) : {};
 
-  var data;
-
-  document.addEventListener("core-response", function (e) {
-    data = e.detail.response;
-    var bingoGrid = document.querySelector('bingo-grid');
-    bingoGrid.show(data);
+  document.addEventListener("bingo-data-loaded", function (res) {
+    app.model = {
+      tiles: res.detail
+    };
   });
 
   // Listen for template bound event to know when bindings
@@ -28,24 +26,26 @@
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('button');
 
-    handleCompletionClick(settings, btn);
-    handleIndividualPage(page, btn, data);
+    listenForCompletionClick(settings, btn);
+    listenForGridPageClicks(page, btn);
     updateScore(settings);
   });
 
-  function handleCompletionClick(settings, btn) {
+  function listenForCompletionClick(settings, btn) {
     btn.addEventListener('click', function () {
-      updateValue(settings, btn);
-      setButtonStatus(btn);
+      var elId = btn.getAttribute("bingo-page");
+      var done = settings.hasOwnProperty(elId);
+      updateValue(settings, elId, !done);
+      setButtonStatus(btn, !done);
     });
   }
 
-  function updateValue(settings, btn) {
-    var elId = btn.getAttribute("bingo-page");
-    if (settings.hasOwnProperty(elId)) {
-      delete settings[elId];
-    } else {
+  function updateValue(settings, elId, done) {
+    app.model.tiles[elId].done = done;
+    if (done) {
       settings[elId] = true;
+    } else {
+      delete settings[elId];
     }
     updateScore(settings);
     persistSettings(settings);
@@ -71,9 +71,8 @@
     document.querySelector("#completed").innerHTML = objectSize(settings);
   }
 
-  function setButtonStatus(btn) {
-    var elId = btn.getAttribute("bingo-page");
-    if (settings.hasOwnProperty(elId)) {
+  function setButtonStatus(btn, done) {
+    if (done) {
       btn.innerHTML = "Someone said this, you got a bingo!";
     } else {
       btn.innerHTML = "Click if someone said this";
@@ -81,22 +80,21 @@
   }
 
 
-  function handleIndividualPage(page, btn, data) {
+  function listenForGridPageClicks(page, btn, data) {
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
       changePage(-1, 4);
 
-      var bId = event.detail.buttonId;
-      var gridEl = data[bId];
+      var details = event.detail;
 
-      page.querySelector('#header-image').setAttribute('src', 'images/' + bId + '.png');
-      page.querySelector('#description').innerHTML = gridEl.description;
-      page.querySelector('#rules p').innerHTML = gridEl.rules;
-      page.querySelector('#main').innerHTML = "<p>" + gridEl.main.join("</p>\n<p>") + "</p>";
+      page.querySelector('#header-image').setAttribute('src', 'images/' + details.tileId + '.png');
+      page.querySelector('#description').innerHTML = details.description;
+      page.querySelector('#rules p').innerHTML = details.rules;
+      page.querySelector('#main').innerHTML = "<p>" + details.main.join("</p>\n<p>") + "</p>";
       // populate page with appropriate stuff
 
-      btn.setAttribute('bingo-page', bId);
-      setButtonStatus(btn);
+      btn.setAttribute('bingo-page', details.tileId);
+      setButtonStatus(btn, details.done);
     });
   }
 

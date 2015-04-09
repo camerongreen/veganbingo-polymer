@@ -10,9 +10,7 @@
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
         <template repeat="{{tile in row}}">
-          <grid-button elClass="{{tile.elClass}}" altText="{{tile.altText}}"
-                       buttonId="{{tile.tileId}}"
-                       buttonImage="{{tile.buttonImage}}" flex></grid-button>
+          <grid-button details="{{tile}}" flex></grid-button>
         </template>
       </div>
     </template>
@@ -35,12 +33,10 @@
             var styleNum = (returnVal.length + currRow.length) % numInRow;
             var style = "style" + (styleNum + 1);
 
-            var newElement = {
-              elClass: style,
-              altText: tiles.description,
-              tileId: tile,
-              buttonImage: tile
-            };
+            var newElement = Object.create(tiles[tile]);
+
+            newElement.tileId = tile;
+            newElement.tileClass = style;
 
             currRow.push(newElement);
 
@@ -59,9 +55,12 @@
       }
 
       Polymer({
-        show: function (tiles) {
-          this.gridTiles = makeGrid(tiles, 4);
+        ready: function () {
+          this.gridTiles = makeGrid(this.tiles, 4);
         },
+        tilesChanged: function () {
+          this.gridTiles = makeGrid(this.tiles, 4);
+        }
       });
     })();
   </script>

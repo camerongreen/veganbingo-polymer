@@ -23,8 +23,6 @@
 
 <body unresolved fullbleed layout vertical>
 
-<core-ajax id="bingoDataSource" auto url="scripts/data.json" handleAs="json"></core-ajax>
-
 <core-scaffold mode="standard">
 
   <!-- Drawer -->
@@ -50,11 +48,13 @@
 
   <!-- Main -->
   <div class="content">
+    <bingo-data tiles="{{tiles}}"></bingo-data>
     <template is="auto-binding" id="app">
+
       <core-animated-pages selected="0" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
-            <bingo-grid></bingo-grid>
+            <bingo-grid tiles="{{tiles}}"></bingo-grid>
           </div>
         </section>
         <section class="info" id="how">

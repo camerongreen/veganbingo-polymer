@@ -1,17 +1,27 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="grid-button" attributes="elClass, altText, buttonId, buttonImage">
+<polymer-element name="grid-button" attributes="details">
   <template>
     <link rel="stylesheet" href="grid-button.css">
-    <div id="{{buttonId}}" class="{{elClass}}" on-click="{{doClick}}">
-      <img src="images/{{buttonImage}}.png" alt="{{altText}}" />
+    <div id="{{details.tileId}}" class="{{details.tileClass}}" on-click="{{doClick}}">
+      <img src="images/{{details | pictureName}}.png" alt="{{details.description}}" />
     </div>
   </template>
   <script>
     (function () {
       Polymer({
         doClick: function (event, detail, sender) {
-          this.fire('grid-button-clicked', {buttonId: this.buttonId});
+          this.fire('grid-button-clicked', this.details);
+        },
+        pictureName: function (details) {
+          var image = details.tileId;
+          if (details.done) {
+            image += '_done';
+          }
+          return image;
+        },
+        create: function () {
+          this.details = {};
         }
       });
     })();
