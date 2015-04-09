@@ -4,8 +4,7 @@
 
 <link rel="import" href="../grid-button/grid-button.html">
 
-
-<polymer-element name="bingo-grid" attributes="numInRow">
+<polymer-element name="bingo-grid" attributes="tiles">
   <template>
     <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
@@ -33,9 +32,8 @@
 
         for (var tile in tiles) {
           if (tiles.hasOwnProperty(tile)) {
-            var row = 1 + returnVal.length;
-            var styleNum = (row + currRow.length) % numInRow;
-            var style = "style" + (styleNum);
+            var styleNum = (returnVal.length + currRow.length) % numInRow;
+            var style = "style" + (styleNum + 1);
 
             var newElement = {
               elClass: style,
@@ -61,17 +59,9 @@
       }
 
       Polymer({
-        ready: function () {
-          var that = this;
-
-          document.addEventListener("core-response", function (e) {
-            that.gridTiles = makeGrid(e.detail.response, that.numInRow);
-          });
-
-          this.addEventListener('grid-button-clicked', function (ev) {
-            console.log(ev.type, ev.buttonId);
-          });
-        }
+        show: function (tiles) {
+          this.gridTiles = makeGrid(tiles, 4);
+        },
       });
     })();
   </script>

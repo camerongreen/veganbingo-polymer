@@ -1,26 +1,21 @@
 (function (document) {
   'use strict';
 
-  var myNs = 'org.camerongreen.veganbingo';
-
-  var settings = localStorage[myNs + '.values'] ? JSON.parse(localStorage[myNs + '.values']) : {};
-  var data;
-
-  function persistSettings(settings) {
-    localStorage[myNs + '.values'] = JSON.stringify(settings);
-  }
-
   // Grab a reference to our auto-binding template
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
   app.appName = 'Vegan Bingo!';
 
-  document.addEventListener('polymer-ready', function () {
-    var ajax = document.querySelector("core-ajax");
-    ajax.addEventListener("core-response", function (e) {
-      data = e.detail.response
-    });
+  var myNs = 'org.camerongreen.veganbingo';
+  var settings = localStorage[myNs + '.values'] ? JSON.parse(localStorage[myNs + '.values']) : {};
+
+  var data;
+
+  document.addEventListener("core-response", function (e) {
+    data = e.detail.response;
+    var bingoGrid = document.querySelector('bingo-grid');
+    bingoGrid.show(data);
   });
 
   // Listen for template bound event to know when bindings
@@ -28,24 +23,24 @@
   app.addEventListener('template-bound', function () {
     listenForMenuClicks();
     listenForHomeButtonClicks();
-    listenForRestartButtonClicks();
+    listenForRestartButtonClicks(settings);
 
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('button');
 
-    handleCompletionClick(btn);
-    handleIndividualPage(page, btn);
+    handleCompletionClick(settings, btn);
+    handleIndividualPage(page, btn, data);
     updateScore(settings);
   });
 
-  function handleCompletionClick(btn) {
+  function handleCompletionClick(settings, btn) {
     btn.addEventListener('click', function () {
-      updateValue(btn);
+      updateValue(settings, btn);
       setButtonStatus(btn);
     });
   }
 
-  function updateValue(btn) {
+  function updateValue(settings, btn) {
     var elId = btn.getAttribute("bingo-page");
     if (settings.hasOwnProperty(elId)) {
       delete settings[elId];
@@ -56,7 +51,7 @@
     persistSettings(settings);
   }
 
-  function restartGame() {
+  function restartGame(settings) {
     settings = {};
     updateScore(settings);
     persistSettings(settings);
@@ -86,7 +81,7 @@
   }
 
 
-  function handleIndividualPage(page, btn) {
+  function handleIndividualPage(page, btn, data) {
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
       changePage(-1, 4);
@@ -117,9 +112,9 @@
     }
   }
 
-  function listenForRestartButtonClicks() {
+  function listenForRestartButtonClicks(settings) {
     document.querySelector("#restart").addEventListener('click', function (evt) {
-      restartGame();
+      restartGame(settings);
       evt.preventDefault();
     });
   }
@@ -137,6 +132,10 @@
     }
     document.querySelector('core-menu').setAttribute('selected', menu);
     document.querySelector('core-animated-pages').setAttribute("selected", page);
+  }
+
+  function persistSettings(settings) {
+    localStorage[myNs + '.values'] = JSON.stringify(settings);
   }
 
 // wrap document so it plays nice with other libraries

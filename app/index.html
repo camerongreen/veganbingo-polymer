@@ -23,7 +23,7 @@
 
 <body unresolved fullbleed layout vertical>
 
-<core-ajax auto url="scripts/data.json" handleAs="json"></core-ajax>
+<core-ajax id="bingoDataSource" auto url="scripts/data.json" handleAs="json"></core-ajax>
 
 <core-scaffold>
 
@@ -54,7 +54,7 @@
       <core-animated-pages selected="0" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
-            <bingo-grid numInRow="4"></bingo-grid>
+            <bingo-grid></bingo-grid>
           </div>
         </section>
         <section class="info" id="how">
