@@ -6,14 +6,12 @@
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
   app.appName = 'Vegan Bingo!';
-
-  var myNs = 'org.camerongreen.veganbingo';
-  var settings = localStorage[myNs + '.values'] ? JSON.parse(localStorage[myNs + '.values']) : {};
+  app.namespace = app.getAttribute('namespace');
+  var settings = localStorage[app.namespace + '.values'] ? JSON.parse(localStorage[app.namespace + '.values']) : {};
+  app.settings = settings;
 
   document.addEventListener("bingo-data-loaded", function (res) {
-    app.model = {
-      tiles: res.detail
-    };
+    app.model.tiles = res.detail;
   });
 
   // Listen for template bound event to know when bindings
@@ -21,14 +19,14 @@
   app.addEventListener('template-bound', function () {
     listenForMenuClicks();
     listenForHomeButtonClicks();
-    listenForRestartButtonClicks(settings);
+    listenForRestartButtonClicks(app.settings);
 
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('button');
 
-    listenForCompletionClick(settings, btn);
+    listenForCompletionClick(app.settings, btn);
     listenForGridPageClicks(page, btn);
-    updateScore(settings);
+    updateScore(app.settings);
   });
 
   function listenForCompletionClick(settings, btn) {
@@ -41,6 +39,8 @@
   }
 
   function updateValue(settings, elId, done) {
+    var tile = app.model.tiles[elId];
+    tile.done = done;
     app.model.tiles[elId].done = done;
     if (done) {
       settings[elId] = true;
@@ -133,7 +133,7 @@
   }
 
   function persistSettings(settings) {
-    localStorage[myNs + '.values'] = JSON.stringify(settings);
+    localStorage[app.namespace + '.values'] = JSON.stringify(settings);
   }
 
 // wrap document so it plays nice with other libraries

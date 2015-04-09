@@ -48,8 +48,8 @@
 
   <!-- Main -->
   <div class="content">
-    <bingo-data tiles="{{tiles}}"></bingo-data>
-    <template is="auto-binding" id="app">
+    <bingo-data tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
+    <template is="auto-binding" id="app" namespace="org.camerongreen.veganbingo">
 
       <core-animated-pages selected="0" transitions="cross-fade-all">
         <section id="game">

@@ -12,6 +12,9 @@
         settings: {},
         ready: function () {
           var that = this;
+
+          var settings = localStorage['org.camerongreen.veganbingo.values'] ? JSON.parse(localStorage['org.camerongreen.veganbingo.values']) : {};
+
           this.$.bingoDataSource.addEventListener('core-response', function () {
             for (var tile in this.response) {
               that.tiles[tile] = this.response[tile];
