@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK",
+"sources": ["bingo-score.scss"],
+"names": [],
+"file": "bingo-score.css"
+}

@@ -1,0 +1,16 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bingo-score" attributes="score, total">
+  <template>
+    <link rel="stylesheet" href="bingo-score.css">
+    <span tool id="score">Score: {{score}} / {{total}}</span>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        ready: function () {
+        }
+      });
+    })();
+  </script>
+</polymer-element>
