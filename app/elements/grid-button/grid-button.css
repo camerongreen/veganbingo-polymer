@@ -3,9 +3,8 @@
   text-align: center;
   height: 100%; }
 
-:host div {
-  padding-top: 1em;
-  padding-bottom: 1em; }
+:host > div {
+  padding: 5%; }
 
 .style1 {
   background-color: #fbb8b8; }
@@ -21,5 +20,9 @@
 
 div.description {
   text-align: center; }
+
+img {
+  max-width: 120px;
+  height: auto; }
 
 /*# sourceMappingURL=grid-button.css.map */

@@ -46,42 +46,17 @@ section {
   }
 
   &.info {
-    margin-left: 15px;
     p {
-      margin-left: 15px;
+      margin-left: 5%;
     }
   }
-}
-
-home-button {
-  margin-left: 15px;
 }
 
 #bingo-page {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
   #header-image {
-    margin: 10px;
-    height: 120px;
-    width: 120px;
-  }
-  div.extras {
-    &.completed {
-      span.isCompleted {
-        display: inline;
-      }
-      span.isUncompleted {
-        display: none;
-      }
-    }
-    &.uncompleted {
-      span.isCompleted {
-        display: none;
-      }
-      span.isUncompleted {
-        display: inline;
-      }
-    }
+    padding: 1%;
   }
 }
 

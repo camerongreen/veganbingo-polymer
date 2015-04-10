@@ -9,9 +9,8 @@ $mygreen: #b8fbc6;
   height: 100%;
 }
 
-:host div {
-  padding-top: 1em;
-  padding-bottom: 1em;
+:host > div {
+  padding: 5%;
 }
 
 .style1 {
@@ -32,4 +31,9 @@ background-color: $myyellow;
 
 div.description {
   text-align: center;
+}
+
+img {
+  max-width: 120px;
+  height: auto;
 }

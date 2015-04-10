@@ -36,28 +36,13 @@ core-animated-pages {
 
 section > div {
   overflow-y: auto; }
-section.info {
-  margin-left: 15px; }
-  section.info p {
-    margin-left: 15px; }
-
-home-button {
-  margin-left: 15px; }
+section.info p {
+  margin-left: 5%; }
 
 #bingo-page {
-  padding-left: 10px;
-  padding-right: 10px; }
+  padding-left: 5%;
+  padding-right: 5%; }
   #bingo-page #header-image {
-    margin: 10px;
-    height: 120px;
-    width: 120px; }
-  #bingo-page div.extras.completed span.isCompleted {
-    display: inline; }
-  #bingo-page div.extras.completed span.isUncompleted {
-    display: none; }
-  #bingo-page div.extras.uncompleted span.isCompleted {
-    display: none; }
-  #bingo-page div.extras.uncompleted span.isUncompleted {
-    display: inline; }
+    padding: 1%; }
 
 /*# sourceMappingURL=main.css.map */
