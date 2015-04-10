@@ -6,6 +6,7 @@
 
 <polymer-element name="bingo-grid">
   <template>
+    <app-globals id="globals"></app-globals>
     <bingo-data id="ajax" tiles="{{tiles}}"></bingo-data>
     <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
@@ -18,6 +19,16 @@
   </template>
   <script>
     (function () {
+      function calculateRowSize (size) {
+        for (var i = 0; i < size; i++) {
+          if ((i * i) >= size) {
+            return i;
+          }
+        }
+
+        return size;
+      }
+
       /**
        * The number of tile styles should equal the number of tiles in each row
        * and be named 'style1', 'style2' etc
@@ -58,8 +69,9 @@
       Polymer({
         ready: function () {
           var that = this;
-          document.addEventListener('core-response', function (res) {
-            that.gridTiles = makeGrid(res.detail.response, 4);
+          this.$.ajax.addEventListener('core-response', function (res) {
+            var tiles = res.detail.response;
+            that.gridTiles = makeGrid(tiles, calculateRowSize(that.$.globals.objLength(tiles)));
           })
         },
       });
