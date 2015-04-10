@@ -4,10 +4,11 @@
 
 <link rel="import" href="../grid-button/grid-button.html">
 
-<polymer-element name="bingo-grid">
+<polymer-element name="bingo-grid" attributes="tiles, score, total">
   <template>
     <app-globals id="globals"></app-globals>
     <bingo-data id="ajax" tiles="{{tiles}}"></bingo-data>
+    <bingo-settings id="settings"></bingo-settings>
     <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
@@ -19,7 +20,7 @@
   </template>
   <script>
     (function () {
-      function calculateRowSize (size) {
+      function calculateRowSize(size) {
         for (var i = 0; i < size; i++) {
           if ((i * i) >= size) {
             return i;
@@ -74,11 +75,50 @@
           })
         },
         toggleDone: function (elId) {
-          this.tiles[elId].done = !this.tiles[elId].done;
+          var done = this.tiles[elId].done;
+          if (done) {
+            this.tiles[elId].done = false;
+          } else {
+            this.tiles[elId].done = Date.now();
+          }
+          this.tilesChanged();
+          return this.tiles[elId].done;
+        },
+        persist: function () {
+          var newSettings = {};
+          for (var tile in this.tiles) {
+            if (this.tiles.hasOwnProperty(tile) && (this.tiles[tile].done !== false)) {
+              newSettings[tile] = this.tiles[tile].done;
+            }
+          }
+          this.$.settings.persist(newSettings);
+        },
+        restart: function () {
+          for (var tile in this.tiles) {
+            if (this.tiles.hasOwnProperty(tile)) {
+              this.tiles[tile].done = false;
+            }
+          }
           this.tilesChanged();
         },
-        tilesChanged: function() {
-          this.gridTiles = makeGrid(this.tiles, calculateRowSize(this.$.globals.objLength(this.tiles)));
+        count: function (countAll) {
+          var count = 0;
+          for (var tile in this.tiles) {
+            if (this.tiles.hasOwnProperty(tile)) {
+              if (countAll || (this.tiles[tile].done !== false)) {
+                count++;
+              }
+            }
+          }
+          return count;
+        },
+        tilesChanged: function () {
+          if (this.$.globals.objLength(this.tiles)) {
+            this.gridTiles = makeGrid(this.tiles, calculateRowSize(this.$.globals.objLength(this.tiles)));
+            this.total = this.count(true);
+            this.score = this.count();
+            this.persist();
+          }
         }
       });
     })();

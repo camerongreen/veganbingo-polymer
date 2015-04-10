@@ -6,6 +6,7 @@ $mygreen: #b8fbc6;
 :host {
   display: block;
   text-align: center;
+  height: 100%;
 }
 
 :host div {
@@ -27,4 +28,8 @@ background-color: $myyellow;
 
 .style4 {
   background-color: $mygreen;
+}
+
+div.description {
+  text-align: center;
 }

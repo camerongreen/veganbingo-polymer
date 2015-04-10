@@ -1,6 +1,7 @@
 :host {
   display: block;
-  text-align: center; }
+  text-align: center;
+  height: 100%; }
 
 :host div {
   padding-top: 1em;
@@ -17,5 +18,8 @@
 
 .style4 {
   background-color: #b8fbc6; }
+
+div.description {
+  text-align: center; }
 
 /*# sourceMappingURL=grid-button.css.map */

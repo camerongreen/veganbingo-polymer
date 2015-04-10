@@ -22,40 +22,41 @@
 </head>
 
 <body unresolved fullbleed layout vertical>
-<bingo-settings></bingo-settings>
+<template is="auto-binding" id="app" namespace="org.camerongreen.veganbingo">
 
-<core-scaffold mode="standard">
+  <bingo-settings></bingo-settings>
 
-  <!-- Drawer -->
-  <core-header-panel navigation flex>
+  <core-scaffold mode="standard">
 
-    <!-- Drawer Toolbar -->
-    <core-toolbar id="navHeader">
-      <span>Menu</span>
-    </core-toolbar>
+    <!-- Drawer -->
+    <core-header-panel navigation flex>
 
-    <!-- Drawer Content -->
-    <core-menu selected="0">
-      <core-item label="Home" icon="apps"></core-item>
-      <core-item label="How to play" icon="help"></core-item>
-      <core-item label="About" icon="info"></core-item>
-      <core-item label="Settings" icon="settings"></core-item>
-    </core-menu>
+      <!-- Drawer Toolbar -->
+      <core-toolbar id="navHeader">
+        <span>Menu</span>
+      </core-toolbar>
 
-  </core-header-panel>
+      <!-- Drawer Content -->
+      <core-menu selected="0">
+        <core-item label="Home" icon="apps"></core-item>
+        <core-item label="How to play" icon="help"></core-item>
+        <core-item label="About" icon="info"></core-item>
+        <core-item label="Settings" icon="settings"></core-item>
+      </core-menu>
 
-  <span tool flex>Vegan Bingo!</span><span tool id="score">Score: <span
-      id="completed">0</span> / 16</span>
+    </core-header-panel>
 
-  <!-- Main -->
-  <div class="content">
+    <span tool flex>Vegan Bingo!</span>
+    <bingo-score tool score="{{score}}" total="{{total}}"></bingo-score>
 
-    <template is="auto-binding" id="app" namespace="org.camerongreen.veganbingo">
+    <!-- Main -->
+    <div class="content">
 
       <core-animated-pages selected="0" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
-            <bingo-grid tiles="{{tiles}}"></bingo-grid>
+            <bingo-grid tiles="{{tiles}}" score="{{score}}"
+                        total="{{total}}"></bingo-grid>
           </div>
         </section>
         <section class="info" id="how">
@@ -158,10 +159,10 @@
           </div>
         </section>
       </core-animated-pages>
-    </template>
-  </div>
-  <!-- /.content -->
-</core-scaffold>
+    </div>
+    <!-- /.content -->
+  </core-scaffold>
+</template>
 
 <!-- build:js scripts/app.js -->
 <script src="scripts/app.js"></script>

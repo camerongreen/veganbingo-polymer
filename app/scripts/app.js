@@ -19,30 +19,22 @@
 
     listenForCompletionClick(btn);
     listenForGridPageClicks(page, btn);
-    updateScore();
   });
 
   function listenForCompletionClick(btn) {
     btn.addEventListener('click', function () {
       var elId = btn.getAttribute("bingo-page");
-      var settings = document.querySelector("bingo-settings");
-      var dataGrid = document.querySelector("bingo-grid");
-      settings.toggle(elId);
-      dataGrid.toggleDone(elId);
-      setButtonStatus(btn, settings.isDone(elId));
+      var bingoGrid = document.querySelector("bingo-grid");
+      var done = bingoGrid.toggleDone(elId);
+      setButtonStatus(btn, done);
     });
-  }
-
-  function updateScore() {
-    var settings = document.querySelector("bingo-settings");
-    document.querySelector("#completed").innerHTML = settings.count();
   }
 
   function setButtonStatus(btn, done) {
     if (done) {
-      btn.innerHTML = "Someone said this, you got a bingo!";
+      btn.innerHTML = "You got a bingo!";
     } else {
-      btn.innerHTML = "Click if someone said this";
+      btn.innerHTML = "Click here if someone said this";
     }
   }
 
@@ -78,8 +70,8 @@
 
   function listenForRestartButtonClicks() {
     document.querySelector("#restart").addEventListener('click', function (evt) {
-      var settings = document.querySelector('bingo-settings');
-      settings.restart();
+      var dataGrid = document.querySelector("bingo-grid");
+      dataGrid.restart();
       evt.preventDefault();
     });
   }
