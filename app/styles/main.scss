@@ -46,10 +46,16 @@ section {
   }
 
   &.info {
+    margin-left: 2%;
     p {
-      margin-left: 5%;
+      margin-left: 2%;
     }
   }
+}
+
+#rules,
+#main {
+  background-color: #fff;
 }
 
 #bingo-page {

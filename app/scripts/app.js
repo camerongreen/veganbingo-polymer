@@ -15,7 +15,7 @@
     listenForRestartButtonClicks();
 
     var page = document.querySelector('#bingo-page');
-    var btn = page.querySelector('button');
+    var btn = page.querySelector('#completionButton');
 
     listenForCompletionClick(btn);
     listenForGridPageClicks(page, btn);

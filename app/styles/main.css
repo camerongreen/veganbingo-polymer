@@ -36,8 +36,14 @@ core-animated-pages {
 
 section > div {
   overflow-y: auto; }
-section.info p {
-  margin-left: 5%; }
+section.info {
+  margin-left: 2%; }
+  section.info p {
+    margin-left: 2%; }
+
+#rules,
+#main {
+  background-color: #fff; }
 
 #bingo-page {
   padding-left: 5%;

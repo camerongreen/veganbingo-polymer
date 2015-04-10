@@ -133,7 +133,9 @@
 
               <p>This will clear all of your completed tasks and set you back to
                 0.</p>
-              <button id="restart">Restart game</button>
+              <p>
+                <paper-button role="button" id="restart" raised class="colored">Restart game</paper-button>
+              </p>
             </div>
             <home-button></home-button>
           </div>
@@ -148,16 +150,16 @@
               <h2 id="description" flex></h2>
             </div>
             <div layout horizontal>
-              <button id="completionButton" bingo-page=""></button>
+              <paper-button id="completionButton" bingo-page="" raised class="colored" role="button"></paper-button>
             </div>
 
             <h3>Also acceptable</h3>
-            <paper-shadow id="rules" z="2">
+            <paper-shadow id="rules" z="1">
               <p></p>
             </paper-shadow>
 
             <h3>More information</h3>
-            <paper-shadow id="main" z="2">
+            <paper-shadow id="main" z="1">
             </paper-shadow>
 
             <home-button></home-button>
