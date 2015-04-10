@@ -70,10 +70,16 @@
         ready: function () {
           var that = this;
           this.$.ajax.addEventListener('core-response', function (res) {
-            var tiles = res.detail.response;
-            that.gridTiles = makeGrid(tiles, calculateRowSize(that.$.globals.objLength(tiles)));
+            that.tiles = res.detail.response;
           })
         },
+        toggleDone: function (elId) {
+          this.tiles[elId].done = !this.tiles[elId].done;
+          this.tilesChanged();
+        },
+        tilesChanged: function() {
+          this.gridTiles = makeGrid(this.tiles, calculateRowSize(this.$.globals.objLength(this.tiles)));
+        }
       });
     })();
   </script>

@@ -25,13 +25,12 @@
   function listenForCompletionClick(btn) {
     btn.addEventListener('click', function () {
       var elId = btn.getAttribute("bingo-page");
-      updateValue(elId, !done);
-      setButtonStatus(btn, !done);
+      var settings = document.querySelector("bingo-settings");
+      var dataGrid = document.querySelector("bingo-grid");
+      settings.toggle(elId);
+      dataGrid.toggleDone(elId);
+      setButtonStatus(btn, settings.isDone(elId));
     });
-  }
-
-  function updateValue(elId, done) {
-    app.model.tiles[elId].done = done;
   }
 
   function updateScore() {
