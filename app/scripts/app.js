@@ -10,21 +10,20 @@
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function () {
-    listenForMenuClicks();
-    listenForHomeButtonClicks();
-    listenForRestartButtonClicks();
-
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('#completionButton');
 
+    listenForMenuClicks();
+    listenForHomeButtonClicks();
+    listenForRestartButtonClicks();
     listenForCompletionClick(page, btn);
     listenForGridPageClicks(page, btn);
   });
 
   function listenForCompletionClick(page, btn) {
+    var bingoGrid = document.querySelector("bingo-grid");
     btn.addEventListener('click', function () {
       var elId = btn.getAttribute("bingo-page");
-      var bingoGrid = document.querySelector("bingo-grid");
       var done = bingoGrid.toggleDone(elId);
       setButtonStatus(btn, done);
       setImageStatus(page, elId, done);
@@ -48,16 +47,13 @@
       // set menu to nothing
       changePage(-1, 4);
 
-      var details = event.detail;
-
-      page.querySelector('#description').innerHTML = details.description;
-      page.querySelector('#rules p').innerHTML = details.rules;
-      page.querySelector('#main').innerHTML = "<p>" + details.main.join("</p>\n<p>") + "</p>";
       // populate page with appropriate stuff
-
-      btn.setAttribute('bingo-page', details.tileId);
-      setButtonStatus(btn, details.done);
-      setImageStatus(page, details.tileId, details.done);
+      page.querySelector('#description').innerHTML = event.detail.description;
+      page.querySelector('#rules p').innerHTML = event.detail.rules;
+      page.querySelector('#main').innerHTML = "<p>" + event.detail.main.join("</p>\n<p>") + "</p>";
+      btn.setAttribute('bingo-page', event.detail.tileId);
+      setButtonStatus(btn, event.detail.done);
+      setImageStatus(page, event.detail.tileId, event.detail.done);
     });
   }
 
@@ -77,14 +73,12 @@
     document.querySelector("#restart").addEventListener('click', function (evt) {
       var dataGrid = document.querySelector("bingo-grid");
       dataGrid.restart();
-      evt.preventDefault();
     });
   }
 
   function listenForHomeButtonClicks() {
     document.addEventListener('home-button-clicked', function (evt) {
       changePage(0);
-      evt.preventDefault();
     });
   }
 
