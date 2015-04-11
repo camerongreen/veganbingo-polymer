@@ -36,7 +36,7 @@
       </core-toolbar>
 
       <!-- Drawer Content -->
-      <core-menu selected="0">
+      <core-menu selected="{{pageSelected}}">
         <core-item label="Home" icon="apps"></core-item>
         <core-item label="How to play" icon="help"></core-item>
         <core-item label="About" icon="info"></core-item>
@@ -51,7 +51,7 @@
     <!-- Main -->
     <div class="content">
 
-      <core-animated-pages selected="0" transitions="cross-fade-all">
+      <core-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
             <bingo-grid tiles="{{tiles}}" score="{{score}}"
