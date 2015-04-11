@@ -7,74 +7,84 @@
   var app = document.querySelector('#app');
   app.appName = 'Vegan Bingo!';
 
-  var PAGES = {
-    home: 0,
-    grid: 4
-  }
-
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function () {
-    // Use URL hash for initial route. Otherwise, use the first page.
-    this.pageSelected = PAGES.home;
+    var vb = new VeganBingo(this);
+    vb.start();
+  });
 
-    var page = document.querySelector('#bingo-page');
-    var btn = page.querySelector('#completionButton');
+  var VeganBingo = function(template) {
+    this.PAGES = {
+      home: 0,
+      grid: 4
+    };
 
-    listenForHomeButtonClicks(this);
-    listenForRestartButtonClicks();
-    listenForCompletionClick(page, btn);
-    listenForGridPageClicks(this, page, btn);
+    this.template = template;
+    this.template.pageSelected = this.PAGES.home;
+  };
 
-    function listenForCompletionClick(page, btn) {
+  VeganBingo.prototype.start = function() {
+      var page = document.querySelector('#bingo-page');
+      var btn = page.querySelector('#completionButton');
+
+      this.listenForHomeButtonClicks();
+      this.listenForRestartButtonClicks();
+      this.listenForCompletionClick(page, btn);
+      this.listenForGridPageClicks(page, btn);
+    };
+
+   VeganBingo.prototype.listenForCompletionClick = function (page, btn) {
       var bingoGrid = document.querySelector("bingo-grid");
+     var that = this;
       btn.addEventListener('click', function () {
         var elId = btn.getAttribute("bingo-page");
         var done = bingoGrid.toggleDone(elId);
-        setButtonStatus(btn, done);
-        setImageStatus(page, elId, done);
-      });
-    }
-
-    function listenForHomeButtonClicks(parent) {
-      document.addEventListener('home-button-clicked', function () {
-        parent.pageSelected = PAGES.home;
+        that.setButtonStatus(btn, done);
+        that.setImageStatus(page, elId, done);
       });
     };
 
-    function setButtonStatus(btn, done) {
+    VeganBingo.prototype.listenForHomeButtonClicks = function() {
+      var that = this;
+      document.addEventListener('home-button-clicked', function () {
+        that.template.pageSelected = that.PAGES.home;
+      });
+    };
+
+    VeganBingo.prototype.setButtonStatus = function(btn, done) {
       if (done) {
         btn.innerHTML = "You got a bingo!";
       } else {
         btn.innerHTML = "Click here if someone said this";
       }
-    }
+    };
 
-    function setImageStatus(page, elId, done) {
+    VeganBingo.prototype.setImageStatus = function (page, elId, done) {
       page.querySelector('#header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
-    }
+    };
 
-    function listenForGridPageClicks(parent, page, btn) {
+    VeganBingo.prototype.listenForGridPageClicks = function(page, btn) {
+      var that = this;
       document.addEventListener('grid-button-clicked', function (event) {
-        parent.pageSelected = PAGES.grid;
+        that.template.pageSelected = that.PAGES.grid;
 
         // populate page with appropriate stuff
         page.querySelector('#description').innerHTML = event.detail.description;
         page.querySelector('#rules p').innerHTML = event.detail.rules;
         page.querySelector('#main').innerHTML = "<p>" + event.detail.main.join("</p>\n<p>") + "</p>";
         btn.setAttribute('bingo-page', event.detail.tileId);
-        setButtonStatus(btn, event.detail.done);
-        setImageStatus(page, event.detail.tileId, event.detail.done);
+        that.setButtonStatus(btn, event.detail.done);
+        that.setImageStatus(page, event.detail.tileId, event.detail.done);
       });
-    }
+    };
 
-    function listenForRestartButtonClicks() {
+    VeganBingo.prototype.listenForRestartButtonClicks = function() {
       document.querySelector("#restart").addEventListener('click', function (evt) {
         var dataGrid = document.querySelector("bingo-grid");
         dataGrid.restart();
       });
-    }
-  });
+    };
 
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
