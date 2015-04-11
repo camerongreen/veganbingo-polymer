@@ -51,7 +51,7 @@ section.info {
   #bingo-page #header-image {
     padding: 1%; }
 
-html /deep/ paper-dialog h1 {
+html /deep/ paper-dialog::shadow h1 {
   color: green; }
 
 /*# sourceMappingURL=main.css.map */

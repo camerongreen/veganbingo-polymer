@@ -67,7 +67,7 @@ section {
 }
 
 html /deep/ paper-dialog {
-  h1 {
+  &::shadow h1 {
     color: green;
   }
 }
