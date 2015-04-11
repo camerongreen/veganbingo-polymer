@@ -17,16 +17,17 @@
     var page = document.querySelector('#bingo-page');
     var btn = page.querySelector('#completionButton');
 
-    listenForCompletionClick(btn);
+    listenForCompletionClick(page, btn);
     listenForGridPageClicks(page, btn);
   });
 
-  function listenForCompletionClick(btn) {
+  function listenForCompletionClick(page, btn) {
     btn.addEventListener('click', function () {
       var elId = btn.getAttribute("bingo-page");
       var bingoGrid = document.querySelector("bingo-grid");
       var done = bingoGrid.toggleDone(elId);
       setButtonStatus(btn, done);
+      setImageStatus(page, elId, done);
     });
   }
 
@@ -38,6 +39,10 @@
     }
   }
 
+  function setImageStatus(page, elId, done) {
+    page.querySelector('#header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
+  }
+
   function listenForGridPageClicks(page, btn) {
     document.addEventListener('grid-button-clicked', function (event) {
       // set menu to nothing
@@ -45,7 +50,6 @@
 
       var details = event.detail;
 
-      page.querySelector('#header-image').setAttribute('src', 'images/' + details.tileId + '.png');
       page.querySelector('#description').innerHTML = details.description;
       page.querySelector('#rules p').innerHTML = details.rules;
       page.querySelector('#main').innerHTML = "<p>" + details.main.join("</p>\n<p>") + "</p>";
@@ -53,6 +57,7 @@
 
       btn.setAttribute('bingo-page', details.tileId);
       setButtonStatus(btn, details.done);
+      setImageStatus(page, details.tileId, details.done);
     });
   }
 
