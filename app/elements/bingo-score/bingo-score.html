@@ -4,11 +4,25 @@
   <template>
     <link rel="stylesheet" href="bingo-score.css">
     <span tool id="score">{{score}} / {{total}}</span>
+    <paper-dialog unresolved id="scoreAchieved" heading="Fan-Vegan Bingo-tastic!!!!" transition="core-transition-center">
+      <p><core-icon icon="star"></core-icon> Congratulations on completing Vegan Bingo! <core-icon icon="star"></core-icon></p>
+      <p>You have joined an elite class and are now officially a level 5 Vegan <core-icon icon="favorite-outline"></core-icon></p>
+      <p>I'd love to know how you did (see the <core-icon icon="info"></core-icon> About page for the Vegan Bingo Facebook page or contact me via my website)</p>
+      <p>To restart, go to the <core-icon icon="settings"></core-icon> Settings page.</p>
+    </paper-dialog>
   </template>
   <script>
     (function () {
       Polymer({
         ready: function () {
+          this.score = 0;
+          this.total = 0;
+        },
+        scoreChanged: function () {
+          if ((this.score === this.total) && (this.total > 0)) {
+            this.transition = 'core-transition-center';
+            this.$.scoreAchieved.toggle();
+          }
         }
       });
     })();
