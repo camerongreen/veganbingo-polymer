@@ -1,28 +1,13 @@
 :host {
   display: block;
   text-align: center;
-  height: 100%; }
-
-:host > div {
   padding: 5%; }
-
-.style1 {
-  background-color: #fbb8b8; }
-
-.style2 {
-  background-color: #b8c8fb; }
-
-.style3 {
-  background-color: #fbf7b8; }
-
-.style4 {
-  background-color: #b8fbc6; }
 
 div.description {
   text-align: center; }
 
 img {
-  max-width: 95%;
+  max-width: 100%;
   height: auto; }
 
 /*# sourceMappingURL=grid-button.css.map */

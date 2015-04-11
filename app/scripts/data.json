@@ -1,25 +1,4 @@
 {
-  "bacon": {
-    "description": "Just saying \"Bacon\" etc.",
-    "rules": "Steak, chicken, any single word comment involving the flesh of our non human family.",
-    "main": [
-      "This can occur in any number of situations, on a web social thread, in a conversation about food, over dinner etc.",
-      "Often not a lot of thought goes into humour at the expense of animals, so we cannot get too carried away with analysing, but...",
-      "In Internet terms this could be called a Troll, someone deliberately saying something offensive because they think they are being clever, despite the fact it has little more intelligence or humour in it other than being offensive.",
-      "In deeper terms this could be called a cold joke, trying to paint something as humorous to themselves in order to avoid dealing with the psychological ramifications of the immoral action they are knowingly participating in.",
-      "Bacon, steak, chicken, they are all animals killed for enjoyment, the least people who pay for that to happen can do is have some respect for them."
-    ]
-  },
-  "hitler": {
-    "description": "Hitler was a vegetarian",
-    "rules": "Pol Pot, Charles Manson, anyone who reflects poorly on our species",
-    "main": [
-      "Evil people who might have eaten vegetables at one point in their lives are often trudged out as examples of...well it is hard to say. What it is probably about is the person trying to maintain their own sense of self esteem by slanderously associating anyone who may be making a moral choice with evil people from history.",
-      "They probably know they are participating in something immoral, and rather than taking any action to be a better person, are using whatever they can grab on to to drag other people down.\nHitler, Pol Pot, neither were ethical vegetarians, they did so for short periods due to health problems and Hitler certainly would rather be eating his favourite sausages.",
-      "The Nazis did enact some laws against animal cruelty, they also had the Winter Relief programme helping the poor during the cold months, so they were evil but not every single thing they did necessarily was.",
-      "Ultimately veganism is about compassion for animals; humans are animals so we care about them too."
-    ]
-  },
   "protein": {
     "description": "Where do you get your protein?",
     "rules": "Iron. B12 is not, because vegans do need to take care to supplement this essential vitamin.",
@@ -45,6 +24,27 @@
       "Cows are not allowed to breed naturally, the idea that they are has more to do with romantic visions of the countryside and how they might once have lived in nature than intensive industrial animal farming.",
       "Their breeding is strictly controlled by the farmers and companies engineering their bodies for human purposes, such as growing oversized udders which impair their mobility. The population of livestock rises and falls quickly in relation to human demand. Veal calves for instance are mainly the by-product of cows artificially inseminated to keep their milk production high.",
       "Sadly for animals born as \"livestock\" it is unlikely that a change to a vegan world will happen overnight, it will probably be gradual. Carnists can therefore stop losing sleep over the terrible notion of these creatures living out their natural lifespans and just go vegan."
+    ]
+  },
+  "bacon": {
+    "description": "Just saying \"Bacon\" etc.",
+    "rules": "Steak, chicken, any single word comment involving the flesh of our non human family.",
+    "main": [
+      "This can occur in any number of situations, on a web social thread, in a conversation about food, over dinner etc.",
+      "Often not a lot of thought goes into humour at the expense of animals, so we cannot get too carried away with analysing, but...",
+      "In Internet terms this could be called a Troll, someone deliberately saying something offensive because they think they are being clever, despite the fact it has little more intelligence or humour in it other than being offensive.",
+      "In deeper terms this could be called a cold joke, trying to paint something as humorous to themselves in order to avoid dealing with the psychological ramifications of the immoral action they are knowingly participating in.",
+      "Bacon, steak, chicken, they are all animals killed for enjoyment, the least people who pay for that to happen can do is have some respect for them."
+    ]
+  },
+  "hitler": {
+    "description": "Hitler was a vegetarian",
+    "rules": "Pol Pot, Charles Manson, anyone who reflects poorly on our species",
+    "main": [
+      "Evil people who might have eaten vegetables at one point in their lives are often trudged out as examples of...well it is hard to say. What it is probably about is the person trying to maintain their own sense of self esteem by slanderously associating anyone who may be making a moral choice with evil people from history.",
+      "They probably know they are participating in something immoral, and rather than taking any action to be a better person, are using whatever they can grab on to to drag other people down.\nHitler, Pol Pot, neither were ethical vegetarians, they did so for short periods due to health problems and Hitler certainly would rather be eating his favourite sausages.",
+      "The Nazis did enact some laws against animal cruelty, they also had the Winter Relief programme helping the poor during the cold months, so they were evil but not every single thing they did necessarily was.",
+      "Ultimately veganism is about compassion for animals; humans are animals so we care about them too."
     ]
   },
   "plants": {
@@ -78,7 +78,7 @@
     ]
   },
   "food": {
-    "description": "Why do vegans eat things resembling animal products?",
+    "description": "You shouldn't eat things that look like animal products",
     "rules": "Asking whether any given vegan alternative is made of tofu...which is all vegans eat apparently",
     "main": [
       "For a start, most animal products do not look like animal products. Cheese, sausages, fish fingers, they are all creations for a culinary purpose.",

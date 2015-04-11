@@ -1,4 +1,6 @@
 :host {
   display: block; }
+  :host span.label {
+    font-size: 60%; }
 
 /*# sourceMappingURL=bingo-score.css.map */

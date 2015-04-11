@@ -3,10 +3,10 @@
 <polymer-element name="grid-button" attributes="details">
   <template>
     <link rel="stylesheet" href="grid-button.css">
-    <div id="{{details.tileId}}" class="{{details.tileClass}}" on-click="{{doClick}}">
+    <span id="{{details.tileId}}" class="{{details.tileClass}}" on-click="{{doClick}}">
       <img src="images/{{details | pictureName}}.png" alt="{{details.description}}" title="{{details.description}}" />
       <div class="description">{{details.description}}</div>
-    </div>
+    </span>
   </template>
   <script>
     (function () {

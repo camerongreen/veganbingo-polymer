@@ -1,5 +1,25 @@
+$mypink: #fbb8b8;
+$myblue: #b8c8fb;
+$myyellow: #fbf7b8;
+$mygreen: #b8fbc6;
 
-:host {
+style:host {
   display: block;
+}
+
+.style1 {
+  background-color: $mypink;
+}
+
+.style2 {
+  background-color: $myblue;
+}
+
+.style3 {
+  background-color: $myyellow;
+}
+
+.style4 {
+  background-color: $mygreen;
 }
 

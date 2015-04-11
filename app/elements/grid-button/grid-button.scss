@@ -1,32 +1,7 @@
-$mypink: #fbb8b8;
-$myblue: #b8c8fb;
-$myyellow: #fbf7b8;
-$mygreen: #b8fbc6;
-
 :host {
   display: block;
   text-align: center;
-  height: 100%;
-}
-
-:host > div {
   padding: 5%;
-}
-
-.style1 {
-  background-color: $mypink;
-}
-
-.style2 {
-  background-color: $myblue;
-}
-
-.style3 {
-background-color: $myyellow;
-}
-
-.style4 {
-  background-color: $mygreen;
 }
 
 div.description {
@@ -34,6 +9,6 @@ div.description {
 }
 
 img {
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
 }
