@@ -52,7 +52,7 @@
     "rules": "Carrots scream when you cut them!",
     "main": [
       "Sadly people who ask this aren't some sort of level 9 compassionate souls, but are even less likely to care about plants than they do animals.",
-      "So yes, it's a ridiculous question, plants don't have a central nervous system and evolution wouldn't bother giving them the ability to feel pain if they couldn't do something useful in response to it, like run away.  Plant biology is many and varied, there is more to be said here, but it would probably lost on anyone silly enough to ask this question.",
+    "So yes, it's a ridiculous question.  Most of the animals we eat are herbivores who eat plants anyway, so eating animals means even more plants are killed than if we just ate plants directly.  Also plants don't have a central nervous system and evolution wouldn't bother giving them the ability to feel pain if they couldn't do something useful in response to it, like run away.  Plant biology is many and varied, there is more to be said here, but it would probably lost on anyone silly enough to ask this question.",
       "Ignoring them, there is a serious point for us to think about here.  In evolutionary terms there aren't distinct, easily identifiable separate kingdoms of plants and animals, it is all very much a continuum.  We need to ask ourselves where we draw the line and on what basis we do so.",
       "Darwin and the best biologists since have understood that our common evolutionary heritage expresses itself in us sharing our sentience with other beings. In understanding how we should treat other beings ethically we should discuss levels of self awareness, the ability to suffer, the presence of a central nervous system, in all of which science should be our guide.",
       "We should draw a line based not on simplistic categories like plants, animals, insects, fish, but instead on our ever advancing knowledge of human and non human biology. In the end if we err in that endeavour let us err on the side of compassion."
@@ -106,11 +106,12 @@
   },
   "eat": {
     "description": "What can you eat?",
-    "rules": "Oh you are vegan, that must be hard.",
+    "rules": "Oh you are vegan, that must be hard.  Veganism is expensive.",
     "main": [
       "Veganism just isn't that hard, as my friend once said, \"Take out the animal things, replace with plant things. Done\".  Not hard.  Maybe slightly harder than not changing at all, but even then after a few weeks it becomes pretty much the same.",
       "Indeed it is often the opposite of a restriction once you try it.  On becoming vegan people discover an expanded world of new and interesting ingredients to explore, most vegans eat a more varied diet than they did before becoming vegan. Many people also use the process of becoming vegan to transition to a healthier diet, by finally following all that nutritional advice of \"Eat more fruits and vegetables\".",
       "So if you are eating a healthy diet already, 90% of it is probably already vegan, and the other 10% you just replace with nuts, seeds, beans, legumes, grains, tofu, tempeh, seitan, the ever widening variety of convenient substitute products and plant based milks, soy, almond, macadamia, oat, rice, hemp, quinoa and coconut.  Take a B12 supplement and you are done. If you like there's everything else these days too, plant based cheeses, marshmallows, milk chocolate (most dark already vegan of course), condensed milk, mayonnaise, yoghurt, haggis, black pugging, you get the idea.",
+      "Now you will note many of those sources of protein are some of the cheapest things you can feed yourself on, beans, legumes, grains.  Even tofu and tempeh are about as cheap as even budget animal products.  Somehow there is an idea out there that being vegan is expensive.  Like any diet it can be if you choose expensive things.  Pretty much the only expensive vegan ingredients that differ to the modern western diet are the meat and cheese analogues.  You don't have to choose to eat these, or maybe just have them on special occasions.  A vegan diet based on fruits, vegetables and wholegrains is one of the cheapest and healthiest diets out there.",
       "Being vegan is not hard, as much as people might prefer to think it is. As there are more and more vegans all the time, it gets easier too.  The main thing that makes it trying sometimes is the knowledge that there aren't more of us."
     ]
   },
@@ -142,7 +143,7 @@
     "main": [
       "It is interesting that people frame our avoidance of animal products with the word - can't - as if it were not voluntary, rather than - won't - which reflects a conscious choice.",
       "Vegans can eat whatever they want, they actively choose not to eat certain products out of concern for the animals involved. Even carnists often refuse to eat some species such as whale, rat or dog, not because they can't but on the basis of habit, cultural or ethical norms.",
-      "Vegans take that ethical stance to it's logical conclusion. We make active choices based on our principles.",
+      "Vegans take that ethical stance to its logical conclusion. We make active choices based on our principles.",
       "To vegans it's very simple what we eat, wear etc, if it comes directly from an animal, we steer clear of it.  Some other people tend to get enormously confused by the concept, like it has to be hard or something. I've had people ask me if I can eat avocado, peanut butter and even if I could wear cotton - see how you go.  Ultimately it's about educating people, but it would be nice if they thought their comments through a little first."
     ]
   },
