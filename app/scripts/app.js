@@ -35,10 +35,10 @@
     };
 
    VeganBingo.prototype.listenForCompletionClick = function (page, btn) {
-      var bingoGrid = document.querySelector("bingo-grid");
+      var bingoGrid = document.querySelector('bingo-grid');
      var that = this;
       btn.addEventListener('click', function () {
-        var elId = btn.getAttribute("bingo-page");
+        var elId = btn.getAttribute('bingo-page');
         var done = bingoGrid.toggleDone(elId);
         that.setButtonStatus(btn, done);
         that.setImageStatus(page, elId, done);
@@ -54,9 +54,9 @@
 
     VeganBingo.prototype.setButtonStatus = function(btn, done) {
       if (done) {
-        btn.innerHTML = "You got a bingo!";
+        btn.innerHTML = 'You got a bingo!';
       } else {
-        btn.innerHTML = "Click here if someone said this";
+        btn.innerHTML = 'Click here if someone said this';
       }
     };
 
@@ -72,7 +72,7 @@
         // populate page with appropriate stuff
         page.querySelector('#description').innerHTML = event.detail.description;
         page.querySelector('#rules p').innerHTML = event.detail.rules;
-        page.querySelector('#main').innerHTML = "<p>" + event.detail.main.join("</p>\n<p>") + "</p>";
+        page.querySelector('#main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
         btn.setAttribute('bingo-page', event.detail.tileId);
         that.setButtonStatus(btn, event.detail.done);
         that.setImageStatus(page, event.detail.tileId, event.detail.done);
@@ -80,8 +80,8 @@
     };
 
     VeganBingo.prototype.listenForRestartButtonClicks = function() {
-      document.querySelector("#restart").addEventListener('click', function (evt) {
-        var dataGrid = document.querySelector("bingo-grid");
+      document.querySelector('#restart').addEventListener('click', function () {
+        var dataGrid = document.querySelector('bingo-grid');
         dataGrid.restart();
       });
     };

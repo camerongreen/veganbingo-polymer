@@ -28,7 +28,7 @@
     ]
   },
   "bacon": {
-    "description": "Just saying \"Bacon\" etc.",
+    "description": "Just saying \"Bacon\"",
     "rules": "Steak, chicken, often with mmmm at the end.",
     "main": [
       "This can occur in any number of situations, on a web social thread, in a conversation about food, over dinner etc.",
@@ -48,7 +48,7 @@
     ]
   },
   "plants": {
-    "description": "Don't plants have feelings?",
+    "description": "Plants have feelings too!",
     "rules": "Carrots scream when you cut them!",
     "main": [
       "Sadly people who ask this aren't some sort of level 9 compassionate souls, but are even less likely to care about plants than they do animals.",
@@ -82,7 +82,7 @@
     ]
   },
   "food": {
-    "description": "You shouldn't eat things that look like animal products",
+    "description": "Why do you eat things resembling animal products?",
     "rules": "Asking whether any given vegan alternative is made of tofu...which is all vegans eat apparently",
     "main": [
       "For a start, most animal products do not look like animal products. Cheese, sausages, fish fingers, they are all creations for a culinary purpose.",
@@ -108,7 +108,7 @@
     "description": "What can you eat?",
     "rules": "Oh you are vegan, that must be hard.",
     "main": [
-      "Veganism just isn't that hard, as my friend once said, \"Just take out the animal products and replace them with plants\".  Not hard.  Maybe slightly harder than not changing at all, but even then after a few weeks it becomes pretty much the same.",
+      "Veganism just isn't that hard, as my friend once said, \"Take out the animal things, replace with plant things. Done\".  Not hard.  Maybe slightly harder than not changing at all, but even then after a few weeks it becomes pretty much the same.",
       "Indeed it is often the opposite of a restriction once you try it.  On becoming vegan people discover an expanded world of new and interesting ingredients to explore, most vegans eat a more varied diet than they did before becoming vegan. Many people also use the process of becoming vegan to transition to a healthier diet, by finally following all that nutritional advice of \"Eat more fruits and vegetables\".",
       "So if you are eating a healthy diet already, 90% of it is probably already vegan, and the other 10% you just replace with nuts, seeds, beans, legumes, grains, tofu, tempeh, seitan, the ever widening variety of convenient substitute products and plant based milks, soy, almond, macadamia, oat, rice, hemp, quinoa and coconut.  Take a B12 supplement and you are done. If you like there's everything else these days too, plant based cheeses, marshmallows, milk chocolate (most dark already vegan of course), condensed milk, mayonnaise, yoghurt, haggis, black pugging, you get the idea.",
       "Being vegan is not hard, as much as people might prefer to think it is. As there are more and more vegans all the time, it gets easier too.  The main thing that makes it trying sometimes is the knowledge that there aren't more of us."
@@ -118,10 +118,10 @@
     "description": "I don't each much meat",
     "rules": "Telling you they ate a vegetarian meal recently.",
     "main": [
-      "This is a positive and healthy statement, but often people who assert this eat meat at almost every meal.",
+      "This is a positive and healthy statement, but often people who assert this eat meat every day, often for lunch and dinner, sometimes even breakfast.  I'm not sure what it means actually, maybe that they eat lots of vegetables, which is healthy but of little solace to the animals unless it is displacing them in someones diet.",
       "Our ideas of what a normal diet is are culturally shaped. The fact that someone eats less meat than their unhealthy friend, or chooses fish or chicken instead of red meat, does not equate to not eating much meat.",
-      "The average person eats much more meat than is considered healthy. Per capita animal product consumption has risen far above even recent historical levels in many countries.",
-      "If someone has more days vegetarian than otherwise, then they might be able to claim to be not eating much meat, otherwise they are probably eating more than they should.",
+      "The average person eats much more meat than is considered healthy. Per capita animal product consumption has risen far above historical levels in many countries.",
+      "If someone has more days vegetarian than otherwise, or they only eat meat one meal a day, then they might be able to claim to be not eating much meat, otherwise they are probably eating more than they should.",
       "Obviously for the animals who live and die in agribusiness systems before ending up on a dinner plate, the optimal amount would be zero."
     ]
   },
@@ -131,19 +131,19 @@
     "main": [
       "The premise of this statement is that whilst there is human suffering, we shouldn't concern ourselves with the suffering of other animals. Vegans don't believe that such a choice needs to be made and care about the suffering of all animals, humans included.",
       "Indeed they are often related: caring for the environment benefits all who share the earth, teaching compassion helps all who can suffer, switching to a plant based diet is going to allow more food for people to be grown with less land used providing habitat for other animals.",
-      "The idea that humans are in a different sphere to all other animals is a pre darwinian conception of ourselves, scientific secular understanding informs us that we are relatives in the same family tree who share traits.",
-      "All who can suffer deserve consideration, of primary relevance to own conscience should be those who suffer as a direct consequence of how we choose to live.",
-      "As many philosophers have said, ethics is like a muscle that goes stronger with use. We should be encouraging compassion in all spheres of life.",
-      "Withdrawing our support and consent to the unnecessary suffering of animals is ultimately going to benefit our fellow humans as well."
+      "The idea that humans are in a different sphere to all other animals is a pre darwinian conception of ourselves, scientific secular understanding informs us that we are relatives in the same family tree who share traits. All who can suffer deserve consideration and of primary relevance to own conscience should be those who suffer as a direct consequence of how we choose to live.",
+      "As many philosophers have said, ethics is like a muscle that goes stronger with use. We should be encouraging compassion in all spheres of life, not playing them off against each other.",
+      "Ultimately the question is flawed, people are animals too. We withdraw our support and consent to the unnecessary suffering of all animals, humans included."
     ]
   },
   "cant": {
-    "description": "Oh, you can't eat that.",
-    "rules": "Some ridiculous thing they think isn't vegan. I've had avocado and cotton - see how you go.",
+    "description": "Oh, you can't eat that",
+    "rules": "Some ridiculous thing they think isn't vegan.",
     "main": [
       "It is interesting that people frame our avoidance of animal products with the word - can't - as if it were not voluntary, rather than - won't - which reflects a conscious choice.",
       "Vegans can eat whatever they want, they actively choose not to eat certain products out of concern for the animals involved. Even carnists often refuse to eat some species such as whale, rat or dog, not because they can't but on the basis of habit, cultural or ethical norms.",
-      "Vegans take that ethical stance to it's logical conclusion. We make active choices based on our principles."
+      "Vegans take that ethical stance to it's logical conclusion. We make active choices based on our principles.",
+      "To vegans it's very simple what we eat, wear etc, if it comes directly from an animal, we steer clear of it.  Some other people tend to get enormously confused by the concept, like it has to be hard or something. I've had people ask me if I can eat avocado, peanut butter and even if I could wear cotton - see how you go.  Ultimately it's about educating people, but it would be nice if they thought their comments through a little first."
     ]
   },
   "aspirational": {
@@ -151,18 +151,19 @@
     "rules": "I was vegan/vegetarian but...",
     "main": [
       "The more mainstream veganism becomes and the more society understands the multitude of reasons for living vegan, the more we hear this. It's a sign that veganism has arrived.",
-      "Of course as vegans we know it's easy to be vegan in most places, and we can get by in most others with a bag of nuts, some bread and a decent salad. Why people don't make the transition has more to do with habit and conformity than anything else.",
-      "Each time a person says this is a chance to help them achieve an aspiration for themselves. Gently gently, we might start by showing them all the free online resources to help them, the local shops or restaurants stocking vegan products, and probably the most convincing advocacy: introducing them to delicious vegan food.",
-      "For people who used to be vegetarian or vegan, it's often the case that they return to it when their mindset and life is in the right place. Helping people who are already aware of the need for change is one of the most fruitful forms of activism."
+      "Of course as vegans we know it's easy to be vegan in most places, and we can get by in most others with a bag of nuts, some bread and a decent salad to tide us over. Why people don't make the transition has more to do with habit and conformity than anything else.",
+      "Ultimately though it is a positive aspirational statement and should be encouraged.  Each time a person says this is a chance to help them achieve something for themselves. Gently gently, we might start by showing them all the free online resources to help them with recipes and advice, then show them the local restaurants or shops stocking vegan products, and probably the most convincing advocacy: introducing them to delicious vegan food and lovely varied vegan people.",
+      "For people who used to be vegetarian or vegan, it's often the case that they return to it when their mindset and life is in the right place. Helping people who are already aware of the need for change is one of the most fruitful forms of activism. Also when you meet ex-vegetarians or vegans, it's a good reminder to us that we need to support our own community in our activism, not just focus on making new converts."
     ]
   },
   "preachy": {
     "description": "Vegans are preachy",
-    "rules": "Each to their own or the sadly ironic live and let live.",
+    "rules": "Each to their own, the sadly ironic live and let live, how do you know someone's vegan - they'll tell you",
     "main": [
       "OK, there are some preachy vegans who need to chill out, but as vegans reflect the diversity of people generally there isn't a stereotype. Anyone who has had bad experiences with a preachy vegan though should try being vegan for a while and see how the reverse is also true.",
-      "This comes down to people's idea of what life is all about, some think it is just about being popular and conforming, and they can't understand people who would expend their social capital advocating ethical beliefs. They might even express this point of view in cliches such as 'to each their own' or 'live and let live'. But as frustrating as we might find this, getting upset with someone is likely to be counter-productive.",
-      "We can speak the best for animals by engaging peoples compassion rather than their self defensiveness. Positive people living in alignment with their ideals are the best advocates for veganism."
+      "It's all perspective too, when local activists erected a billboard showing a wounded race horse just before it was shot, they were forced to take it down.  Of course our suburbs are littered with burnt charred images of dead animals in food advertisements and no one blinks an eye.  If the vast majority of people agree with you, preachiness seems to go unnoticed.",
+      "Ultimately this comes down to people's idea of what life is all about, some think it is just about being popular and conforming, and they can't understand people who would expend their social capital advocating ethical beliefs. They might even express this point of view in cliches such as 'to each their own' or 'live and let live' (if only they would let the animals just live). But as frustrating as we might find this, getting upset with someone is likely to be counter-productive.",
+      "We can speak the best for animals by engaging peoples compassion rather than their self defensiveness. Whether we like it or not, how we present the message is almost as important as the message itself.  Positive people living in alignment with their ideals are the best advocates for veganism."
     ]
   }
 }

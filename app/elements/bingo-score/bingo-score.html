@@ -11,20 +11,5 @@
       <p>To restart, go to the <core-icon icon="settings"></core-icon> Settings page.</p>
     </paper-dialog>
   </template>
-  <script>
-    (function () {
-      Polymer({
-        ready: function () {
-          this.score = 0;
-          this.total = 0;
-        },
-        scoreChanged: function () {
-          if ((this.score === this.total) && (this.total > 0)) {
-            this.transition = 'core-transition-center';
-            this.$.scoreAchieved.toggle();
-          }
-        }
-      });
-    })();
-  </script>
+  <script src="bingo-score.js"></script>
 </polymer-element>
