@@ -83,6 +83,15 @@ section {
   }
 }
 
+bingo-grid::shadow grid-button {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  &::shadow div.description {
+    margin-top: 1em;
+    font-weight: bold;
+  }
+}
+
 section home-button::shadow div.home-button {
   margin-top: 10px;
   margin-bottom: 10px;
