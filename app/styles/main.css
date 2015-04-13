@@ -1,7 +1,16 @@
 body {
-  background: #fafafa;
+  background-color: #000;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333; }
+
+core-scaffold::shadow core-drawer-panel core-header-panel core-toolbar {
+  background-color: #663399; }
+
+core-header-panel::shadow #mainContainer {
+  background-color: #DDD; }
+core-header-panel #navHeader {
+  color: #EEE;
+  background-color: #2E0854; }
 
 .hero-unit {
   margin: 50px auto 0 auto;
@@ -50,5 +59,11 @@ section.info {
   padding-right: 5%; }
   #bingo-page #header-image {
     padding: 1%; }
+
+section home-button::shadow div.home-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #666;
+  text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */

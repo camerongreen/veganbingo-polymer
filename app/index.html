@@ -6,7 +6,9 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vegan Bingo</title>
+
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="manifest" href="manifest.json">
 
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
@@ -46,7 +48,7 @@
 
     </core-header-panel>
 
-    <span tool flex>Vegan Bingo!</span>
+    <home-button text="Vegan Bingo" tool flex></home-button>
     <bingo-score tool score="{{score}}" total="{{total}}"></bingo-score>
 
     <!-- Main -->
@@ -61,7 +63,6 @@
         </section>
         <section class="info" id="how">
           <div layout vertical>
-            <home-button></home-button>
             <h2>
               <core-icon icon="help"></core-icon>
               How to play
@@ -86,12 +87,11 @@
               <p>Vegan bingo is a fun game for vegans, not to make fun of
                 non-vegans; remember veganism was new to most of us at one point
                 and we might have asked similar questions.</p></div>
-            <home-button></home-button>
+            <home-button text="Home"></home-button>
           </div>
         </section>
         <section class="info" id="about">
           <div layout vertical>
-            <home-button></home-button>
             <h2>
               <core-icon icon="info"></core-icon>
               About
@@ -115,12 +115,11 @@
               <p>Inspired by the original Rationalization Bingo in Vegnews.</p>
 
               <p>This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">http://creativecommons.org/licenses/by-nc-sa/3.0/</a>.</p></div>
-            <home-button></home-button>
+            <home-button text="Home"></home-button>
           </div>
         </section>
         <section class="info" id="settings">
           <div layout vertical>
-            <home-button></home-button>
             <h2>
               <core-icon icon="settings"></core-icon>
               Settings
@@ -134,13 +133,11 @@
                 <paper-button role="button" id="restart" raised class="colored">Restart game</paper-button>
               </p>
             </div>
-            <home-button></home-button>
+            <home-button text="Home"></home-button>
           </div>
         </section>
         <section class="info" id="bingo-page">
           <div layout vertical>
-            <home-button></home-button>
-
             <div layout horizontal center>
               <img id="header-image"/>
 
@@ -159,7 +156,7 @@
             <paper-shadow id="main" z="1">
             </paper-shadow>
 
-            <home-button></home-button>
+            <home-button text="Home"></home-button>
           </div>
         </section>
       </core-animated-pages>

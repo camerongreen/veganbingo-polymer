@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;;AAGhB,eAAgB;EACd,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,IAAI;EACnB,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,IAAI",
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK",
 "sources": ["home-button.scss"],
 "names": [],
 "file": "home-button.css"

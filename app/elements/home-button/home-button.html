@@ -1,10 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="home-button" attributes="">
+<polymer-element name="home-button" attributes="text">
   <template>
     <link rel="stylesheet" href="home-button.css">
     <div class="home-button" on-click="{{doClick}}">
-      <core-icon icon="apps"></core-icon> Home
+      <core-icon icon="apps"></core-icon> {{text}}
     </div>
   </template>
   <script>
