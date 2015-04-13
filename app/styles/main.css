@@ -60,10 +60,15 @@ section.info {
   #bingo-page #header-image {
     padding: 1%; }
 
+<<<<<<< HEAD
 section home-button::shadow div.home-button {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #666;
   text-decoration: none; }
+=======
+html /deep/ paper-dialog::shadow h1 {
+  color: green; }
+>>>>>>> 6a665ac3932df87af5c6f805af6d22d1052d295a
 
 /*# sourceMappingURL=main.css.map */

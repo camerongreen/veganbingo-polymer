@@ -1,9 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="grid-button" attributes="details">
+<polymer-element name="grid-button" attributes="details" on-click="{{doClick}}">
   <template>
     <link rel="stylesheet" href="grid-button.css">
-    <span id="{{details.tileId}}" class="{{details.tileClass}}" on-click="{{doClick}}">
+    <span id="{{details.tileId}}" class="{{details.tileClass}}">
       <img src="images/{{details | pictureName}}.png" alt="{{details.description}}" title="{{details.description}}" />
       <div class="description">{{details.description}}</div>
     </span>

@@ -30,7 +30,10 @@ module.exports = function (grunt) {
         ]
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+        files: [
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/elements/{,*/}*.js'
+        ],
         tasks: ['jshint']
       },
       styles: {
@@ -141,6 +144,7 @@ module.exports = function (grunt) {
       },
       all: [
         '<%= yeoman.app %>/scripts/{,*/}*.js',
+        '<%= yeoman.app %>/elements/*/*.js',
         '!<%= yeoman.app %>/scripts/vendor/*',
         'test/spec/{,*/}*.js'
       ]
@@ -221,6 +225,7 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'elements/**',
+            'scripts/data.json',
             '!elements/**/*.scss',
             'images/{,*/}*.{webp,gif}'
           ]
@@ -290,7 +295,7 @@ module.exports = function (grunt) {
     ]);
   });
 
-  
+
   grunt.registerTask('test:local', ['wct-test:local']);
   grunt.registerTask('test:remote', ['wct-test:remote']);
 

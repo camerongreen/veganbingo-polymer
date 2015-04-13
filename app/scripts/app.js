@@ -10,91 +10,81 @@
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('template-bound', function () {
-    listenForMenuClicks();
-    listenForHomeButtonClicks();
-    listenForRestartButtonClicks();
-
-    var page = document.querySelector('#bingo-page');
-    var btn = page.querySelector('#completionButton');
-
-    listenForCompletionClick(page, btn);
-    listenForGridPageClicks(page, btn);
+    var vb = new VeganBingo(this);
+    vb.start();
   });
 
-  function listenForCompletionClick(page, btn) {
-    btn.addEventListener('click', function () {
-      var elId = btn.getAttribute("bingo-page");
-      var bingoGrid = document.querySelector("bingo-grid");
-      var done = bingoGrid.toggleDone(elId);
-      setButtonStatus(btn, done);
-      setImageStatus(page, elId, done);
-    });
-  }
+  var VeganBingo = function(template) {
+    this.PAGES = {
+      home: 0,
+      grid: 4
+    };
 
-  function setButtonStatus(btn, done) {
-    if (done) {
-      btn.innerHTML = "You got a bingo!";
-    } else {
-      btn.innerHTML = "Click here if someone said this";
-    }
-  }
+    this.template = template;
+    this.template.pageSelected = this.PAGES.home;
+  };
 
-  function setImageStatus(page, elId, done) {
-    page.querySelector('#header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
-  }
+  VeganBingo.prototype.start = function() {
+      var page = document.querySelector('#bingo-page');
+      var btn = page.querySelector('#completionButton');
 
-  function listenForGridPageClicks(page, btn) {
-    document.addEventListener('grid-button-clicked', function (event) {
-      // set menu to nothing
-      changePage(-1, 4);
+      this.listenForHomeButtonClicks();
+      this.listenForRestartButtonClicks();
+      this.listenForCompletionClick(page, btn);
+      this.listenForGridPageClicks(page, btn);
+    };
 
-      var details = event.detail;
+   VeganBingo.prototype.listenForCompletionClick = function (page, btn) {
+      var bingoGrid = document.querySelector('bingo-grid');
+     var that = this;
+      btn.addEventListener('click', function () {
+        var elId = btn.getAttribute('bingo-page');
+        var done = bingoGrid.toggleDone(elId);
+        that.setButtonStatus(btn, done);
+        that.setImageStatus(page, elId, done);
+      });
+    };
 
-      page.querySelector('#description').innerHTML = details.description;
-      page.querySelector('#rules p').innerHTML = details.rules;
-      page.querySelector('#main').innerHTML = "<p>" + details.main.join("</p>\n<p>") + "</p>";
-      // populate page with appropriate stuff
+    VeganBingo.prototype.listenForHomeButtonClicks = function() {
+      var that = this;
+      document.addEventListener('home-button-clicked', function () {
+        that.template.pageSelected = that.PAGES.home;
+      });
+    };
 
-      btn.setAttribute('bingo-page', details.tileId);
-      setButtonStatus(btn, details.done);
-      setImageStatus(page, details.tileId, details.done);
-    });
-  }
+    VeganBingo.prototype.setButtonStatus = function(btn, done) {
+      if (done) {
+        btn.innerHTML = 'You got a bingo!';
+      } else {
+        btn.innerHTML = 'Click here if someone said this';
+      }
+    };
 
-  function listenForMenuClicks() {
-    var els = document.querySelectorAll('core-item');
+    VeganBingo.prototype.setImageStatus = function (page, elId, done) {
+      page.querySelector('#header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
+    };
 
-    for (var i = 0, l = els.length; i < l; i++) {
-      (function (index) {
-        els[i].addEventListener('click', function () {
-          changePage(index);
-        });
-      })(i);
-    }
-  }
+    VeganBingo.prototype.listenForGridPageClicks = function(page, btn) {
+      var that = this;
+      document.addEventListener('grid-button-clicked', function (event) {
+        that.template.pageSelected = that.PAGES.grid;
 
-  function listenForRestartButtonClicks() {
-    document.querySelector("#restart").addEventListener('click', function (evt) {
-      var dataGrid = document.querySelector("bingo-grid");
-      dataGrid.restart();
-      evt.preventDefault();
-    });
-  }
+        // populate page with appropriate stuff
+        page.querySelector('#description').innerHTML = event.detail.description;
+        page.querySelector('#rules p').innerHTML = event.detail.rules;
+        page.querySelector('#main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
+        btn.setAttribute('bingo-page', event.detail.tileId);
+        that.setButtonStatus(btn, event.detail.done);
+        that.setImageStatus(page, event.detail.tileId, event.detail.done);
+      });
+    };
 
-  function listenForHomeButtonClicks() {
-    document.addEventListener('home-button-clicked', function (evt) {
-      changePage(0);
-      evt.preventDefault();
-    });
-  }
-
-  function changePage(menu, page) {
-    if (typeof page === 'undefined') {
-      page = menu;
-    }
-    document.querySelector('core-menu').setAttribute('selected', menu);
-    document.querySelector('core-animated-pages').setAttribute("selected", page);
-  }
+    VeganBingo.prototype.listenForRestartButtonClicks = function() {
+      document.querySelector('#restart').addEventListener('click', function () {
+        var dataGrid = document.querySelector('bingo-grid');
+        dataGrid.restart();
+      });
+    };
 
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers

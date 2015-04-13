@@ -90,4 +90,10 @@ section home-button::shadow div.home-button {
   text-decoration: none;
 }
 
+html /deep/ paper-dialog {
+  &::shadow h1 {
+    color: green;
+  }
+}
+
 
