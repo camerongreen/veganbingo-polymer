@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,UAAU,EAAE,GAAG",
+"sources": ["bingo-time.scss"],
+"names": [],
+"file": "bingo-time.css"
+}
