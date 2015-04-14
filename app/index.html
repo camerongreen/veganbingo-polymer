@@ -25,7 +25,7 @@
 
 <body unresolved fullbleed layout vertical>
 <template is="auto-binding" id="app" namespace="org.camerongreen.veganbingo">
-  <bingo-settings></bingo-settings>
+  <bingo-settings settings="{{settings}}"></bingo-settings>
 
   <core-scaffold mode="standard">
 
@@ -56,8 +56,9 @@
       <core-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
-            <bingo-grid data="scripts/data.json" tiles="{{tiles}}" score="{{score}}"
+            <bingo-grid settings="{{settings}}" data="scripts/data.json" tiles="{{tiles}}" score="{{score}}"
                         total="{{total}}"></bingo-grid>
+            <bingo-time settings="{{settings}}"></bingo-time>
           </div>
         </section>
         <section class="info" id="how">

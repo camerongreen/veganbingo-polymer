@@ -3,7 +3,7 @@
 <polymer-element name="bingo-score" attributes="score, total">
   <template>
     <link rel="stylesheet" href="bingo-score.css">
-    <span tool id="score">{{score}} / {{total}}</span>
+    <span tool id="score"><span class="score-label">{{scoreLabel}} </span>{{score}} / {{total}}</span>
     <paper-dialog unresolved id="scoreAchieved" heading="Fan-Vegan Bingo-tastic!!!!" transition="core-transition-center">
       <p><core-icon icon="star"></core-icon> Congratulations on completing Vegan Bingo! <core-icon icon="star"></core-icon></p>
       <p>You have joined an elite class and are now officially a level 5 Vegan <core-icon icon="favorite-outline"></core-icon></p>

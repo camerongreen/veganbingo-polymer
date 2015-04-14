@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,gBAAW;IACT,SAAS,EAAE,GAAG",
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,gBAAW;IACT,SAAS,EAAE,GAAG;;AAIlB,yBAA0B;EACxB,gBAAiB;IACf,OAAO,EAAE,IAAI",
 "sources": ["bingo-score.scss"],
 "names": [],
 "file": "bingo-score.css"

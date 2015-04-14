@@ -2,12 +2,12 @@
   Polymer({
     created: function () {
       this.tiles = {};
+      this.settings = {};
     },
     tilesLoaded: function () {
-      var settings = this.$.settings.get();
       this.tiles = Object.create(this.$.ajax.response);
       for (var tile in this.tiles) {
-        this.tiles[tile].done = settings.hasOwnProperty(tile) ? settings[tile] : false;
+        this.tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
       }
     },
     getTiles: function () {

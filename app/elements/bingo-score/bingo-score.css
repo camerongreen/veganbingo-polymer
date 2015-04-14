@@ -3,4 +3,8 @@
   :host span.label {
     font-size: 60%; }
 
+@media (max-width: 800px) {
+  span.score-label {
+    display: none; } }
+
 /*# sourceMappingURL=bingo-score.css.map */

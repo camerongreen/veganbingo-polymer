@@ -70,7 +70,7 @@
           newSettings[tile] = this.tiles[tile].done;
         }
       }
-      this.$.settings.persist(newSettings);
+      this.settings = newSettings;
     },
     restart: function () {
       for (var tile in this.tiles) {
