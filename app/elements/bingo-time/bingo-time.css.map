@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,UAAU,EAAE,GAAG",
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,eAAU;IACR,WAAW,EAAE,IAAI;EAEnB,eAAU;IACR,YAAY,EAAE,GAAG",
 "sources": ["bingo-time.scss"],
 "names": [],
 "file": "bingo-time.css"

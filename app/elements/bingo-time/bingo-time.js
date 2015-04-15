@@ -77,20 +77,39 @@
       }
       return startTime;
     },
+    getEndTime: function () {
+      var endTime;
+      for (var setting in this.settings) {
+        if (!endTime || (this.settings[setting] > endTime)) {
+          endTime = this.settings[setting];
+        }
+      }
+      return endTime;
+    },
     settingsChanged: function () {
-      this.startTime = this.getStartTime();
-      if (this.startTime) {
-        this.startTimeString = formatDate(new Date(this.startTime));
+      this.tick();
+    },
+    tick: function () {
+      var startTime = this.getStartTime();
+      if (startTime) {
+        this.startTimeString = formatDate(new Date(startTime));
 
         this.async(function () {
-          if (this.startTime) {
-            var seconds = Math.round((Date.now() - this.startTime) / 1000);
+          if (startTime) {
+            var fromTime, completed = this.score === this.total;
+            if (completed) {
+              fromTime = this.getEndTime();
+            } else {
+              fromTime = Date.now();
+            }
+            var seconds = Math.round((fromTime - startTime) / 1000);
             this.timer = formatElapsedTime(seconds);
           }
+          this.tick();
         }, null, 1000);
       } else {
         this.startTimeString = 'Not started';
       }
-    },
+    }
   });
 })();

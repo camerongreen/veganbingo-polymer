@@ -1,5 +1,8 @@
 :host {
-  display: block;
-  margin-top: 2em; }
+  display: block; }
+  :host div.label {
+    font-weight: bold; }
+  :host div.value {
+    padding-left: 1ex; }
 
 /*# sourceMappingURL=bingo-time.css.map */

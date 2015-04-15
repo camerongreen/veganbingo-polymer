@@ -1,14 +1,14 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="bingo-time" attributes="settings">
+<polymer-element name="bingo-time" attributes="settings, score, total">
   <template>
     <link rel="stylesheet" href="bingo-time.css">
-    <div layout horizontal hidden="{{!startTime}}">
-      <div class="label">Time :</div>
+    <div layout horizontal hidden?="{{!startTimeString}}">
+      <div class="label">Time</div>
       <div class="value">{{timer}}</div>
     </div>
     <div layout horizontal>
-      <div class="label">Started :</div>
+      <div class="label">Started</div>
       <div class="value">{{startTimeString}}</div>
     </div>
   </template>
