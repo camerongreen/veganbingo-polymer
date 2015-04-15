@@ -91,6 +91,15 @@ bingo-grid::shadow grid-button {
   }
 }
 
+bingo-time {
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+  &::shadow > div {
+    text-align: center;
+  }
+}
+
 section home-button::shadow div.home-button {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -103,5 +112,4 @@ html /deep/ paper-dialog {
     color: green;
   }
 }
-
 

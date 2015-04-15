@@ -66,6 +66,13 @@ bingo-grid::shadow grid-button {
     margin-top: 1em;
     font-weight: bold; }
 
+bingo-time {
+  background-color: #000;
+  color: #fff;
+  padding: 1em; }
+  bingo-time::shadow > div {
+    text-align: center; }
+
 section home-button::shadow div.home-button {
   margin-top: 10px;
   margin-bottom: 10px;

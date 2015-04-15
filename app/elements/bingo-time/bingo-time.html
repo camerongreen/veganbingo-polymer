@@ -3,11 +3,11 @@
 <polymer-element name="bingo-time" attributes="settings, score, total">
   <template>
     <link rel="stylesheet" href="bingo-time.css">
-    <div layout horizontal hidden?="{{!startTimeString}}">
+    <div layout horizontal center-justified hidden?="{{!startTimeString}}">
       <div class="label">Time</div>
       <div class="value">{{timer}}</div>
     </div>
-    <div layout horizontal>
+    <div layout horizontal center-justified>
       <div class="label">Started</div>
       <div class="value">{{startTimeString}}</div>
     </div>
