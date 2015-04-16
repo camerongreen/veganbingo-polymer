@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="settings-page" attributes="" noscript>
+<polymer-element name="settings-page" attributes="settings" noscript>
   <template>
     <link rel="stylesheet" href="settings-page.css">
     <div layout vertical>
@@ -10,10 +10,9 @@
       <div>
         <h3>Restart game</h3>
 
-        <p>This will clear all of your completed tasks and set you back to
-          0.</p>
+        <p>This will clear all of your completed tasks and set you back to 0.</p>
         <p>
-          <paper-button role="button" id="restart" raised class="colored">Restart game</paper-button>
+          <paper-button role="button" id="restart" raised disabled="{{!settings.length}}">Restart game</paper-button>
         </p>
       </div>
       <home-button text="Home"></home-button>

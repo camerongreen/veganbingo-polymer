@@ -52,7 +52,6 @@
 
     <!-- Main -->
     <div class="content">
-
       <core-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
@@ -68,7 +67,7 @@
           <about-page id="about"></about-page>
         </section>
         <section class="info">
-          <settings-page id="settings"></settings-page>
+          <settings-page id="settings" settings="{{settings}}"></settings-page>
         </section>
         <section class="info">
           <bingo-page id="bingo-page"></bingo-page>

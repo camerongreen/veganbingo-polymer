@@ -4,7 +4,7 @@
   // Grab a reference to our auto-binding template
   // and give it some initial binding values
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
-  var app = document.querySelector('#app');
+  var app = document.getElementById('app');
   app.appName = 'Vegan Bingo!';
 
   // Listen for template bound event to know when bindings
@@ -25,7 +25,7 @@
   };
 
   VeganBingo.prototype.start = function () {
-    var page = document.querySelector('#bingo-page');
+    var page = document.getElementById('bingo-page');
     var btn = page.shadowRoot.querySelector('#completionButton');
 
     this.listenForHomeButtonClicks();
@@ -61,7 +61,7 @@
   };
 
   VeganBingo.prototype.setImageStatus = function (page, elId, done) {
-    page.shadowRoot.querySelector('#header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
+    page.shadowRoot.getElementById('header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
   };
 
   VeganBingo.prototype.listenForGridPageClicks = function (page, btn) {
@@ -70,9 +70,9 @@
       that.template.pageSelected = that.PAGES.grid;
 
       // populate page with appropriate stuff
-      page.shadowRoot.querySelector('#description').innerHTML = event.detail.description;
+      page.shadowRoot.getElementById('description').innerHTML = event.detail.description;
       page.shadowRoot.querySelector('#rules p').innerHTML = event.detail.rules;
-      page.shadowRoot.querySelector('#main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
+      page.shadowRoot.getElementById('main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
       btn.setAttribute('bingo-page', event.detail.tileId);
       that.setButtonStatus(btn, event.detail.done);
       that.setImageStatus(page, event.detail.tileId, event.detail.done);
