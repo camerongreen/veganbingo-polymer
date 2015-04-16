@@ -47,17 +47,17 @@ section > div {
   overflow-y: auto; }
 section.info {
   margin-left: 2%; }
-  section.info p {
+  section.info /deep/ p {
     margin-left: 2%; }
-
-#rules {
-  background-color: #fff; }
 
 #bingo-page {
   padding-left: 5%;
   padding-right: 5%; }
-  #bingo-page #header-image {
+  #bingo-page::shadow #header-image {
     padding: 1%; }
+  #bingo-page::shadow #main,
+  #bingo-page::shadow #rules {
+    background-color: #fff; }
 
 bingo-grid::shadow grid-button {
   padding-top: 1.5em;
@@ -73,7 +73,7 @@ bingo-time {
   bingo-time::shadow > div {
     text-align: center; }
 
-section home-button::shadow div.home-button {
+section /deep/ home-button::shadow div.home-button {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #666;

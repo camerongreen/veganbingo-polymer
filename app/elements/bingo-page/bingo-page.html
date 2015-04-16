@@ -1,0 +1,28 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="bingo-page" attributes="" noscript>
+  <template>
+    <link rel="stylesheet" href="bingo-page.css">
+    <div layout vertical>
+      <div layout horizontal center>
+        <img id="header-image"/>
+
+        <h2 id="description" flex></h2>
+      </div>
+      <div layout horizontal>
+        <paper-button id="completionButton" bingo-page="" raised class="colored" role="button"></paper-button>
+      </div>
+
+      <h3>Also acceptable</h3>
+      <paper-shadow id="rules" z="1">
+        <p></p>
+      </paper-shadow>
+
+      <h3>More information</h3>
+      <paper-shadow id="main" z="1">
+      </paper-shadow>
+
+      <home-button text="Home"></home-button>
+    </div>
+  </template>
+</polymer-element>
