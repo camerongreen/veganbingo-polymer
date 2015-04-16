@@ -6,7 +6,7 @@
  * Time: 5:23 PM
  */
 suite('About page tests', function () {
-test('About page tests', function(){
-  assert.isTrue(document.querySelector('fixture').awesomest);
-});
+  test('About page tests', function () {
+    assert.isTrue(document.querySelector('#about::shadow h2').textContent === "&nbsp;About");
+  });
 });
