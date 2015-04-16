@@ -71,8 +71,10 @@
     getStartTime: function () {
       var startTime;
       for (var setting in this.settings) {
-        if (!startTime || (this.settings[setting] < startTime)) {
-          startTime = this.settings[setting];
+        if (this.settings.hasOwnProperty(setting)) {
+          if (!startTime || (this.settings[setting] < startTime)) {
+            startTime = this.settings[setting];
+          }
         }
       }
       return startTime;
@@ -90,19 +92,19 @@
       this.tick();
     },
     tick: function () {
-      var startTime = this.getStartTime();
-      if (startTime) {
-        this.startTimeString = formatDate(new Date(startTime));
+      this.startTime = this.getStartTime();
+      if (this.startTime) {
+        this.startTimeString = formatDate(new Date(this.startTime));
 
         this.async(function () {
-          if (startTime) {
+          if (this.startTime) {
             var fromTime, completed = this.score === this.total;
             if (completed) {
               fromTime = this.getEndTime();
             } else {
               fromTime = Date.now();
             }
-            var seconds = Math.round((fromTime - startTime) / 1000);
+            var seconds = Math.round((fromTime - this.startTime) / 1000);
             this.timer = formatElapsedTime(seconds);
           }
           this.tick();

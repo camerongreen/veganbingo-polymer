@@ -80,7 +80,7 @@
     };
 
     VeganBingo.prototype.listenForRestartButtonClicks = function() {
-      document.querySelector('#restart').addEventListener('click', function () {
+      document.querySelector('#settings::shadow #restart').addEventListener('click', function () {
         var dataGrid = document.querySelector('bingo-grid');
         dataGrid.restart();
       });
