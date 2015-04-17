@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>grid-button-basic</title>
+
+  <script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
+  <script src="../../bower_components/web-component-tester/browser.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../elements/grid-button/grid-button.html">
+
+</head>
+<body>
+
+  <grid-button></grid-button>
+
+  <script>
+    suite('<grid-button>', function() {
+      test('Item lengths should be equalled', function(done) {
+        // Test a property
+        var el = document.querySelector('grid-button');
+        el.details = {
+          tileId: 'chomsky',
+          tileClass: 'style1',
+          description: 'I am a grid button'
+        };
+
+        var sp = el.querySelector('span');
+        assert.equal(el.details.tileId, sp.id);
+        done();
+      })
+    });
+  </script>
+
+</body>
+</html>

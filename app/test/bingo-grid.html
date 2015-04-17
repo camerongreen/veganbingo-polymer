@@ -8,19 +8,19 @@
   <script src="../../bower_components/web-component-tester/browser.js"></script>
 
   <!-- Step 1: import the element to test -->
-  <link rel="import" href="../elements/yo-greeting/yo-greeting.html">
+  <link rel="import" href="../elements/bingo-grid/bingo-grid.html">
 
 </head>
 <body>
 
-  <yo-greeting id="fixture"></yo-greeting>
+  <bingo-grid></bingo-grid>
 
   <script>
-    suite('yo-greeting', function() {
-      test('Allo, Allo!', function() {
-        var el = document.querySelector('yo-greeting');
-        var header = el.shadowRoot.querySelector('h1');
-        assert.equal(header.textContent, '\'Allo, \'Allo!');
+    suite('<bingo-grid>', function() {
+      test('Test buttons!', function() {
+        var el = document.querySelector('bingo-grid');
+        var btns = el.shadowRoot.querySelector('grid-button');
+        assert.equal(16, bts.length);
       })
     });
   </script>
