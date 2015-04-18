@@ -4,11 +4,13 @@
       this.tiles = {};
       this.settings = {};
     },
-    tilesLoaded: function () {
-      this.tiles = Object.create(this.$.ajax.response);
-      for (var tile in this.tiles) {
-        this.tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
-      }
+    ready: function () {
+      this.addEventListener('core-response', function (event) {
+        this.tiles = event.detail.response;
+        for (var tile in this.tiles) {
+          this.tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
+        }
+      });
     },
     getTiles: function () {
       return this.tiles;

@@ -55,8 +55,8 @@
       <core-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
         <section id="game">
           <div layout vertical>
-            <bingo-grid settings="{{settings}}" data="scripts/data.json" tiles="{{tiles}}" score="{{score}}"
-                        total="{{total}}"></bingo-grid>
+            <bingo-data file="scripts/data.json" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
+            <bingo-grid settings="{{settings}}" tiles="{{tiles}}" score="{{score}}" total="{{total}}"></bingo-grid>
             <bingo-time settings="{{settings}}" score="{{score}}" total="{{total}}"></bingo-time>
           </div>
         </section>

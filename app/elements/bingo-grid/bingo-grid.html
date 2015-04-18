@@ -4,10 +4,10 @@
 
 <link rel="import" href="../grid-button/grid-button.html">
 
-<polymer-element name="bingo-grid" attributes="data, tiles, score, settings, total">
+<polymer-element name="bingo-grid" attributes="tiles, score, settings, total">
   <template>
     <app-globals id="globals"></app-globals>
-    <bingo-data id="ajax" file="{{data}}" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
+
     <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>

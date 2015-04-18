@@ -1,4 +1,8 @@
 (function () {
+  /**
+   * Calculates the minimum square grid which will take
+   * the passed in number of elements.  I'm not sure that explanation helped explain this...
+   */
   function calculateRowSize(size) {
     for (var i = 0; i < size; i++) {
       if ((i * i) >= size) {
@@ -47,11 +51,12 @@
   }
 
   Polymer({
+    created: function () {
+      this.tiles = {};
+      this.settings = {};
+    },
     ready: function () {
-      var that = this;
-      this.$.ajax.addEventListener('core-response', function (res) {
-        that.tiles = res.detail.response;
-      });
+
     },
     toggleDone: function (elId) {
       var done = this.tiles[elId].done;
