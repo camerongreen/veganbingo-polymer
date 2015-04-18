@@ -3,7 +3,7 @@ module.exports = {
   verbose: true,
   plugins: {
     local: {
-      browsers: ['chrome', 'firefox']
+      browsers: ['chrome']
     }
   },
   suites: ['app/test']

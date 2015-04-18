@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>yo-greeting-basic</title>
+  <title>bingo0grid</title>
 
   <script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
   <script src="../../bower_components/web-component-tester/browser.js"></script>
@@ -13,17 +13,28 @@
 </head>
 <body>
 
-  <bingo-grid></bingo-grid>
+<bingo-grid></bingo-grid>
 
-  <script>
-    suite('<bingo-grid>', function() {
-      test('Test buttons!', function() {
-        var el = document.querySelector('bingo-grid');
+<script>
+  suite('<bingo-grid>', function () {
+    test('Test bingo grid creates buttons', function () {
+      var el = document.querySelector('bingo-grid');
+      el.tiles = [];
+      for (var i = 0; i < 16; i++) {
+        el.tiles.push({
+          tileId: 'tile' + i,
+          tileClass: 'style' + i,
+          description: 'I am tile ' + i
+        });
+      }
+
+      flush(function() {
         var btns = el.shadowRoot.querySelector('grid-button');
-        assert.equal(16, bts.length);
-      })
-    });
-  </script>
+        assert.equal(16, btns.length);
+      });
+    })
+  });
+</script>
 
 </body>
 </html>
