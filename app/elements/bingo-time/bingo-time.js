@@ -14,6 +14,13 @@
     return [date.getDate(), shortMonthNames[date.getMonth()], date.getFullYear(), date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()].join(' ');
   }
 
+  /**
+   * Take a number of seconds and divide it by weeks, days etc
+   * and return string of the results
+   *
+   * @param totalSeconds
+   * @returns {string}
+   */
   function formatElapsedTime(totalSeconds) {
     var minute = 60;
     var hour = 60 * minute;
