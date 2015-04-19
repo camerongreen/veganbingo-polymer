@@ -1,6 +1,6 @@
 {
-  "name": "polymer",
-  "version": "0.0.0",
+  "name": "veganbingo",
+  "version": "0.0.1",
   "dependencies": {
     "core-elements": "Polymer/core-elements#^0.5.1",
     "paper-elements": "Polymer/paper-elements#^0.5.1",
@@ -12,5 +12,23 @@
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.2.3"
-  }
+  },
+  "homepage": "https://github.com/camerongreen/veganbingo-polymer",
+  "description": "Fun game for vegans",
+  "main": "app/index.html",
+  "keywords": [
+    "vegan",
+    "bingo"
+  ],
+  "authors": [
+    "Cameron Green"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
