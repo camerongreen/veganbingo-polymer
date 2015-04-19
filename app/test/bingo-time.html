@@ -13,21 +13,22 @@
 </head>
 <body>
 
-<bingo-time></bingo-time>
+<bingo-time id="chomsky"></bingo-time>
 
 <script>
   suite('<bingo-time>', function () {
     test('Test bingo time default state', function (done) {
       var el = document.querySelector('bingo-time');
-      el.settings = {
-      };
+      el.settings = {};
       el.score = 0;
       el.total = 16;
 
-      flush(function() {
-        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
-        assert.equal('Not started', textEl.textContent);
-        done();
+      flush(function () {
+        setTimeout(function () {
+          var textEl = el.shadowRoot.querySelector('div.start-time div.value');
+          assert.equal('Not started', textEl.textContent);
+          done();
+        }, 5000);
       });
     })
   });
