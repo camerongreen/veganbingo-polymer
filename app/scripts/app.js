@@ -14,6 +14,12 @@
     vb.start();
   });
 
+  /**
+   * Class for the main Vegan Bingo tasks
+   *
+   * @param template
+   * @constructor
+   */
   var VeganBingo = function (template) {
     this.PAGES = {
       home: 0,
