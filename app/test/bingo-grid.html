@@ -8,29 +8,34 @@
   <script src="../../bower_components/web-component-tester/browser.js"></script>
 
   <!-- Step 1: import the element to test -->
+  <link rel="import" href="../elements/app-globals/app-globals.html">
   <link rel="import" href="../elements/bingo-grid/bingo-grid.html">
 
 </head>
 <body>
 
-<bingo-grid></bingo-grid>
+<bingo-grid id="chomsky"></bingo-grid>
 
 <script>
   suite('<bingo-grid>', function () {
-    test('Test bingo grid creates buttons', function () {
+    test('Test bingo grid creates buttons', function (done) {
       var el = document.querySelector('bingo-grid');
-      el.tiles = [];
+      el.tiles = {};
       for (var i = 0; i < 16; i++) {
-        el.tiles.push({
-          tileId: 'tile' + i,
-          tileClass: 'style' + i,
-          description: 'I am tile ' + i
-        });
+        var tileId = 'tile' + i;
+
+        el.tiles[tileId] = {
+          description: 'I am tile ' + i,
+          done: false,
+          rules: 'I am rules for ' + i,
+          main: ['I am main for ' + i]
+        };
       }
 
-      flush(function() {
-        var btns = el.shadowRoot.querySelector('grid-button');
+      flush(function () {
+        var btns = el.shadowRoot.querySelectorAll('grid-button');
         assert.equal(16, btns.length);
+        done();
       });
     })
   });

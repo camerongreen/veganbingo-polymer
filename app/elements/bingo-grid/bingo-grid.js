@@ -51,20 +51,21 @@
   }
 
   Polymer({
+    /**
+     * Setup expected bind vars
+     */
     created: function () {
       this.tiles = {};
       this.settings = {};
     },
-    ready: function () {
-
-    },
+    /**
+     * Set a tile to
+     *
+     * @param elId
+     * @returns {number|boolean}
+     */
     toggleDone: function (elId) {
-      var done = this.tiles[elId].done;
-      if (done) {
-        this.tiles[elId].done = false;
-      } else {
-        this.tiles[elId].done = Date.now();
-      }
+      this.tiles[elId].done = this.tiles[elId].done ? false : Date.now();
       this.tilesChanged();
       return this.tiles[elId].done;
     },
