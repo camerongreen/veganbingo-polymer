@@ -40,6 +40,13 @@
     this.listenForGridPageClicks(page, btn);
   };
 
+  /**
+   * Listen for a click on any of the bingo tasks
+   * if so, set the page up.
+   *
+   * @param page
+   * @param btn
+   */
   VeganBingo.prototype.listenForCompletionClick = function (page, btn) {
     var bingoGrid = document.querySelector('bingo-grid');
     var that = this;
