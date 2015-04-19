@@ -18,7 +18,6 @@
 <script>
   suite('<grid-button>', function () {
     test('button should take passed in id', function (done) {
-      // Test a property
       var el = document.querySelector('grid-button');
       el.details = {
         tileId: 'chomsky',
@@ -34,7 +33,6 @@
     })
 
     test('button should take passed in class', function (done) {
-      // Test a property
       var el = document.querySelector('grid-button');
       el.details = {
         tileId: 'chomsky',
@@ -45,6 +43,21 @@
       flush(function() {
         var sp = el.shadowRoot.querySelector('span');
         assert.equal(el.details.tileClass, sp.className);
+        done();
+      });
+    })
+
+    test('button should take passed in descriprion', function (done) {
+      var el = document.querySelector('grid-button');
+      el.details = {
+        tileId: 'chomsky',
+        tileClass: 'style1',
+        description: 'I am a grid button'
+      };
+
+      flush(function() {
+        var sp = el.shadowRoot.querySelector('div.description');
+        assert.equal(el.details.description, sp.textContent);
         done();
       });
     })
