@@ -5,7 +5,7 @@
     "bower": "^1.4.1",
     "web-component-tester": "^2.2.3",
     "selenium-standalone": "*",
-    "chromediver": "*",
+    "chromedriver": "*",
     "connect-livereload": "^0.5.2",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
