@@ -17,7 +17,7 @@
 
 <script>
   suite('<bingo-time>', function () {
-    test('Test bingo time default state', function () {
+    test('Test bingo time default state', function (done) {
       var el = document.querySelector('bingo-time');
       el.settings = {
       };
@@ -25,8 +25,9 @@
       el.total = 16;
 
       flush(function() {
-        var el = el.shadowRoot.querySelector('start-time div.value');
-        assert.equal('Not started amigo', el.textContent);
+        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
+        assert.equal('Not started', textEl.textContent);
+        done();
       });
     })
   });
