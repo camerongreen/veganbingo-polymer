@@ -1,9 +1,9 @@
 module.exports = {
   root: '.',
-  verbose: true,
+  verbose: false,
   plugins: {
     local: {
-      browsers: ['chrome']
+      browsers: ['chrome', 'firefox']
     }
   },
   suites: ['app/test']
