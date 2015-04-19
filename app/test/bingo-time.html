@@ -23,10 +23,8 @@
       el.score = 0;
       el.total = 16;
 
-      assert.deepProperty(el, 'shadowRoot');
-
       flush(function () {
-        var textEl = document.querySelector('bingo-time::shadow div.start-time div.value');
+        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
         assert.equal('Not started', textEl.textContent);
         done();
       });
