@@ -17,6 +17,28 @@
 
 <script>
   suite('<grid-button>', function () {
+    test('button should fire click event with id', function (done) {
+      var el = document.querySelector('grid-button');
+      el.details = {
+        tileId: 'chomsky',
+        tileClass: 'style1',
+        description: 'I am a grid button'
+      };
+
+      flush(function() {
+        el.addEventListener('grid-button-clicked', function (event) {
+          assert.equal(el.details.tileId, event.detail.tileId);
+        });
+        var clickEvent = new MouseEvent("click", {
+          "view": window,
+          "bubbles": true,
+          "cancelable": false
+        });
+        el.dispatchEvent(clickEvent);
+        done();
+      });
+    })
+
     test('button should take passed in id', function (done) {
       var el = document.querySelector('grid-button');
       el.details = {
@@ -47,7 +69,7 @@
       });
     })
 
-    test('button should take passed in descriprion', function (done) {
+    test('button should take passed in description', function (done) {
       var el = document.querySelector('grid-button');
       el.details = {
         tileId: 'chomsky',
