@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<bingo-time id="chomsky"></bingo-time>
+<bingo-time></bingo-time>
 
 <script>
   suite('<bingo-time>', function () {
@@ -23,12 +23,12 @@
       el.score = 0;
       el.total = 16;
 
+      assert.deepProperty(el, 'shadowRoot');
+
       flush(function () {
-        setTimeout(function () {
-          var textEl = el.shadowRoot.querySelector('div.start-time div.value');
-          assert.equal('Not started', textEl.textContent);
-          done();
-        }, 5000);
+        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
+        assert.equal('Not started', textEl.textContent);
+        done();
       });
     })
   });
