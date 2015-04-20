@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>settings-page</title>
+
+  <script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
+  <script src="../../bower_components/web-component-tester/browser.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../elements/settings-page/settings-page.html">
+
+</head>
+<body>
+
+<settings-page></settings-page>
+
+<script>
+  suite('<settings-page>', function () {
+    test('button should be disabled when score 0', function (done) {
+      var el = document.querySelector('settings-page');
+      var btn = el.shadowRoot.getElementById('restart');
+      el.score = 0;
+
+      flush(function() {
+        assert.isTrue(btn.disabled)
+        done();
+      });
+    })
+
+    test('button should be enabled when score non zero', function (done) {
+      var el = document.querySelector('settings-page');
+      var btn = el.shadowRoot.getElementById('restart');
+      el.score = 10;
+
+      flush(function() {
+        assert.isFalse(btn.disabled)
+        done();
+      });
+    })
+  });
+</script>
+
+</body>
+</html>
