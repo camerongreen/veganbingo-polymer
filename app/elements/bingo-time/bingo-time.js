@@ -18,6 +18,9 @@
    * Take a number of seconds and divide it by weeks, days etc
    * and return string of the results
    *
+   * 1 week, 2 days, 12 hours, 10 minutes, 5 hours, 2 minute, 10 seconds
+   * In the life of Arrested Development
+   *
    * @param totalSeconds
    * @returns {string}
    */
@@ -75,6 +78,12 @@
       this.settings = {};
       this.startTime = false;
     },
+    /**
+     * Go through the timestamps on settings and
+     * returns the earliest one or undefined
+     *
+     * @returns {Number|boolean}
+     */
     getStartTime: function () {
       var startTime;
       for (var setting in this.settings) {
@@ -86,6 +95,12 @@
       }
       return startTime;
     },
+    /**
+     * Go through the timestamps on settings and
+     * returns the latest one or undefined
+     *
+     * @returns {Number|boolean}
+     */
     getEndTime: function () {
       var endTime;
       for (var setting in this.settings) {
@@ -95,9 +110,19 @@
       }
       return endTime;
     },
+    /**
+     * If the settings have changed, we need to check if there
+     * has been a restart or if they have completed the challenge
+     * so we send the user off to the tick function
+     */
     settingsChanged: function () {
       this.tick();
     },
+    /**
+     * Update the time displayed to the users but also
+     * check if been a restart or if they have completed the challenge
+     * in which case we do things differently
+     */
     tick: function () {
       this.startTime = this.getStartTime();
       if (this.startTime) {
