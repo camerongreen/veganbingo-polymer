@@ -23,7 +23,7 @@
   var VeganBingo = function (template) {
     this.PAGES = {
       home: 0,
-      grid: 4
+      grid: 5
     };
 
     this.template = template;
