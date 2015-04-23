@@ -9,7 +9,7 @@
     "core-icons": "Polymer/core-icons#~0.5.5",
     "core-iconset": "Polymer/core-iconset#~0.5.5",
     "core-iconset-svg": "Polymer/core-iconset-svg#~0.5.5",
-    "google-chart": "~0.2.1"
+    "bs-timeline": "~0.0.4"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^2.2.3"
