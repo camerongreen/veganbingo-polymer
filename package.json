@@ -1,6 +1,6 @@
 {
-  "name": "polymer",
-  "version": "0.0.0",
+  "name": "veganbingo",
+  "version": "0.0.1",
   "devDependencies": {
     "bower": "^1.4.1",
     "web-component-tester": "^2.2.3",
