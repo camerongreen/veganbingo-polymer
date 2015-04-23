@@ -1,0 +1,22 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="stats-page" attributes="tiles, settings, score, total">
+  <template>
+    <app-globals id="globals"></app-globals>
+    <link rel="stylesheet" href="stats-page.css">
+    <h2>
+      <core-icon icon="assessment"></core-icon>
+      &nbsp;Timeline
+    </h2>
+    <template repeat="{{ stat in stats }}">
+      <paper-shadow>
+      <div class="stats-box">
+        <h3><core-icon icon="check-box"></core-icon>&nbsp;{{stat.description}}</h3>
+        <div>Completed : {{stat.completedDate}}</div>
+      </div>
+      </paper-shadow>
+    </template>
+    <h3 hidden?="{{score !== 0}}">Come back when you've completed some tasks</h3>
+  </template>
+  <script src="stats-page.js"></script>
+</polymer-element>
