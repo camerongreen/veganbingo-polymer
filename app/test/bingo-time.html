@@ -29,6 +29,21 @@
         done();
       });
     })
+
+    test('Test bingo time started state', function (done) {
+      var el = document.querySelector('bingo-time');
+      el.settings = {
+        cows: 1429754069296
+      };
+      el.score = 1;
+      el.total = 16;
+
+      flush(function () {
+        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
+        assert.notEqual('Not started', textEl.textContent);
+        done();
+      });
+    })
   });
 </script>
 
