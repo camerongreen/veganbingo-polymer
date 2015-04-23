@@ -5,8 +5,10 @@
     created: function () {
       this.stats = [];
     },
-    observe: {
-      tiles: 'tilesChanged'
+    settingsChanged: function () {
+      if (this.$.globals.objLength(this.tiles)) {
+        this.updateStats();
+      }
     },
     tilesChanged: function () {
       if (this.$.globals.objLength(this.tiles)) {
