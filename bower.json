@@ -10,9 +10,6 @@
     "core-iconset": "Polymer/core-iconset#~0.5.5",
     "core-iconset-svg": "Polymer/core-iconset-svg#~0.5.5"
   },
-  "devDependencies": {
-    "web-component-tester": "Polymer/web-component-tester#^2.2.3"
-  },
   "homepage": "https://github.com/camerongreen/veganbingo-polymer",
   "description": "Fun game for vegans",
   "main": "app/index.html",
