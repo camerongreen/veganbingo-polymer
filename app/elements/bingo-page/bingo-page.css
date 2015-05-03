@@ -1,4 +1,14 @@
 :host {
   display: block; }
 
+header {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+#rules {
+  padding: 1em; }
+
+#main {
+  padding-right: 1em; }
+
 /*# sourceMappingURL=bingo-page.css.map */

@@ -27,5 +27,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "resolutions": {
+    "polymer": "^0.5.4",
+    "core-collapse": "^0.5",
+    "core-component-page": "^0.5",
+    "polymer-test-tools": "^0.5"
+  }
 }
