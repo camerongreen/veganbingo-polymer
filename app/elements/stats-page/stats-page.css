@@ -1,0 +1,8 @@
+:host {
+  display: block; }
+  :host div.stats-box {
+    background-color: #fff;
+    padding: 1em;
+    margin: 1em; }
+
+/*# sourceMappingURL=stats-page.css.map */
