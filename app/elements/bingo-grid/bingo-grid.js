@@ -51,12 +51,12 @@
   }
 
   Polymer({
-    /**
-     * Setup expected bind vars
-     */
-    created: function () {
-      this.tiles = {};
-      this.settings = {};
+    is: 'bingo-grid',
+    properties : {
+      tiles: Object,
+      score: Number,
+      settings: Object,
+      total: Number
     },
     /**
      * Set a tile to

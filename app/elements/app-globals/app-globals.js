@@ -1,5 +1,6 @@
 (function () {
   Polymer({
+    is: 'app-globals',
     ready: function () {
       this.namespace = 'org.camerongreen.veganbingo';
     },

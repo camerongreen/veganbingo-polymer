@@ -1,8 +1,9 @@
 (function () {
   Polymer({
-    created: function () {
-      this.tiles = {};
-      this.settings = {};
+    is: 'bingo-data',
+    properties: {
+      tiles: Object,
+      settings: Object
     },
     ready: function () {
       this.addEventListener('core-response', function (event) {

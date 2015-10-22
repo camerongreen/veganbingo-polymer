@@ -74,8 +74,13 @@
   }
 
   Polymer({
+    is: 'bingo-time',
+    properties: {
+      settings: Object,
+      score: Number,
+      total: Number
+    },
     created: function () {
-      this.settings = {};
       this.startTime = false;
     },
     /**

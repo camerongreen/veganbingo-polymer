@@ -2,13 +2,14 @@
   "name": "veganbingo",
   "version": "0.0.2",
   "dependencies": {
-    "iron-elements": "PolymerElements/iron-elements#^1.0.0",
+    "iron-elements": "PolymerElements/iron-elements#~1.0.4",
     "iron-icon": "PolymerElements/iron-icon#^1.0.0",
     "iron-icons": "PolymerElements/iron-icons#^1.0.0",
     "iron-iconset": "PolymerElements/iron-iconset#^1.0.0",
     "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.0",
-    "paper-elements": "PolymerElements/paper-elements#^1.0.0",
-    "polymer": "Polymer/polymer#^1.0.0",
+    "neon-animations" : "https://github.com/PolymerElements/neon-animation.git#v1.0.7",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.5",
+    "polymer": "Polymer/polymer#~1.1.5",
     "webcomponentsjs": "~0.7.15"
   },
   "devDependencies": {

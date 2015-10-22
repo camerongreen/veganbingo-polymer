@@ -1,7 +1,12 @@
 (function () {
   Polymer({
-    tiles: {},
-    settings: {},
+    is: 'stats-page',
+    properties: {
+      tiles: Object,
+      settings: Object,
+      score: Number,
+      total: Number
+    },
     created: function () {
       this.stats = [];
     },

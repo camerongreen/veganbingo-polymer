@@ -1,7 +1,8 @@
 (function () {
   Polymer({
-    created: function() {
-      this.settings = {};
+    is: 'bingo-settings',
+    properties: {
+      settings: Object
     },
     ready: function () {
       this.name = this.$.globals.namespace + '.values';

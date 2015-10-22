@@ -1,9 +1,18 @@
 (function () {
+  'use strict';
+
   Polymer({
-    created: function () {
-      this.score = 0;
-      this.total = 0;
-      this.scoreLabel = "Score";
+    is: 'bingo-score',
+    scoreLabel: 'Score',
+    properties: {
+      score: {
+        type: Number,
+        value: 0
+      },
+      total: {
+        type: Number,
+        value: 0
+      }
     },
     scoreChanged: function () {
       if ((this.score === this.total) && (this.total > 0)) {

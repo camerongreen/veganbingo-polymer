@@ -1,17 +1,17 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="about-page" attributes="" noscript>
+<dom-module id="about-page" attributes="" noscript>
+  <link rel="import" type="css" href="about-page.css">
   <template>
-    <link rel="stylesheet" href="about-page.css">
     <div layout vertical>
       <h2>
-        <core-icon icon="info"></core-icon>&nbsp;About
+        <iron-icon icon="info"></iron-icon>&nbsp;About
       </h2>
 
-      <div><p>This was developed for the animals by Cameron Green.  Originally I wrote it as an&nbsp;<core-icon icon="android"></core-icon>&nbsp;Android application, so you can get that for free from the Play Store if you want an offline version.</p>
+      <div><p>This was developed for the animals by Cameron Green.  Originally I wrote it as an&nbsp;<iron-icon icon="android"></iron-icon>&nbsp;Android application, so you can get that for free from the Play Store if you want an offline version.</p>
 
         <p>Check out my web page at:<br/>
-          <core-icon icon="language"></core-icon>&nbsp;<a href="http://camerongreen.org" target="_blank" title="Website of Cameron Green">camerongreen.org</a><br/>
+          <iron-icon icon="language"></iron-icon>&nbsp;<a href="http://camerongreen.org" target="_blank" title="Website of Cameron Green">camerongreen.org</a><br/>
           to get in touch with me or to read my philosophies.
         </p>
 
@@ -29,4 +29,8 @@
       <home-button text="Home"></home-button>
     </div>
   </template>
-</polymer-element>
+
+  <script>
+    Polymer({ is: "about-page" });
+  </script>
+</dom-module>

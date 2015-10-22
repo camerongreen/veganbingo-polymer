@@ -1,12 +1,12 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="grid-button" attributes="details" on-click="{{doClick}}">
+<dom-module id="grid-button" on-click="{{doClick}}">
+  <link rel="import" type="css" href="grid-button.css">
   <template>
-    <link rel="stylesheet" href="grid-button.css">
     <span id="{{details.tileId}}" class="{{details.tileClass}}">
       <img src="images/{{details | pictureName}}" alt="{{details.description}}" title="{{details.description}}" />
       <div class="description">{{details.description}}</div>
     </span>
   </template>
   <script src="grid-button.js"></script>
-</polymer-element>
+</dom-module>

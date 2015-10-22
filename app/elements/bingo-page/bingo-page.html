@@ -1,8 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="bingo-page" attributes="" noscript>
+<dom-module id="bingo-page">
+  <link rel="import" type="css" href="bingo-page.css">
   <template>
-    <link rel="stylesheet" href="bingo-page.css">
     <div layout vertical>
       <div layout horizontal center>
         <img id="header-image"/>
@@ -14,15 +14,19 @@
       </div>
 
       <h3>Also acceptable</h3>
-      <paper-shadow id="rules" z="1">
+      <paper-material id="rules" z="1">
         <p></p>
-      </paper-shadow>
+      </paper-material>
 
       <h3>More information</h3>
-      <paper-shadow id="main" z="1">
-      </paper-shadow>
+      <paper-material id="main" z="1">
+      </paper-material>
 
       <home-button text="Home"></home-button>
     </div>
   </template>
-</polymer-element>
+
+  <script>
+    Polymer({ is: "bingo-page" });
+  </script>
+</dom-module>

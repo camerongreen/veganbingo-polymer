@@ -1,15 +1,15 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="bingo-score" attributes="score, total">
+<dom-module id="bingo-score">
+  <link rel="import" type="css" href="bingo-score.css">
   <template>
-    <link rel="stylesheet" href="bingo-score.css">
-    <span tool id="score"><span class="score-label">{{scoreLabel}} </span>{{score}} / {{total}}</span>
+    <span id="score"><span class="score-label">{{scoreLabel}}</span> <span>{{score}}</span> / <span>{{total}}</span></span>
     <paper-dialog unresolved id="scoreAchieved" heading="Fan-Vegan Bingo-tastic!!!!" transition="core-transition-center">
-      <p><core-icon icon="star"></core-icon> Congratulations on completing Vegan Bingo! <core-icon icon="star"></core-icon></p>
-      <p>You have joined an elite class and are now officially a level 5 Vegan <core-icon icon="favorite-outline"></core-icon></p>
-      <p>I'd love to know how you did (see the <core-icon icon="info"></core-icon> About page for the Vegan Bingo Facebook page or contact me via my website)</p>
-      <p>To restart, go to the <core-icon icon="settings"></core-icon> Settings page.</p>
+      <p><iron-icon icon="star"></iron-icon> Congratulations on completing Vegan Bingo! <iron-icon icon="star"></iron-icon></p>
+      <p>You have joined an elite class and are now officially a level 5 Vegan <iron-icon icon="favorite-outline"></iron-icon></p>
+      <p>I'd love to know how you did (see the <iron-icon icon="info"></iron-icon> About page for the Vegan Bingo Facebook page or contact me via my website)</p>
+      <p>To restart, go to the <iron-icon icon="settings"></iron-icon> Settings page.</p>
     </paper-dialog>
   </template>
   <script src="bingo-score.js"></script>
-</polymer-element>
+</dom-module>

@@ -1,11 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="settings-page" attributes="score" noscript>
+<dom-module id="settings-page">
+  <link rel="import" type="css" href="settings-page.css">
   <template>
-    <link rel="stylesheet" href="settings-page.css">
     <div layout vertical>
       <h2>
-        <core-icon icon="settings"></core-icon>&nbsp;Settings
+        <iron-icon icon="settings"></iron-icon>&nbsp;Settings
       </h2>
       <div>
         <h3>Restart game</h3>
@@ -18,4 +18,13 @@
       <home-button text="Home"></home-button>
     </div>
   </template>
-</polymer-element>
+
+  <script>
+    Polymer({
+      is: "settings-page",
+      properties: {
+        score: Number
+      }
+    });
+  </script>
+</dom-module>

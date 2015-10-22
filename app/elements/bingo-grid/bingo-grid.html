@@ -1,14 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import"
-      href="../../bower_components/core-layout-grid/core-layout-grid.html">
-
 <link rel="import" href="../grid-button/grid-button.html">
 
-<polymer-element name="bingo-grid" attributes="tiles, score, settings, total">
+<dom-module id="bingo-grid">
+  <link rel="import" type="css" href="bingo-grid.css">
   <template>
     <app-globals id="globals"></app-globals>
 
-    <link rel="stylesheet" href="bingo-grid.css">
     <template repeat="{{row in gridTiles}}">
       <div horizontal layout>
         <template repeat="{{tile in row}}">
@@ -18,4 +15,4 @@
     </template>
   </template>
   <script src="bingo-grid.js"></script>
-</polymer-element>
+</dom-module>

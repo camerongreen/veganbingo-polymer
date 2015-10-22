@@ -1,8 +1,8 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="bingo-time" attributes="settings, score, total">
+<dom-module id="bingo-time">
+  <link rel="import" type="css" href="bingo-time.css">
   <template>
-    <link rel="stylesheet" href="bingo-time.css">
     <div layout horizontal center-justified hidden?="{{!startTime}}" class="timer">
       <div class="label">Timer -</div>
       <div class="value">{{timer}}</div>
@@ -13,4 +13,4 @@
     </div>
   </template>
   <script src="bingo-time.js"></script>
-</polymer-element>
+</dom-module>

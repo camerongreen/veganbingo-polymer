@@ -2,97 +2,132 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vegan Bingo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vegan Bingo</title>
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="manifest" href="manifest.json">
+    <!-- Chrome for Android theme color -->
+    <meta name="theme-color" content="#2E3AA1">
 
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild-->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="manifest" href="manifest.json">
 
-  <!-- build:js bower_components/webcomponentsjs/webcomponents.min.js -->
-  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-  <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild-->
 
-  <!-- will be replaced with elements/elements.vulcanized.html -->
-  <link rel="import" href="elements/elements.html">
-  <!-- endreplace-->
+    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- endbuild -->
+
+    <!-- will be replaced with elements/elements.vulcanized.html -->
+    <link rel="import" href="elements/elements.html">
+    <!-- endreplace-->
 </head>
 
 <body unresolved fullbleed layout vertical>
-<template is="auto-binding" id="app" namespace="org.camerongreen.veganbingo">
-  <bingo-settings settings="{{settings}}"></bingo-settings>
+<span id="browser-sync-binding"></span>
+<template is="dom-bind" id="app" namespace="org.camerongreen.veganbingo">
+    <bingo-settings settings="{{settings}}"></bingo-settings>
 
-  <core-scaffold mode="standard">
+    <paper-drawer-panel id="paperDrawerPanel">
+        <!-- Drawer -->
+        <paper-scroll-header-panel drawer fixed>
 
-    <!-- Drawer -->
-    <core-header-panel navigation flex>
+            <!-- Drawer Toolbar -->
+            <paper-toolbar id="drawToolbar">
+                <span class="paper-font-title">Menu</span>
+            </paper-toolbar>
 
-      <!-- Drawer Toolbar -->
-      <core-toolbar id="navHeader">
-        <span>Menu</span>
-      </core-toolbar>
+            <!-- Drawer Content -->
+            <paper-menu class="list" attr-for-select="data-route" selected="[[route]]">
+                <a data-route="home" href="/" on-click="onDataRouteClick">
+                    <iron-icon icon="apps"></iron-icon>
+                    <span>Home</span>
+                </a>
+                <a data-route="help" href="/help" on-click="onDataRouteClick">
+                    <iron-icon icon="help"></iron-icon>
+                    <span>How to play</span>
+                </a>
+                <a data-route="about" href="/about" on-click="onDataRouteClick">
+                    <iron-icon icon="info"></iron-icon>
+                    <span>About</span>
+                </a>
+                <a data-route="timeline" href="/timeline" on-click="onDataRouteClick">
+                    <iron-icon icon="assessment"></iron-icon>
+                    <span>Timeline</span>
+                </a>
+                <a data-route="settings" href="/settings" on-click="onDataRouteClick">
+                    <iron-icon icon="settings"></iron-icon>
+                    <span>Settings</span>
+                </a>
+            </paper-menu>
+        </paper-scroll-header-panel>
 
-      <!-- Drawer Content -->
-      <core-menu selected="{{pageSelected}}">
-        <core-item label="Home" icon="apps"></core-item>
-        <core-item label="How to play" icon="help"></core-item>
-        <core-item label="About" icon="info"></core-item>
-        <core-item label="Timeline" icon="assessment"></core-item>
-        <core-item label="Settings" icon="settings"></core-item>
-      </core-menu>
 
-    </core-header-panel>
+        <!-- Main -->
+        <paper-scroll-header-panel main condenses keep-condensed-header>
+            <!-- Main Toolbar -->
+            <paper-toolbar id="mainToolbar" class="short">
+                <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+                <!-- Toolbar icons -->
+                <home-button class="flex" text="Vegan Bingo"></home-button>
+                <bingo-score score="{{score}}" total="{{total}}"></bingo-score>
+            </paper-toolbar>
 
-    <home-button text="Vegan Bingo" tool flex></home-button>
-    <bingo-score tool score="{{score}}" total="{{total}}"></bingo-score>
-
-    <!-- Main -->
-    <div class="content">
-      <core-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
-        <section id="game">
-          <div layout vertical>
-            <bingo-data file="scripts/data.json" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
-            <bingo-grid settings="{{settings}}" tiles="{{tiles}}" score="{{score}}" total="{{total}}"></bingo-grid>
-            <bingo-time settings="{{settings}}" score="{{score}}" total="{{total}}"></bingo-time>
-          </div>
-        </section>
-        <section class="info">
-          <how-to-play-page id="how"></how-to-play-page>
-        </section>
-        <section class="info">
-          <about-page id="about"></about-page>
-        </section>
-        <section class="info">
-          <stats-page id="stats" tiles="{{tiles}}" settings="{{settings}}" score="{{score}}" total="{{total}}"></stats-page>
-        </section>
-        <section class="info">
-          <settings-page id="settings" score="{{score}}"></settings-page>
-        </section>
-        <section class="info">
-          <bingo-page id="bingo-page"></bingo-page>
-        </section>
-      </core-animated-pages>
-    </div>
-    <!-- /.content -->
-  </core-scaffold>
+            <div class="content">
+                <h1>Hello</h1>
+                <!--neon-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
+                    <section id="game">
+                        <div layout vertical>
+                            <bingo-data file="scripts/data.json" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
+                            <bingo-grid settings="{{settings}}" tiles="{{tiles}}" score="{{score}}"
+                                        total="{{total}}"></bingo-grid>
+                            <bingo-time settings="{{settings}}" score="{{score}}" total="{{total}}"></bingo-time>
+                        </div>
+                    </section>
+                    <section class="info">
+                        <how-to-play-page id="how"></how-to-play-page>
+                    </section>
+                    <section class="info">
+                        <about-page id="about"></about-page>
+                    </section>
+                    <section class="info">
+                        <stats-page id="stats" tiles="{{tiles}}" settings="{{settings}}" score="{{score}}"
+                                    total="{{total}}"></stats-page>
+                    </section>
+                    <section class="info">
+                        <settings-page id="settings" score="{{score}}"></settings-page>
+                    </section>
+                    <section class="info">
+                        <bingo-page id="bingo-page"></bingo-page>
+                    </section>
+                </neon-animated-pages-->
+            </div>
+        </paper-scroll-header-panel>
+        <!-- /.content -->
+    </paper-drawer-panel>
 </template>
 
 <!-- build:js scripts/app.js -->
 <script src="scripts/app.js"></script>
 <!-- endbuild-->
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-579291-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-579291-1', 'auto');
+    ga('send', 'pageview');
 </script>
 </body>
 

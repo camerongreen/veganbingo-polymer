@@ -9,9 +9,9 @@
 
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
-  app.addEventListener('template-bound', function () {
-    var vb = new VeganBingo(this);
-    vb.start();
+  app.addEventListener('dom-change', function () {
+    //var vb = new VeganBingo(this);
+    //vb.start();
   });
 
   /**
@@ -32,7 +32,7 @@
 
   VeganBingo.prototype.start = function () {
     var page = document.getElementById('bingo-page');
-    var btn = page.shadowRoot.querySelector('#completionButton');
+    var btn = page.querySelector('#completionButton');
 
     this.listenForHomeButtonClicks();
     this.listenForRestartButtonClicks();
@@ -74,7 +74,7 @@
   };
 
   VeganBingo.prototype.setImageStatus = function (page, elId, done) {
-    page.shadowRoot.getElementById('header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
+    page.getElementById('header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
   };
 
   VeganBingo.prototype.listenForGridPageClicks = function (page, btn) {
@@ -83,9 +83,9 @@
       that.template.pageSelected = that.PAGES.grid;
 
       // populate page with appropriate stuff
-      page.shadowRoot.getElementById('description').innerHTML = event.detail.description;
-      page.shadowRoot.querySelector('#rules p').innerHTML = event.detail.rules;
-      page.shadowRoot.getElementById('main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
+      page.getElementById('description').innerHTML = event.detail.description;
+      page.querySelector('#rules p').innerHTML = event.detail.rules;
+      page.getElementById('main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
       btn.setAttribute('bingo-page', event.detail.tileId);
       that.setButtonStatus(btn, event.detail.done);
       that.setImageStatus(page, event.detail.tileId, event.detail.done);
@@ -93,7 +93,7 @@
   };
 
   VeganBingo.prototype.listenForRestartButtonClicks = function () {
-    document.querySelector('#settings::shadow #restart').addEventListener('click', function () {
+    document.querySelector('#settings #restart').addEventListener('click', function () {
       var dataGrid = document.querySelector('bingo-grid');
       dataGrid.restart();
     });

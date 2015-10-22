@@ -1,10 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="bingo-data" attributes="tiles, file, settings">
+<dom-module id="bingo-data">
   <template>
     <bingo-settings id="settings"></bingo-settings>
-    <core-ajax id="ajax" auto url="{{file}}"
-               handleAs="json" on-core-response="{{tilesLoaded}}"></core-ajax>
+    <iron-ajax id="ajax" auto url="{{file}}"
+               handleAs="json" on-core-response="{{tilesLoaded}}"></iron-ajax>
   </template>
   <script src="bingo-data.js"></script>
-</polymer-element>
+</dom-module>

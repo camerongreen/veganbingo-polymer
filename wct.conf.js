@@ -3,8 +3,8 @@ module.exports = {
   verbose: false,
   plugins: {
     local: {
-      browsers: ['chrome', 'firefox']
+      browsers: ['chrome']
     }
   },
-  suites: ['app/test']
+  suites: ['app/test/bingo-grid.html']
 };

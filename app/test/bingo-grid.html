@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>bingo0grid</title>
 
-  <script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../bower_components/web-component-tester/browser.js"></script>
 
   <!-- Step 1: import the element to test -->
@@ -33,7 +33,7 @@
       }
 
       flush(function () {
-        var btns = el.shadowRoot.querySelectorAll('grid-button');
+        var btns = el.querySelectorAll('grid-button');
         assert.equal(16, btns.length);
         done();
       });

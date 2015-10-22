@@ -1,5 +1,9 @@
 (function () {
   Polymer({
+    is: 'grid-button',
+    properties: {
+      details: Object
+    },
     doClick: function () {
       this.fire('grid-button-clicked', this.details);
     },
@@ -13,9 +17,6 @@
         }
         return image + '.png';
       }
-    },
-    create: function () {
-      this.details = {};
     }
   });
 })();
