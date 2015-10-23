@@ -42,26 +42,36 @@
 
             <!-- Drawer Content -->
             <paper-menu class="list" attr-for-select="data-route" selected="[[route]]">
+                <paper-item>
                 <a data-route="home" href="/" on-click="onDataRouteClick">
                     <iron-icon icon="apps"></iron-icon>
                     <span>Home</span>
                 </a>
+                </paper-item>
+                <paper-item>
                 <a data-route="help" href="/help" on-click="onDataRouteClick">
                     <iron-icon icon="help"></iron-icon>
                     <span>How to play</span>
                 </a>
+                </paper-item>
+                <paper-item>
                 <a data-route="about" href="/about" on-click="onDataRouteClick">
                     <iron-icon icon="info"></iron-icon>
                     <span>About</span>
                 </a>
+                </paper-item>
+                <paper-item>
                 <a data-route="timeline" href="/timeline" on-click="onDataRouteClick">
                     <iron-icon icon="assessment"></iron-icon>
                     <span>Timeline</span>
                 </a>
+                </paper-item>
+                <paper-item>
                 <a data-route="settings" href="/settings" on-click="onDataRouteClick">
                     <iron-icon icon="settings"></iron-icon>
                     <span>Settings</span>
                 </a>
+                </paper-item>
             </paper-menu>
         </paper-scroll-header-panel>
 

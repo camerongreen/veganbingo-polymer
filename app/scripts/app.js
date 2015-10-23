@@ -10,7 +10,7 @@
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function () {
-    //var vb = new VeganBingo(this);
+    var vb = new VeganBingo(this);
     //vb.start();
   });
 
