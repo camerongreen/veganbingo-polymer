@@ -75,13 +75,11 @@
 
   Polymer({
     is: 'bingo-time',
+    startTime: false,
     properties: {
       settings: Object,
       score: Number,
       total: Number
-    },
-    created: function () {
-      this.startTime = false;
     },
     /**
      * Go through the timestamps on settings and

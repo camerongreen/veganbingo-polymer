@@ -11,8 +11,13 @@
   // have resolved and content has been stamped to the page
   app.addEventListener('dom-change', function () {
     var vb = new VeganBingo(this);
-    //vb.start();
+    vb.start();
   });
+
+  // Scroll page to top and expand header
+  app.scrollPageToTop = function() {
+    document.getElementById('mainContainer').scrollTop = 0;
+  };
 
   /**
    * Class for the main Vegan Bingo tasks

@@ -43,34 +43,34 @@
             <!-- Drawer Content -->
             <paper-menu class="list" attr-for-select="data-route" selected="[[route]]">
                 <paper-item>
-                <a data-route="home" href="/" on-click="onDataRouteClick">
                     <iron-icon icon="apps"></iron-icon>
-                    <span>Home</span>
-                </a>
+                    <a data-route="home" href="/">
+                        <span>Home</span>
+                    </a>
                 </paper-item>
                 <paper-item>
-                <a data-route="help" href="/help" on-click="onDataRouteClick">
                     <iron-icon icon="help"></iron-icon>
-                    <span>How to play</span>
-                </a>
+                    <a data-route="help" href="/help">
+                        <span>How to play</span>
+                    </a>
                 </paper-item>
                 <paper-item>
-                <a data-route="about" href="/about" on-click="onDataRouteClick">
                     <iron-icon icon="info"></iron-icon>
-                    <span>About</span>
-                </a>
+                    <a data-route="about" href="/about">
+                        <span>About</span>
+                    </a>
                 </paper-item>
                 <paper-item>
-                <a data-route="timeline" href="/timeline" on-click="onDataRouteClick">
                     <iron-icon icon="assessment"></iron-icon>
-                    <span>Timeline</span>
-                </a>
+                    <a data-route="timeline" href="/timeline">
+                        <span>Timeline</span>
+                    </a>
                 </paper-item>
                 <paper-item>
-                <a data-route="settings" href="/settings" on-click="onDataRouteClick">
                     <iron-icon icon="settings"></iron-icon>
-                    <span>Settings</span>
-                </a>
+                    <a data-route="settings" href="/settings">
+                        <span>Settings</span>
+                    </a>
                 </paper-item>
             </paper-menu>
         </paper-scroll-header-panel>
@@ -87,9 +87,8 @@
             </paper-toolbar>
 
             <div class="content">
-                <h1>Hello</h1>
-                <!--neon-animated-pages selected="{{pageSelected}}" transitions="cross-fade-all">
-                    <section id="game">
+                <iron-pages attr-for-selected="data-route" selected="{{route}}" transitions="cross-fade-all">
+                    <section id="game" data-route="home">
                         <div layout vertical>
                             <bingo-data file="scripts/data.json" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
                             <bingo-grid settings="{{settings}}" tiles="{{tiles}}" score="{{score}}"
@@ -97,23 +96,24 @@
                             <bingo-time settings="{{settings}}" score="{{score}}" total="{{total}}"></bingo-time>
                         </div>
                     </section>
-                    <section class="info">
+                    <section class="info" data-route="help">
                         <how-to-play-page id="how"></how-to-play-page>
                     </section>
-                    <section class="info">
+                    <section class="info" data-route="about">
+                        <h2>About</h2>
                         <about-page id="about"></about-page>
                     </section>
-                    <section class="info">
+                    <section class="info" data-route="timeline">
                         <stats-page id="stats" tiles="{{tiles}}" settings="{{settings}}" score="{{score}}"
                                     total="{{total}}"></stats-page>
                     </section>
-                    <section class="info">
+                    <section class="info" data-route="settings">
                         <settings-page id="settings" score="{{score}}"></settings-page>
                     </section>
                     <section class="info">
                         <bingo-page id="bingo-page"></bingo-page>
                     </section>
-                </neon-animated-pages-->
+                </iron-pages>
             </div>
         </paper-scroll-header-panel>
         <!-- /.content -->
