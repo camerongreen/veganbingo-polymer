@@ -4,7 +4,7 @@
   <link rel="import" type="css" href="grid-button.css">
   <template>
     <span id="{{details.tileId}}" class="{{details.tileClass}}">
-      <img src="images/{{details | pictureName}}" alt="{{details.description}}" title="{{details.description}}" />
+      <img src="images/{{pictureName(details)}}" alt="{{details.description}}" title="{{details.description}}" />
       <div class="description">{{details.description}}</div>
     </span>
   </template>

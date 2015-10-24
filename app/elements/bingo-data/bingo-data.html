@@ -2,9 +2,8 @@
 
 <dom-module id="bingo-data">
   <template>
-    <bingo-settings id="settings"></bingo-settings>
     <iron-ajax id="ajax" auto url="{{file}}"
-               handleAs="json" on-core-response="{{tilesLoaded}}"></iron-ajax>
+               handleAs="json" on-response="loadTiles"></iron-ajax>
   </template>
   <script src="bingo-data.js"></script>
 </dom-module>

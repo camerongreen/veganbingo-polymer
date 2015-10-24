@@ -2,16 +2,19 @@
   Polymer({
     is: 'bingo-data',
     properties: {
-      tiles: Object,
+      tiles: {
+        type: Object,
+        notify: true
+      },
       settings: Object
     },
-    ready: function () {
-      this.addEventListener('core-response', function (event) {
-        this.tiles = event.detail.response;
-        for (var tile in this.tiles) {
-          this.tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
-        }
-      });
+    tilesLoaded: false,
+    loadTiles: function () {
+      this.tiles = event.detail.response;
+      for (var tile in this.tiles) {
+        this.tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
+      }
+      this.tilesLoaded = true;
     },
     getTiles: function () {
       return this.tiles;

@@ -6,12 +6,12 @@ body {
   color: #333;
 }
 
-core-scaffold::shadow core-drawer-panel core-header-panel core-toolbar {
+paper-drawer-panel paper-header-panel paper-toolbar {
   background-color: $deep-purple;
 }
 
-core-header-panel {
-  &::shadow #mainContainer {
+paper-header-panel {
+  & #mainContainer {
     background-color: #DDD;
   }
 
@@ -49,7 +49,7 @@ core-header-panel {
   background-color: #EEEEEE;
 }
 
-core-animated-pages {
+iron-pages {
   position: absolute;
   top: 0;
   right: 0;
@@ -73,7 +73,7 @@ section {
 #bingo-page {
   padding-left: 5%;
   padding-right: 5%;
-  &::shadow {
+  & {
     #header-image {
       padding: 1%;
     }
@@ -84,10 +84,10 @@ section {
   }
 }
 
-bingo-grid::shadow grid-button {
+bingo-grid grid-button {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
-  &::shadow div.description {
+  & div.description {
     margin-top: 1em;
     font-weight: bold;
   }
@@ -97,20 +97,20 @@ bingo-time {
   background-color: #000;
   color: #fff;
   padding: 1em;
-  &::shadow > div {
+  & > div {
     text-align: center;
   }
 }
 
-section /deep/ home-button::shadow div.home-button {
+section home-button div.home-button {
   margin-top: 10px;
   margin-bottom: 10px;
   color: #666;
   text-decoration: none;
 }
 
-html /deep/ paper-dialog {
-  &::shadow h1 {
+html paper-dialog {
+  & h1 {
     color: green;
   }
 }

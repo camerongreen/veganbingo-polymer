@@ -2,7 +2,11 @@
   Polymer({
     is: 'bingo-settings',
     properties: {
-      settings: Object
+      settings: {
+        type: Object,
+        value: {},
+        notify: true
+      }
     },
     ready: function () {
       this.name = this.$.globals.namespace + '.values';

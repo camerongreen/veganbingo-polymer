@@ -52,8 +52,11 @@
 
   Polymer({
     is: 'bingo-grid',
-    properties : {
-      tiles: Object,
+    properties: {
+      tiles: {
+        type: Object,
+        observer: 'tilesChanged'
+      },
       score: Number,
       settings: Object,
       total: Number
