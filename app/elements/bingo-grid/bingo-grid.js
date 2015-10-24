@@ -89,6 +89,9 @@
       }
       this.tilesChanged();
     },
+    classes: function (classes) {
+      return classes;
+    },
     count: function (countAll) {
       var count = 0;
       for (var tile in this.tiles) {

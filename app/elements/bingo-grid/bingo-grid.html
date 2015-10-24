@@ -5,10 +5,10 @@
   <link rel="import" type="css" href="bingo-grid.css">
   <template>
     <app-globals id="globals"></app-globals>
-    <template is="dom-repeat" items="{{gridTiles}}">
-      <div horizontal layout>
-        <template is="dom-repeat" items="{{item}}">
-          <grid-button details="{{item}}" hero-id="hero-{{item.tileId}}" class="flex {{item.tileClass}}"></grid-button>
+    <template is="dom-repeat" items="{{gridTiles}}" as="row">
+      <div class="horizontal layout">
+        <template is="dom-repeat" items="{{row}}" as="tile">
+          <grid-button details="{{tile}}" hero-id="hero-{{tile.tileId}}" class$="flex {{classes(tile.tileClass)}}"></grid-button>
         </template>
       </div>
     </template>
