@@ -57,13 +57,6 @@
     });
   };
 
-  VeganBingo.prototype.listenForHomeButtonClicks = function () {
-    var that = this;
-    document.addEventListener('home-button-clicked', function () {
-      that.template.pageSelected = that.PAGES.home;
-    });
-  };
-
   VeganBingo.prototype.listenForRestartButtonClicks = function () {
     document.querySelector('#settings #restart').addEventListener('click', function () {
       var dataGrid = document.querySelector('bingo-grid');

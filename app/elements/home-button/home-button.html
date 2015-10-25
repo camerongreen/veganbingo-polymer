@@ -1,11 +1,8 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
-
 <dom-module id="home-button">
   <!--link rel="import" type="css" href="home-button.css"-->
   <template>
-    <div class="home-button" on-click="doClick">
-      <iron-icon icon="apps"></iron-icon> <span>{{text}}</span>
+    <div class="home-button">
+      <iron-icon icon="apps"></iron-icon> <a href="/">{{text}}</a>
     </div>
   </template>
   <script src="home-button.js"></script>
