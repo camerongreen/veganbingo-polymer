@@ -53,14 +53,14 @@
   Polymer({
     is: 'bingo-grid',
     properties: {
-      tiles: {
-        type: Object,
-        observer: 'tilesChanged'
-      },
+      tiles: Object,
       score: Number,
       settings: Object,
       total: Number
     },
+    observers: [
+      'tilesChanged(tiles.*)'
+    ],
     /**
      * Set a tile to
      *
@@ -68,7 +68,7 @@
      * @returns {number|boolean}
      */
     toggleDone: function (elId) {
-      this.tiles[elId].done = this.tiles[elId].done ? false : Date.now();
+      this.set('tiles.' + elId + '.done', this.tiles[elId].done ? false : Date.now());
       this.tilesChanged();
       return this.tiles[elId].done;
     },
@@ -84,7 +84,7 @@
     restart: function () {
       for (var tile in this.tiles) {
         if (this.tiles.hasOwnProperty(tile)) {
-          this.tiles[tile].done = false;
+          this.set('tiles.' + elId + '.done', false);
         }
       }
       this.tilesChanged();
