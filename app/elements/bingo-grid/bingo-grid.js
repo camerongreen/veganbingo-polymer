@@ -55,7 +55,10 @@
     properties: {
       tiles: Object,
       score: Number,
-      settings: Object,
+      settings: {
+        type: Object,
+        notify: true
+      },
       total: Number
     },
     observers: [

@@ -8,6 +8,9 @@
         notify: true
       }
     },
+    observers: [
+      'settingsChanged(settings.*)'
+    ],
     ready: function () {
       this.name = this.$.globals.namespace + '.values';
       this.load();
@@ -16,7 +19,9 @@
       this.settings = localStorage.hasOwnProperty(this.name) ? JSON.parse(localStorage[this.name]) : {};
     },
     settingsChanged: function () {
-      localStorage[this.name] = JSON.stringify(this.settings);
+      if (this.name) {
+        localStorage[this.name] = JSON.stringify(this.settings);
+      }
     }
   });
 })();

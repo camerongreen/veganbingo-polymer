@@ -7,7 +7,8 @@
     properties: {
       score: {
         type: Number,
-        value: 0
+        value: 0,
+        observer: 'scoreChanged'
       },
       total: {
         type: Number,
