@@ -1,32 +1,31 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-
 <dom-module id="bingo-page">
   <link rel="import" type="css" href="bingo-page.css">
   <template>
-    <div layout vertical>
-      <header layout horizontal center>
-        <img id="header-image"/>
+    <div class="layout vertical">
+      <header class="layout horizontal center">
+        <img src="{{image}}" id="header-image"/>
 
-        <h2 id="description" flex></h2>
+        <h2 id="description" class="flex">{{page.description}}</h2>
       </header>
-      <div layout horizontal>
-        <paper-button id="completionButton" bingo-page="" raised class="colored" role="button"></paper-button>
+      <div class="layout horizontal">
+        <paper-button id="completionButton" bingo-page="{{page.tileId}}" raised colored role="button" on-click="doClick">{{btnText}}</paper-button>
       </div>
 
       <h3>Also acceptable</h3>
       <paper-material id="rules" z="1">
-        <p></p>
+          <p>{{page.rules}}</p>
       </paper-material>
 
       <h3>More information</h3>
       <paper-material id="main" z="1">
+        <template is="dom-repeat" items="{{page.main}}">
+          <p>{{item}}</p>
+        </template>
       </paper-material>
 
       <home-button text="Home"></home-button>
     </div>
   </template>
 
-  <script>
-    Polymer({ is: "bingo-page" });
-  </script>
+  <script src="bingo-page.js"></script>
 </dom-module>

@@ -37,12 +37,10 @@
 
   VeganBingo.prototype.start = function () {
     var page = document.getElementById('bingo-page');
-    var btn = page.querySelector('#completionButton');
 
     this.listenForHomeButtonClicks();
     this.listenForRestartButtonClicks();
-    this.listenForCompletionClick(page, btn);
-    this.listenForGridPageClicks(page, btn);
+    this.listenForCompletionClick();
   };
 
   /**
@@ -52,14 +50,10 @@
    * @param page
    * @param btn
    */
-  VeganBingo.prototype.listenForCompletionClick = function (page, btn) {
-    var bingoGrid = document.querySelector('bingo-grid');
-    var that = this;
-    btn.addEventListener('click', function () {
-      var elId = btn.getAttribute('bingo-page');
-      var done = bingoGrid.toggleDone(elId);
-      that.setButtonStatus(btn, done);
-      that.setImageStatus(page, elId, done);
+  VeganBingo.prototype.listenForCompletionClick = function () {
+    document.addEventListener('bingo-button-clicked', function (e) {
+      var bingoGrid = document.querySelector('bingo-grid');
+      bingoGrid.toggleDone(e.detail);
     });
   };
 
@@ -67,33 +61,6 @@
     var that = this;
     document.addEventListener('home-button-clicked', function () {
       that.template.pageSelected = that.PAGES.home;
-    });
-  };
-
-  VeganBingo.prototype.setButtonStatus = function (btn, done) {
-    if (done) {
-      btn.innerHTML = 'You got a bingo!';
-    } else {
-      btn.innerHTML = 'Click here if someone said this';
-    }
-  };
-
-  VeganBingo.prototype.setImageStatus = function (page, elId, done) {
-    page.getElementById('header-image').setAttribute('src', 'images/' + elId + (done ? '_done' : '') + '.png');
-  };
-
-  VeganBingo.prototype.listenForGridPageClicks = function (page, btn) {
-    var that = this;
-    document.addEventListener('grid-button-clicked', function (event) {
-      that.template.pageSelected = that.PAGES.grid;
-
-      // populate page with appropriate stuff
-      page.getElementById('description').innerHTML = event.detail.description;
-      page.querySelector('#rules p').innerHTML = event.detail.rules;
-      page.getElementById('main').innerHTML = '<p>' + event.detail.main.join('</p>\n<p>') + '</p>';
-      btn.setAttribute('bingo-page', event.detail.tileId);
-      that.setButtonStatus(btn, event.detail.done);
-      that.setImageStatus(page, event.detail.tileId, event.detail.done);
     });
   };
 

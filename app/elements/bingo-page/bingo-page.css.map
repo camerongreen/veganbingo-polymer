@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;;AAGhB,MAAO;EACL,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,GAAG;;AAGpB,MAAO;EACL,OAAO,EAAE,GAAG;;AAGd,KAAM;EACJ,aAAa,EAAE,GAAG",
+"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;;AAGhB,MAAO;EACL,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,GAAG;;AAGpB,cAAe;EACb,OAAO,EAAE,GAAG;;AAGd,KAAM;EACJ,aAAa,EAAE,GAAG",
 "sources": ["bingo-page.scss"],
 "names": [],
 "file": "bingo-page.css"

@@ -113,8 +113,8 @@
                     <section class="info" data-route="settings">
                         <settings-page id="settings" score="{{score}}"></settings-page>
                     </section>
-                    <section class="info">
-                        <bingo-page id="bingo-page"></bingo-page>
+                    <section data-route="page">
+                        <bingo-page id="bingo-page" params="{{params}}" tiles="{{tiles}}"></bingo-page>
                     </section>
                 </iron-pages>
             </div>

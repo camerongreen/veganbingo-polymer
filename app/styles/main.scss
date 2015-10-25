@@ -73,14 +73,12 @@ section {
 #bingo-page {
   padding-left: 5%;
   padding-right: 5%;
-  & {
-    #header-image {
-      padding: 1%;
-    }
-    #main,
-    #rules {
-      background-color: #fff;
-    }
+  #header-image {
+    padding: 1%;
+  }
+  #main,
+  #rules {
+    background-color: #fff;
   }
 }
 

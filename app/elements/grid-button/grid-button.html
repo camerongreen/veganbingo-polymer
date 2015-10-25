@@ -1,9 +1,9 @@
-<dom-module id="grid-button" on-click="doClick">
+<dom-module id="grid-button">
   <link rel="import" type="css" href="grid-button.css">
   <template>
     <span id="{{details.tileId}}" class="{{details.tileClass}}">
-      <img src="images/{{pictureName(details)}}" alt="{{details.description}}" title="{{details.description}}" />
-      <div class="description">{{details.description}}</div>
+      <a href="/page/{{details.tileId}}"><img src="images/{{pictureName(details)}}" alt="{{details.description}}" title="{{details.description}}" /></a>
+      <div class="description"><a href="/page/{{details.tileId}}">{{details.description}}</a></div>
     </span>
   </template>
   <script src="grid-button.js"></script>
