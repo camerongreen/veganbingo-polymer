@@ -54,12 +54,18 @@
     is: 'bingo-grid',
     properties: {
       tiles: Object,
-      score: Number,
       settings: {
         type: Object,
         notify: true
       },
-      total: Number
+      score: {
+        type: Number,
+        notify: true
+      },
+      total: {
+        type: Number,
+        notify: true
+      }
     },
     observers: [
       'tilesChanged(tiles.*)'

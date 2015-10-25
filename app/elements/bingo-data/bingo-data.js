@@ -8,13 +8,12 @@
       },
       settings: Object
     },
-    tilesLoaded: false,
     loadTiles: function () {
-      this.tiles = event.detail.response;
-      for (var tile in this.tiles) {
-        this.tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
+      var tiles = event.detail.response;
+      for (var tile in tiles) {
+        tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
       }
-      this.tilesLoaded = true;
+      this.tiles = tiles;
     },
     getTiles: function () {
       return this.tiles;
