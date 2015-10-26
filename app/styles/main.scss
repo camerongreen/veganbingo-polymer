@@ -4,120 +4,124 @@ body {
   background-color: #111;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
-}
-
-paper-drawer-panel paper-header-panel paper-toolbar {
-  background-color: $deep-purple;
-}
-
-paper-header-panel {
-  & #mainContainer {
-    background-color: #DDD;
+  // override theme meddlings
+  section:not([style-scope]):not(.style-scope) {
+    padding: 0;
   }
 
-  #navHeader {
-    color: #EEE;
-    background-color: #2E0854;
-  }
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-}
-
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-[drawer] {
-  background-color: #EEEEEE;
-}
-
-iron-pages {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-section {
-  & > div {
-    overflow-y: auto;
+  paper-drawer-panel paper-header-panel paper-toolbar {
+    background-color: $deep-purple;
   }
 
-  &.info {
-    margin-left: 2%;
-    p {
-      margin-left: 2%;
+  paper-header-panel {
+    & #mainContainer {
+      background-color: #DDD;
+    }
+
+    #navHeader {
+      color: #EEE;
+      background-color: #2E0854;
     }
   }
-}
 
-#bingo-page {
-  padding-left: 5%;
-  padding-right: 5%;
-  #header-image {
-    padding: 1%;
+  .hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
   }
-  #main,
-  #rules {
-    background-color: #fff;
+
+  .hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
   }
-}
 
-bingo-grid grid-button {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  & div.description {
-    margin-top: 1em;
-    font-weight: bold;
+  .browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
   }
-}
 
-paper-menu a span {
-  padding-left: 1em;
-}
-
-bingo-time {
-  background-color: #000;
-  color: #fff;
-  padding: 1em;
-  & > div {
-    text-align: center;
+  [drawer] {
+    background-color: #EEEEEE;
   }
-}
 
-#topBar home-button {
-  font-size: 200%;
-  a {
-    color: #FFF;
-    text-decoration: none;
+  iron-pages {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
-}
 
-section home-button {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  a {
-    color: #666;
-    text-decoration: none;
+  section {
+    & > div {
+      overflow-y: auto;
+    }
+
+    &.info {
+      margin-left: 2%;
+      p {
+        margin-left: 2%;
+      }
+    }
+  }
+
+  #bingo-page {
+    padding-left: 5%;
+    padding-right: 5%;
+    #header-image {
+      padding: 1%;
+    }
+    #main,
+    #rules {
+      background-color: #fff;
+    }
+  }
+
+  bingo-grid grid-button {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    & div.description {
+      margin-top: 1em;
+      font-weight: bold;
+    }
+  }
+
+  paper-menu a span {
+    padding-left: 1em;
+  }
+
+  bingo-time {
+    background-color: #000;
+    color: #fff;
+    padding: 1em;
+    & > div {
+      text-align: center;
+    }
+  }
+
+  #topBar home-button {
+    font-size: 200%;
+    a {
+      color: #FFF;
+      text-decoration: none;
+    }
+  }
+
+  section home-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    a {
+      color: #666;
+      text-decoration: none;
+    }
   }
 }
 
@@ -126,5 +130,4 @@ html paper-dialog {
     color: green;
   }
 }
-
 

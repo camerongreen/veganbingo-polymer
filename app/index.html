@@ -29,7 +29,7 @@
     <!-- endreplace-->
 </head>
 
-<body unresolved fullbleed layout vertical>
+<body unresolved class="fullbleed layout vertical">
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app" namespace="org.camerongreen.veganbingo">
     <bingo-settings settings="{{settings}}"></bingo-settings>
@@ -80,9 +80,9 @@
 
 
         <!-- Main -->
-        <paper-scroll-header-panel main condenses keep-condensed-header>
+        <paper-scroll-header-panel main fixed>
             <!-- Main Toolbar -->
-            <paper-toolbar id="mainToolbar" class="short">
+            <paper-toolbar id="mainToolbar">
                 <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
                 <!-- Toolbar icons -->
                 <home-button class="flex" text="Vegan Bingo"></home-button>
@@ -92,7 +92,7 @@
             <div class="content">
                 <iron-pages attr-for-selected="data-route" selected="{{route}}" transitions="cross-fade-all">
                     <section id="game" data-route="home">
-                        <div layout vertical>
+                        <div class="layout vertical">
                             <bingo-data file="scripts/data.json" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
                             <bingo-grid settings="{{settings}}" tiles="{{tiles}}" score="{{score}}"
                                         total="{{total}}"></bingo-grid>
