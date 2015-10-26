@@ -38,7 +38,6 @@
   VeganBingo.prototype.start = function () {
     var page = document.getElementById('bingo-page');
 
-    this.listenForHomeButtonClicks();
     this.listenForRestartButtonClicks();
     this.listenForCompletionClick();
   };

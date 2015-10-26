@@ -93,7 +93,7 @@
     restart: function () {
       for (var tile in this.tiles) {
         if (this.tiles.hasOwnProperty(tile)) {
-          this.set('tiles.' + elId + '.done', false);
+          this.set('tiles.' + tile + '.done', false);
         }
       }
       this.tilesChanged();
