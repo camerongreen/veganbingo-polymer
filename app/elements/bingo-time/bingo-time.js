@@ -81,6 +81,9 @@
       score: Number,
       total: Number
     },
+    observers: [
+        'settingsChanged(settings.*)'
+    ],
     /**
      * Go through the timestamps on settings and
      * returns the earliest one or undefined
@@ -143,7 +146,7 @@
             this.timer = formatElapsedTime(seconds);
           }
           this.tick();
-        }, null, 1000);
+        }, 1000);
       } else {
         this.startTimeString = 'Not started';
       }

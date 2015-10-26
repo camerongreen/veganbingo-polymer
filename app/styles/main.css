@@ -66,6 +66,9 @@ bingo-grid grid-button {
     margin-top: 1em;
     font-weight: bold; }
 
+paper-menu a span {
+  padding-left: 1em; }
+
 bingo-time {
   background-color: #000;
   color: #fff;
@@ -73,11 +76,18 @@ bingo-time {
   bingo-time > div {
     text-align: center; }
 
-section home-button div.home-button {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #666;
-  text-decoration: none; }
+#topBar home-button {
+  font-size: 200%; }
+  #topBar home-button a {
+    color: #FFF;
+    text-decoration: none; }
+
+section home-button {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  section home-button a {
+    color: #666;
+    text-decoration: none; }
 
 html paper-dialog h1 {
   color: green; }

@@ -4,12 +4,10 @@
   <link rel="import" type="css" href="bingo-time.css">
   <template>
     <div layout horizontal center-justified hidden?="{{!startTime}}" class="timer">
-      <div class="label">Timer -</div>
-      <div class="value">{{timer}}</div>
+      <div class="label">Timer - <span class="value">{{timer}}</span></div>
     </div>
     <div layout horizontal center-justified class="start-time">
-      <div class="label">Start time -</div>
-      <div class="value">{{startTimeString}}</div>
+      <div class="label">Start time - <span class="value">{{startTimeString}}</span></div>
     </div>
   </template>
   <script src="bingo-time.js"></script>

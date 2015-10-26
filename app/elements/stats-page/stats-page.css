@@ -4,5 +4,7 @@
     background-color: #fff;
     padding: 1em;
     margin: 1em; }
+    :host div.stats-box iron-icon {
+      margin-right: 1ex; }
 
 /*# sourceMappingURL=stats-page.css.map */

@@ -8,15 +8,16 @@
       <iron-icon icon="assessment"></iron-icon>
       &nbsp;Timeline
     </h2>
-    <template repeat="{{ stat in stats }}">
+    <pre>{{timeline}}</pre>
+    <template is="dom-repeat" items="{{timeline}}">
       <paper-material>
       <div class="stats-box">
-        <h3><iron-icon icon="check-box"></iron-icon>&nbsp;{{stat.description}}</h3>
-        <div>Completed : {{stat.completedDate}}</div>
+        <h3><iron-icon icon="check-box"></iron-icon>{{item.description}}</h3>
+        <div>Completed : <span>{{item.completedDate}}</span></div>
       </div>
       </paper-material>
     </template>
-    <h3 hidden?="{{score !== 0}}">Come back when you've completed some tasks</h3>
+    <h3 hidden="{{score}}">Come back when you've completed some tasks</h3>
   </template>
   <script src="stats-page.js"></script>
 </dom-module>

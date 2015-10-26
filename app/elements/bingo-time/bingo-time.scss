@@ -2,8 +2,8 @@
   display: block;
   div.label {
     font-weight: bold;
-  }
-  div.value {
-    padding-left: 1ex;
+    span.value {
+      font-weight: normal;
+    }
   }
 }

@@ -2,19 +2,23 @@
   display: block;
   text-align: center;
   padding: 5%;
-}
 
-div.description {
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 800px) {
   div.description {
-    display: none;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 800px) {
+    div.description {
+      display: none;
+    }
   }
 }
