@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="og:image" content="http://camerongreen.org/veganbingo/images/veganbingo-icon.png" />
-  <meta name="og:title" content="Vegan Bingo!" />
-  <meta name="og:url" content="http://camerongreen.org/veganbingo" />
-  <title>Vegan Bingo</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:image" content="http://camerongreen.org/veganbingo/images/veganbingo-icon.png"/>
+    <meta name="og:title" content="Vegan Bingo!"/>
+    <meta name="og:url" content="http://camerongreen.org/veganbingo"/>
+    <title>Vegan Bingo</title>
 
     <!-- Chrome for Android theme color -->
     <meta name="theme-color" content="#2E3AA1">
@@ -45,35 +45,25 @@
 
             <!-- Drawer Content -->
             <paper-menu class="list" attr-for-select="data-route" selected="[[route]]">
-                <paper-item>
+                <paper-item on-click="itemClick" data-route="home">
                     <iron-icon icon="apps"></iron-icon>
-                    <a data-route="home" href="/home">
-                        <span>Home</span>
-                    </a>
+                    <span>Home</span>
                 </paper-item>
-                <paper-item>
+                <paper-item on-click="itemClick" data-route="help">
                     <iron-icon icon="help"></iron-icon>
-                    <a data-route="help" href="/help">
-                        <span>How to play</span>
-                    </a>
+                    <span>How to play</span>
                 </paper-item>
-                <paper-item>
+                <paper-item on-click="itemClick" data-route="about">
                     <iron-icon icon="info"></iron-icon>
-                    <a data-route="about" href="/about">
-                        <span>About</span>
-                    </a>
+                    <span>About</span>
                 </paper-item>
-                <paper-item>
+                <paper-item on-click="itemClick" data-route="timeline">
                     <iron-icon icon="assessment"></iron-icon>
-                    <a data-route="timeline" href="/timeline">
-                        <span>Timeline</span>
-                    </a>
+                    <span>Timeline</span>
                 </paper-item>
-                <paper-item>
+                <paper-item on-click="itemClick" data-route="settings">
                     <iron-icon icon="settings"></iron-icon>
-                    <a data-route="settings" href="/settings">
-                        <span>Settings</span>
-                    </a>
+                    <span>Settings</span>
                 </paper-item>
             </paper-menu>
         </paper-scroll-header-panel>

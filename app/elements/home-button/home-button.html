@@ -1,7 +1,10 @@
 <dom-module id="home-button">
-  <link rel="import" type="css" href="home-button.css">
-  <template>
-    <iron-icon icon="apps"></iron-icon> <a href="/">{{text}}</a>
-  </template>
-  <script src="home-button.js"></script>
+    <link rel="import" type="css" href="home-button.css">
+    <template on-click="goHome">
+        <div on-click="goHome">
+            <iron-icon icon="apps"></iron-icon>
+            <span>{{text}}</span>
+        </div>
+    </template>
+    <script src="home-button.js"></script>
 </dom-module>

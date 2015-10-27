@@ -19,6 +19,13 @@
     document.getElementById('mainContainer').scrollTop = 0;
   };
 
+  app.itemClick = function (evt) {
+    var el = evt.target;
+    el.classList.add('iron-selected');
+    var path = el.getAttribute('data-route');
+    page('/' + path);
+  };
+
   /**
    * Class for the main Vegan Bingo tasks
    *

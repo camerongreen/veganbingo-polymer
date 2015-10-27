@@ -1,10 +1,13 @@
 (function () {
-    'use strict';
+  'use strict';
 
-    Polymer({
-        is: 'home-button',
-        properties: {
-            text: String
-        }
-    });
+  Polymer({
+    is: 'home-button',
+    properties: {
+      text: String
+    },
+    goHome: function () {
+      page('/home');
+    }
+  });
 })();

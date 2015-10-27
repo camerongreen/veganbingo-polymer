@@ -57,7 +57,7 @@ body {
     body bingo-grid grid-button div.description {
       margin-top: 1em;
       font-weight: bold; }
-  body paper-menu a span {
+  body paper-menu span {
     padding-left: 1em; }
   body bingo-time {
     background-color: #000;
