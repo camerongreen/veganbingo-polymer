@@ -2,29 +2,44 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>bingo0grid</title>
+  <title>bingo grid</title>
 
-  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-  <script src="../../bower_components/web-component-tester/browser.js"></script>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+  <script src="../bower_components/test-fixture/test-fixture-mocha.js"></script>
+  <link rel="import" href="../bower_components/test-fixture/test-fixture.html">
 
   <!-- Step 1: import the element to test -->
-  <link rel="import" href="../elements/app-globals/app-globals.html">
   <link rel="import" href="../elements/bingo-grid/bingo-grid.html">
 
 </head>
 <body>
 
-<bingo-grid id="chomsky"></bingo-grid>
+<test-fixture id="tfx">
+  <template>
+    <bingo-grid></bingo-grid>
+  </template>
+</test-fixture>
 
 <script>
   suite('<bingo-grid>', function () {
-    test('Test bingo grid creates buttons', function (done) {
-      var el = document.querySelector('bingo-grid');
-      el.tiles = {};
+    var bg;
+
+    setup(function() {
+      bg = fixture('tfx');
+    });
+
+    test('It should create grid buttons', function (done) {
+      bg.tiles = {};
+      bg.score = 0;
+      bg.total = 0;
+      bg.setings = {};
+
       for (var i = 0; i < 16; i++) {
         var tileId = 'tile' + i;
 
-        el.tiles[tileId] = {
+        bg.tiles[tileId] = {
           description: 'I am tile ' + i,
           done: false,
           rules: 'I am rules for ' + i,
@@ -33,7 +48,8 @@
       }
 
       flush(function () {
-        var btns = el.querySelectorAll('grid-button');
+        debugger;
+        var btns = bg.querySelectorAll('grid-button');
         assert.equal(16, btns.length);
         done();
       });

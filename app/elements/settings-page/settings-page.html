@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
 <dom-module id="settings-page">
   <link rel="import" type="css" href="settings-page.css">
@@ -12,7 +13,7 @@
 
         <p>This will clear all of your completed tasks and set you back to 0.</p>
         <p>
-          <paper-button role="button" id="restart" raised disabled="{{score === 0}}">Restart game</paper-button>
+          <paper-button role="button" id="restart" raised disabled="{{!score}}">Restart game</paper-button>
         </p>
       </div>
       <home-button text="Home"></home-button>

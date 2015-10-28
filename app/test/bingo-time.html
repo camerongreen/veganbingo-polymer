@@ -4,8 +4,10 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>bingo0grid</title>
 
-  <script src="../../bower_components/webcomponentsjs/webcomponents.js"></script>
-  <script src="../../bower_components/web-component-tester/browser.js"></script>
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../bower_components/web-component-tester/browser.js"></script>
+  <script src="../bower_components/test-fixture/test-fixture-mocha.js"></script>
+  <link rel="import" href="../bower_components/test-fixture/test-fixture.html">
 
   <!-- Step 1: import the element to test -->
   <link rel="import" href="../elements/bingo-time/bingo-time.html">
@@ -13,33 +15,41 @@
 </head>
 <body>
 
-<bingo-time></bingo-time>
+<test-fixture id="tfx">
+  <template>
+    <bingo-time></bingo-time>
+  </template>
+</test-fixture>
 
 <script>
+  var bt;
+
+  setup(function() {
+    bt = fixture('tfx');
+  });
+
   suite('<bingo-time>', function () {
     test('Test bingo time default state', function (done) {
-      var el = document.querySelector('bingo-time');
-      el.settings = {};
-      el.score = 0;
-      el.total = 16;
+      bt.settings = {};
+      bt.score = 0;
+      bt.total = 16;
 
       flush(function () {
-        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
+        var textEl = bt.querySelector('div.start-time span.value');
         assert.equal('Not started', textEl.textContent);
         done();
       });
     })
 
     test('Test bingo time started state', function (done) {
-      var el = document.querySelector('bingo-time');
-      el.settings = {
+      bt.settings = {
         cows: 1429754069296
       };
-      el.score = 1;
-      el.total = 16;
+      bt.score = 1;
+      bt.total = 16;
 
       flush(function () {
-        var textEl = el.shadowRoot.querySelector('div.start-time div.value');
+        var textEl = bt.querySelector('div.start-time span.value');
         assert.notEqual('Not started', textEl.textContent);
         done();
       });

@@ -1,4 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../app-globals/app-globals.html">
 <link rel="import" href="../grid-button/grid-button.html">
 
 <dom-module id="bingo-grid">
@@ -8,7 +9,7 @@
     <template is="dom-repeat" items="{{gridTiles}}" as="row">
       <div class="horizontal layout">
         <template is="dom-repeat" items="{{row}}" as="tile">
-          <grid-button details="{{tile}}" hero-id="hero-{{tile.tileId}}" class$="flex {{classes(tile.tileClass)}}"></grid-button>
+          <grid-button details="{{tile}}" class$="flex {{classes(tile.tileClass)}}"></grid-button>
         </template>
       </div>
     </template>
