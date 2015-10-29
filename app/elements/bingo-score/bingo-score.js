@@ -1,6 +1,4 @@
 (function () {
-  'use strict';
-
   Polymer({
     is: 'bingo-score',
     scoreLabel: 'Score',

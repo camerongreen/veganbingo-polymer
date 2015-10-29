@@ -43,8 +43,6 @@
   };
 
   VeganBingo.prototype.start = function () {
-    var page = document.getElementById('bingo-page');
-
     this.listenForRestartButtonClicks();
     this.listenForCompletionClick();
   };
@@ -52,9 +50,6 @@
   /**
    * Listen for a click on any of the bingo tasks
    * if so, set the page up.
-   *
-   * @param page
-   * @param btn
    */
   VeganBingo.prototype.listenForCompletionClick = function () {
     document.addEventListener('bingo-button-clicked', function (e) {
