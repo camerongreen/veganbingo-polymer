@@ -81,7 +81,7 @@
             </paper-toolbar>
 
             <div class="content">
-                <iron-pages attr-for-selected="data-route" selected="{{route}}" transitions="cross-fade-all">
+                <neon-animated-pages attr-for-selected="data-route" selected="{{route}}"  entry-animation="fade-in-animation" exit-animation="fade-out-animation">
                     <section id="game" data-route="home">
                         <div class="layout vertical">
                             <bingo-data file="scripts/data.json" tiles="{{tiles}}" settings="{{settings}}"></bingo-data>
@@ -107,7 +107,7 @@
                     <section data-route="page">
                         <bingo-page id="bingo-page" params="{{params}}" tiles="{{tiles}}"></bingo-page>
                     </section>
-                </iron-pages>
+                </neon-animated-pages>
             </div>
         </paper-scroll-header-panel>
         <!-- /.content -->
