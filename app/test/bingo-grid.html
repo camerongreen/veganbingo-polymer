@@ -31,7 +31,7 @@
     });
 
     test('It should create grid buttons', function (done) {
-      bg.tiles = {};
+      var tiles = {};
       bg.score = 0;
       bg.total = 0;
       bg.setings = {};
@@ -39,7 +39,7 @@
       for (var i = 0; i < 16; i++) {
         var tileId = 'tile' + i;
 
-        bg.tiles[tileId] = {
+        tiles[tileId] = {
           description: 'I am tile ' + i,
           done: false,
           rules: 'I am rules for ' + i,
@@ -47,8 +47,9 @@
         };
       }
 
+      bg.tiles = tiles;
+
       flush(function () {
-        debugger;
         var btns = bg.querySelectorAll('grid-button');
         assert.equal(16, btns.length);
         done();
