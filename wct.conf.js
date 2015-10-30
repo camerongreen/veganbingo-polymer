@@ -7,7 +7,7 @@ var ret = {
   },
   plugins: {
     local: {
-      browsers: ['chrome']
+      browsers: ['firefox']
     }
   }
 };
