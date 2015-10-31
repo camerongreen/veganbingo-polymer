@@ -19,6 +19,13 @@
     document.getElementById('mainContainer').scrollTop = 0;
   };
 
+  app.displayInstalledToast = function() {
+    // Check to make sure caching is actually enabled—it won't be in the dev environment.
+    if (!document.querySelector('platinum-sw-cache').disabled) {
+      document.querySelector('#caching-complete').show();
+    }
+  };
+
   app.itemClick = function (evt) {
     var el = evt.target;
     el.classList.add('iron-selected');
