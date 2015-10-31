@@ -6,5 +6,10 @@
 @media (max-width: 800px) {
   span.score-label {
     display: none; } }
+paper-dialog h2 {
+  color: #28153e; }
+
+paper-dialog iron-icon {
+  color: #999; }
 
 /*# sourceMappingURL=bingo-score.css.map */

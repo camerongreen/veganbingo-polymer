@@ -15,8 +15,10 @@
     },
     scoreChanged: function () {
       if ((this.score === this.total) && (this.total > 0)) {
-        this.transition = 'core-transition-center';
-        this.$.scoreAchieved.toggle();
+        var dialog = document.getElementById('scoreAchieved');
+        if (dialog) {
+          dialog.open();
+        }
       }
     }
   });
