@@ -1,7 +1,9 @@
 (function () {
   function pad(num, size) {
-    var s = num+"";
-    while (s.length < size) s = "0" + s;
+    var s = num + '';
+    while (s.length < size) {
+      s = '0' + s;
+    }
     return s;
   }
 
@@ -17,7 +19,7 @@
       'Nov', 'Dec'
     ];
 
-    return [date.getDate(), shortMonthNames[date.getMonth()], date.getFullYear(), pad(date.getHours(), 2) + ':' + pad(date.getMinutes(),2) + ':' + pad(date.getSeconds(), 2)].join(' ');
+    return [date.getDate(), shortMonthNames[date.getMonth()], date.getFullYear(), pad(date.getHours(), 2) + ':' + pad(date.getMinutes(), 2) + ':' + pad(date.getSeconds(), 2)].join(' ');
   }
 
   /**
@@ -88,7 +90,7 @@
       total: Number
     },
     observers: [
-        'settingsChanged(settings.*)'
+      'settingsChanged(settings.*)'
     ],
     /**
      * Go through the timestamps on settings and
