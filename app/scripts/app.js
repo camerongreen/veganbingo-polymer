@@ -15,11 +15,51 @@
   });
 
   // Scroll page to top and expand header
-  app.scrollPageToTop = function() {
+  app.scrollPageToTop = function () {
     document.getElementById('mainContainer').scrollTop = 0;
   };
 
-  app.displayInstalledToast = function() {
+  // I'm sure this could be done with a wildcard, but having thorough
+  // user friendly documentation isn't the Google way
+  app.precache = [
+    'images/aspirational_done.png',
+    'images/aspirational.png',
+    'images/bacon_done.png',
+    'images/bacon.png',
+    'images/cant_done.png',
+    'images/cant.png',
+    'images/cheese_done.png',
+    'images/cheese.png',
+    'images/cow_done.png',
+    'images/cow.png',
+    'images/eat_done.png',
+    'images/eat.png',
+    'images/food_done.png',
+    'images/food.png',
+    'images/hitler_done.png',
+    'images/hitler.png',
+    'images/humane_done.png',
+    'images/humane.png',
+    'images/ic_launcher.png',
+    'images/natural_done.png',
+    'images/natural.png',
+    'images/notmuch_done.png',
+    'images/notmuch.png',
+    'images/plants_done.png',
+    'images/plants.png',
+    'images/preachy_done.png',
+    'images/preachy.png',
+    'images/protein_done.png',
+    'images/protein.png',
+    'images/teeth_done.png',
+    'images/teeth.png',
+    'images/veganbingo-icon.png',
+    'images/veganbingo.png',
+    'images/what_done.png',
+    'images/what.png'
+  ];
+
+  app.displayInstalledToast = function () {
     // Check to make sure caching is actually enabled—it won't be in the dev environment.
     if (!document.querySelector('platinum-sw-cache').disabled) {
       document.querySelector('#caching-complete').show();
