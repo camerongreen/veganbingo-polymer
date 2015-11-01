@@ -8,7 +8,7 @@
       },
       settings: Object
     },
-    loadTiles: function () {
+    loadTiles: function (event) {
       var tiles = event.detail.response;
       for (var tile in tiles) {
         tiles[tile].done = this.settings.hasOwnProperty(tile) ? this.settings[tile] : false;
