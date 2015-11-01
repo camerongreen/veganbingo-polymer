@@ -1,4 +1,10 @@
 (function () {
+  function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+  }
+
   /**
    * End result should be
    * 13 Apr 2015 23:44:14
@@ -11,7 +17,7 @@
       'Nov', 'Dec'
     ];
 
-    return [date.getDate(), shortMonthNames[date.getMonth()], date.getFullYear(), date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()].join(' ');
+    return [date.getDate(), shortMonthNames[date.getMonth()], date.getFullYear(), pad(date.getHours(), 2) + ':' + pad(date.getMinutes(),2) + ':' + pad(date.getSeconds(), 2)].join(' ');
   }
 
   /**
