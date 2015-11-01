@@ -207,7 +207,7 @@ gulp.task('cache-config', function (callback) {
     disabled: false
   };
 
-  glob('{elements,scripts,styles}/**/*.*', {cwd: dir}, function(error, files) {
+  glob('{elements,scripts,styles,images}/**/*.*', {cwd: dir}, function(error, files) {
     if (error) {
       callback(error);
     } else {

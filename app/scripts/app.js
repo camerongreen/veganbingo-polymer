@@ -19,46 +19,6 @@
     document.getElementById('mainContainer').scrollTop = 0;
   };
 
-  // I'm sure this could be done with a wildcard, but having thorough
-  // user friendly documentation isn't the Google way
-  app.precache = [
-    'http://camerongreen.org/veganbingo/images/aspirational_done.png',
-    'http://camerongreen.org/veganbingo/images/aspirational.png',
-    'http://camerongreen.org/veganbingo/images/bacon_done.png',
-    'http://camerongreen.org/veganbingo/images/bacon.png',
-    'http://camerongreen.org/veganbingo/images/cant_done.png',
-    'http://camerongreen.org/veganbingo/images/cant.png',
-    'http://camerongreen.org/veganbingo/images/cheese_done.png',
-    'http://camerongreen.org/veganbingo/images/cheese.png',
-    'http://camerongreen.org/veganbingo/images/cow_done.png',
-    'http://camerongreen.org/veganbingo/images/cow.png',
-    'http://camerongreen.org/veganbingo/images/eat_done.png',
-    'http://camerongreen.org/veganbingo/images/eat.png',
-    'http://camerongreen.org/veganbingo/images/food_done.png',
-    'http://camerongreen.org/veganbingo/images/food.png',
-    'http://camerongreen.org/veganbingo/images/hitler_done.png',
-    'http://camerongreen.org/veganbingo/images/hitler.png',
-    'http://camerongreen.org/veganbingo/images/humane_done.png',
-    'http://camerongreen.org/veganbingo/images/humane.png',
-    'http://camerongreen.org/veganbingo/images/ic_launcher.png',
-    'http://camerongreen.org/veganbingo/images/natural_done.png',
-    'http://camerongreen.org/veganbingo/images/natural.png',
-    'http://camerongreen.org/veganbingo/images/notmuch_done.png',
-    'http://camerongreen.org/veganbingo/images/notmuch.png',
-    'http://camerongreen.org/veganbingo/images/plants_done.png',
-    'http://camerongreen.org/veganbingo/images/plants.png',
-    'http://camerongreen.org/veganbingo/images/preachy_done.png',
-    'http://camerongreen.org/veganbingo/images/preachy.png',
-    'http://camerongreen.org/veganbingo/images/protein_done.png',
-    'http://camerongreen.org/veganbingo/images/protein.png',
-    'http://camerongreen.org/veganbingo/images/teeth_done.png',
-    'http://camerongreen.org/veganbingo/images/teeth.png',
-    'http://camerongreen.org/veganbingo/images/veganbingo-icon.png',
-    'http://camerongreen.org/veganbingo/images/veganbingo.png',
-    'http://camerongreen.org/veganbingo/images/what_done.png',
-    'http://camerongreen.org/veganbingo/images/what.png'
-  ];
-
   app.displayInstalledToast = function () {
     // Check to make sure caching is actually enabled—it won't be in the dev environment.
     if (!document.querySelector('platinum-sw-cache').disabled) {
