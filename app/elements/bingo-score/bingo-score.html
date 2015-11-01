@@ -1,14 +1,29 @@
 <dom-module id="bingo-score">
   <link rel="import" type="css" href="bingo-score.css">
   <template>
-    <span id="score"><span class="score-label">{{scoreLabel}}</span> <span>{{score}}</span> / <span>{{total}}</span></span>
-    <paper-dialog id="scoreAchieved" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
-      <h2>Fan-Vegan Bingo-tastic!!!!</h2>
-      <p><iron-icon icon="star"></iron-icon> Congratulations on completing Vegan Bingo! <iron-icon icon="star"></iron-icon></p>
-      <p>You have joined an elite class and are now officially a level 5 Vegan <iron-icon icon="favorite-outline"></iron-icon></p>
-      <p>I'd love to know how you did (see the <iron-icon icon="info"></iron-icon> About page for the Vegan Bingo Facebook page or contact me via my website)</p>
-      <p>To restart, go to the <iron-icon icon="settings"></iron-icon> Settings page.</p>
-    </paper-dialog>
+    <span id="score"><span
+        class="score-label">{{scoreLabel}}</span> <span>{{score}}</span> / <span>{{total}}</span>
+    </span>
+      <paper-dialog id="scoreAchieved" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop>
+        <h2>Fan-Vegan Bingo-tastic!!!!</h2>
+
+        <p>
+          <iron-icon icon="star"></iron-icon>
+          Congratulations on completing Vegan Bingo!
+          <iron-icon icon="star"></iron-icon>
+        </p>
+        <p>You have joined an elite class and are now officially a level 5 Vegan
+          <iron-icon icon="favorite-outline"></iron-icon>
+        </p>
+        <p>I'd love to know how you did (see the
+          <iron-icon icon="info"></iron-icon>
+          About page for the Vegan Bingo Facebook page or contact me via my website)
+        </p>
+        <p>To restart, go to the
+          <iron-icon icon="settings"></iron-icon>
+          Settings page.
+        </p>
+      </paper-dialog>
   </template>
   <script src="bingo-score.js"></script>
 </dom-module>
