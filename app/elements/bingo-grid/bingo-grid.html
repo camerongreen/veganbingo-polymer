@@ -1,7 +1,8 @@
+<link rel="import" href="bingo-grid-styles.html">
 <dom-module id="bingo-grid">
-  <link rel="import" type="css" href="bingo-grid.css">
   <template>
     <app-globals id="globals"></app-globals>
+    <style include="bingo-grid-styles"></style>
     <template is="dom-repeat" items="{{gridTiles}}" as="row">
       <div class="horizontal layout">
         <template is="dom-repeat" items="{{row}}" as="tile">

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,gBAAW;IACT,SAAS,EAAE,GAAG;;AAIlB,yBAA0B;EACxB,gBAAiB;IACf,OAAO,EAAE,IAAI;AAIjB,eAAgB;EACd,KAAK,EAAE,OAAO;;AAGhB,sBAAuB;EACrB,KAAK,EAAE,IAAI",
-"sources": ["bingo-score.scss"],
-"names": [],
-"file": "bingo-score.css"
-}

@@ -32,6 +32,7 @@
 <body unresolved class="fullbleed layout vertical">
 <span id="browser-sync-binding"></span>
 <template is="dom-bind" id="app" namespace="org.camerongreen.veganbingo">
+  <style is="custom-style" include="iron-flex"></style>
   <bingo-settings settings="{{settings}}"></bingo-settings>
 
   <paper-drawer-panel id="paperDrawerPanel">
@@ -45,23 +46,23 @@
 
       <!-- Drawer Content -->
       <paper-menu class="list" attr-for-select="data-route" selected="[[route]]">
-        <paper-item on-click="itemClick" data-route="home">
+        <paper-item on-tap="itemClick" data-route="home">
           <iron-icon icon="apps"></iron-icon>
           <span>Home</span>
         </paper-item>
-        <paper-item on-click="itemClick" data-route="help">
+        <paper-item on-tap="itemClick" data-route="help">
           <iron-icon icon="help"></iron-icon>
           <span>How to play</span>
         </paper-item>
-        <paper-item on-click="itemClick" data-route="timeline">
+        <paper-item on-tap="itemClick" data-route="timeline">
           <iron-icon icon="assessment"></iron-icon>
           <span>Timeline</span>
         </paper-item>
-        <paper-item on-click="itemClick" data-route="settings">
+        <paper-item on-tap="itemClick" data-route="settings">
           <iron-icon icon="settings"></iron-icon>
           <span>Settings</span>
         </paper-item>
-        <paper-item on-click="itemClick" data-route="about">
+        <paper-item on-tap="itemClick" data-route="about">
           <iron-icon icon="info"></iron-icon>
           <span>About</span>
         </paper-item>
@@ -72,7 +73,7 @@
     <!-- Main -->
     <paper-scroll-header-panel main fixed>
       <!-- Main Toolbar -->
-      <paper-toolbar id="mainToolbar">
+      <paper-toolbar id="mainToolbar" class="layout vertical">
         <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
         <!-- Toolbar icons -->
         <home-button class="flex" text="Vegan Bingo"></home-button>

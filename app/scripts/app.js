@@ -27,7 +27,7 @@
   };
 
   app.itemClick = function (evt) {
-    var el = evt.target;
+    var el = evt.currentTarget;
     el.classList.add('iron-selected');
     var path = el.getAttribute('data-route');
     page('/' + path);

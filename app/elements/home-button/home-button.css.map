@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,KAAM;EACJ,OAAO,EAAE,KAAK",
-"sources": ["home-button.scss"],
-"names": [],
-"file": "home-button.css"
-}
