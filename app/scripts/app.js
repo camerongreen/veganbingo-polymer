@@ -1,38 +1,6 @@
 (function (document) {
   'use strict';
 
-  // Grab a reference to our auto-binding template
-  // and give it some initial binding values
-  // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
-  var app = document.getElementById('app');
-  app.appName = 'Vegan Bingo!';
-
-  // Listen for template bound event to know when bindings
-  // have resolved and content has been stamped to the page
-  app.addEventListener('dom-change', function () {
-    var vb = new VeganBingo(this);
-    vb.start();
-  });
-
-  // Scroll page to top and expand header
-  app.scrollPageToTop = function () {
-    document.getElementById('mainContainer').scrollTop = 0;
-  };
-
-  app.displayInstalledToast = function () {
-    // Check to make sure caching is actually enabled—it won't be in the dev environment.
-    if (!document.querySelector('platinum-sw-cache').disabled) {
-      document.querySelector('#caching-complete').show();
-    }
-  };
-
-  app.itemClick = function (evt) {
-    var el = evt.currentTarget;
-    el.classList.add('iron-selected');
-    var path = el.getAttribute('data-route');
-    page('/' + path);
-  };
-
   /**
    * Class for the main Vegan Bingo tasks
    *
@@ -71,6 +39,39 @@
       dataGrid.restart();
     });
   };
+
+  // Grab a reference to our auto-binding template
+  // and give it some initial binding values
+  // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
+  var app = document.getElementById('app');
+  app.appName = 'Vegan Bingo!';
+
+  // Listen for template bound event to know when bindings
+  // have resolved and content has been stamped to the page
+  app.addEventListener('dom-change', function () {
+    var vb = new VeganBingo(this);
+    vb.start();
+  });
+
+  // Scroll page to top and expand header
+  app.scrollPageToTop = function () {
+    document.getElementById('mainContainer').scrollTop = 0;
+  };
+
+  app.displayInstalledToast = function () {
+    // Check to make sure caching is actually enabled—it won't be in the dev environment.
+    if (!document.querySelector('platinum-sw-cache').disabled) {
+      document.querySelector('#caching-complete').show();
+    }
+  };
+
+  app.itemClick = function (evt) {
+    var el = evt.currentTarget;
+    el.classList.add('iron-selected');
+    var path = el.getAttribute('data-route');
+    page('/' + path);
+  };
+
 
 // wrap document so it plays nice with other libraries
 // http://www.polymer-project.org/platform/shadow-dom.html#wrappers
