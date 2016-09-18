@@ -7,7 +7,7 @@ http://camerongreen.org/veganbingo
 
 It is a web based version of the Android app I wrote.
 
-You can find it on the Play store and code is here:
+You can find the app on the Play store and code is here:
 
 https://github.com/camerongreen/veganbingo
 
