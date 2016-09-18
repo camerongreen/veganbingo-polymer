@@ -1,6 +1,7 @@
 <link rel="import" href="home-button-style.html">
 <dom-module id="home-button">
     <template on-click="goHome">
+        <style include="home-button-style"></style>
         <div on-click="goHome">
             <iron-icon icon="apps"></iron-icon>
             <span>{{text}}</span>
